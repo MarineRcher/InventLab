@@ -36,9 +36,12 @@ namespace InventLab
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Enter your name:");
-            string name = Console.ReadLine();
-            Console.WriteLine("Hello, " + name + "!");
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
