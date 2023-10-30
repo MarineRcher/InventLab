@@ -15,11 +15,30 @@ namespace InventLab
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello");
+          
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Enter your name:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Hello, " + name + "!");
         }
     }
 }
