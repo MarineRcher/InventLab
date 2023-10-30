@@ -8,3 +8,13 @@ C:\Users\Administrateur\Desktop\InventLab\InventLab\obj\Debug\InventLab.csproj.G
 C:\Users\Administrateur\Desktop\InventLab\InventLab\obj\Debug\InventLab.csproj.CoreCompileInputs.cache
 C:\Users\Administrateur\Desktop\InventLab\InventLab\obj\Debug\InventLab.exe
 C:\Users\Administrateur\Desktop\InventLab\InventLab\obj\Debug\InventLab.pdb
+C:\Users\Marine\Documents\InventLab\bin\Debug\InventLab.exe.config
+C:\Users\Marine\Documents\InventLab\bin\Debug\InventLab.exe
+C:\Users\Marine\Documents\InventLab\bin\Debug\InventLab.pdb
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.csproj.AssemblyReference.cache
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.Form1.resources
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.Properties.Resources.resources
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.csproj.GenerateResource.cache
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.csproj.CoreCompileInputs.cache
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.exe
+C:\Users\Marine\Documents\InventLab\obj\Debug\InventLab.pdb
