@@ -98,7 +98,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="connect.cs" />
     <Compile Include="Drug.cs" />
     <Compile Include="DrugDataAccess.cs" />
     <Compile Include="EditDrug.cs">

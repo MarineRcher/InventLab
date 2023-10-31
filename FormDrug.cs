@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using MySqlX.XDevAPI.Common;
 
 namespace InventLab
 {
@@ -26,9 +26,10 @@ namespace InventLab
         private void button1_Click(object sender, EventArgs e)
         {
             Drug drug = new Drug(this.textBox1.Text, this.textBox2.Text);
-            dataAccess.addDrug(drug);
-
-            updateDataGridView();
+            //dataAccess.addDrug(drug);
+            int result = dataAccess.addDrugToDB(drug);
+            MessageBox.Show(result.ToString());
+            //updateDataGridView();
         }
 
         public void updateDataGridView()
