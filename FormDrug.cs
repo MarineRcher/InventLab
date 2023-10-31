@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.SqlServer.Server;
+using MySql.Data.MySqlClient;
+
 
 namespace InventLab
 {
     public partial class FormDrug : Form
     {
+
+       
 
         private DrugDataAccess dataAccess = new DrugDataAccess();
         public FormDrug()
@@ -42,6 +45,24 @@ namespace InventLab
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           if(e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                string name = selectedRow.Cells["name"].Value.ToString();
+                string description = selectedRow.Cells["description"].Value.ToString();
+
+                EditDrug editDrug = new EditDrug(name, description);
+                editDrug.Show();
+            }
         }
     }
 }
