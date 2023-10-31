@@ -46,7 +46,7 @@ namespace InventLab
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            _message = textBox1.Text;
+            _message = InputSignUpUsername.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,7 +69,22 @@ namespace InventLab
 
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void InputSignUpName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InputSignUpLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InputSignUpPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

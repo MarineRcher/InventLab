@@ -28,82 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Modifier = new System.Windows.Forms.Button();
+            this.titleDrugEdit = new System.Windows.Forms.Label();
+            this.InputNameDrugEdit = new System.Windows.Forms.TextBox();
+            this.inputDescriptionDrugEdit = new System.Windows.Forms.TextBox();
+            this.labelDescriptionDrugEdit = new System.Windows.Forms.Label();
+            this.labelNameDrugEdit = new System.Windows.Forms.Label();
+            this.buttonDrugEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // titleDrugEdit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 39);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(146, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Modifier le médicament";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.titleDrugEdit.AutoSize = true;
+            this.titleDrugEdit.Font = new System.Drawing.Font("Noto Sans Cond", 16.2F, System.Drawing.FontStyle.Bold);
+            this.titleDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.titleDrugEdit.Location = new System.Drawing.Point(252, 26);
+            this.titleDrugEdit.Name = "titleDrugEdit";
+            this.titleDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.titleDrugEdit.Size = new System.Drawing.Size(298, 38);
+            this.titleDrugEdit.TabIndex = 0;
+            this.titleDrugEdit.Text = "Modifier le médicament";
+            this.titleDrugEdit.Click += new System.EventHandler(this.titleDrugEdit_Click);
             // 
-            // textBox1
+            // InputNameDrugEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(269, 142);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.InputNameDrugEdit.Location = new System.Drawing.Point(269, 142);
+            this.InputNameDrugEdit.Name = "InputNameDrugEdit";
+            this.InputNameDrugEdit.Size = new System.Drawing.Size(222, 22);
+            this.InputNameDrugEdit.TabIndex = 1;
+            this.InputNameDrugEdit.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // inputDescriptionDrugEdit
             // 
-            this.textBox2.Location = new System.Drawing.Point(269, 229);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 22);
-            this.textBox2.TabIndex = 2;
+            this.inputDescriptionDrugEdit.Location = new System.Drawing.Point(269, 229);
+            this.inputDescriptionDrugEdit.Name = "inputDescriptionDrugEdit";
+            this.inputDescriptionDrugEdit.Size = new System.Drawing.Size(222, 22);
+            this.inputDescriptionDrugEdit.TabIndex = 2;
             // 
-            // label2
+            // labelDescriptionDrugEdit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 195);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Description";
+            this.labelDescriptionDrugEdit.AutoSize = true;
+            this.labelDescriptionDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescriptionDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(269, 197);
+            this.labelDescriptionDrugEdit.Name = "labelDescriptionDrugEdit";
+            this.labelDescriptionDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelDescriptionDrugEdit.Size = new System.Drawing.Size(146, 29);
+            this.labelDescriptionDrugEdit.TabIndex = 3;
+            this.labelDescriptionDrugEdit.Text = "Description";
             // 
-            // label3
+            // labelNameDrugEdit
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 107);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(113, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nom médicament";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.labelNameDrugEdit.AutoSize = true;
+            this.labelNameDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNameDrugEdit.Location = new System.Drawing.Point(269, 110);
+            this.labelNameDrugEdit.Name = "labelNameDrugEdit";
+            this.labelNameDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelNameDrugEdit.Size = new System.Drawing.Size(68, 29);
+            this.labelNameDrugEdit.TabIndex = 4;
+            this.labelNameDrugEdit.Text = "Nom";
+            this.labelNameDrugEdit.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Modifier
+            // buttonDrugEdit
             // 
-            this.Modifier.Location = new System.Drawing.Point(285, 314);
-            this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(219, 50);
-            this.Modifier.TabIndex = 5;
-            this.Modifier.Text = "Modifier";
-            this.Modifier.UseVisualStyleBackColor = true;
-            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
+            this.buttonDrugEdit.BackColor = System.Drawing.Color.DarkSalmon;
+            this.buttonDrugEdit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.buttonDrugEdit.Location = new System.Drawing.Point(269, 304);
+            this.buttonDrugEdit.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonDrugEdit.Name = "buttonDrugEdit";
+            this.buttonDrugEdit.Size = new System.Drawing.Size(219, 50);
+            this.buttonDrugEdit.TabIndex = 5;
+            this.buttonDrugEdit.Text = "Modifier";
+            this.buttonDrugEdit.UseVisualStyleBackColor = false;
+            this.buttonDrugEdit.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // EditDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Modifier);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonDrugEdit);
+            this.Controls.Add(this.labelNameDrugEdit);
+            this.Controls.Add(this.labelDescriptionDrugEdit);
+            this.Controls.Add(this.inputDescriptionDrugEdit);
+            this.Controls.Add(this.InputNameDrugEdit);
+            this.Controls.Add(this.titleDrugEdit);
             this.Name = "EditDrug";
             this.Text = "EditDrug";
             this.ResumeLayout(false);
@@ -113,11 +123,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Modifier;
+        private System.Windows.Forms.Label titleDrugEdit;
+        private System.Windows.Forms.TextBox InputNameDrugEdit;
+        private System.Windows.Forms.TextBox inputDescriptionDrugEdit;
+        private System.Windows.Forms.Label labelDescriptionDrugEdit;
+        private System.Windows.Forms.Label labelNameDrugEdit;
+        private System.Windows.Forms.Button buttonDrugEdit;
     }
 }

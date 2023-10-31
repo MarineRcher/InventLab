@@ -16,11 +16,11 @@ namespace InventLab
         public EditDrug(string name, string description)
         {
             InitializeComponent();
-            this.textBox1.Text = name;
-            this.textBox2.Text = description;
+            this.InputNameDrugEdit.Text = name;
+            this.inputDescriptionDrugEdit.Text = description;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void titleDrugEdit_Click(object sender, EventArgs e)
         {
 
         }

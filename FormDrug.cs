@@ -25,7 +25,7 @@ namespace InventLab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Drug drug = new Drug(this.textBox1.Text, this.textBox2.Text);
+            Drug drug = new Drug(this.inputNameAddDrug.Text, this.inputDescriptionAddDrug.Text);
             //dataAccess.addDrug(drug);
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
@@ -48,7 +48,7 @@ namespace InventLab
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void inputNameAddDrug_TextChanged(object sender, EventArgs e)
         {
 
         }
