@@ -10,15 +10,40 @@ namespace InventLab
 {
     internal class DrugDataAccess
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
-        private List<Drug> drugs = new List<Drug>();
+
+            public string Name { get; set; }
+            public string Description { get; set; }
+
+            public Drug(string Name, string Description)
+            {
+                this.Name = Name;
+                this.Description = Description;
+            }
+            private string connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
+
+            private List<Drug> drugs = new List<Drug>();
+       
 
         public void addDrug(Drug drug)
         {
             this.drugs.Add(drug);
         }
 
-        public List<Drug> getDrugList() { return this.drugs; }
+      /*  public List<Drug> getDrugList() { return this.drugs; }
+        public class Drug
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+
+            public Drug() { } 
+
+            public Drug(string name, string description)
+            {
+                Name = name;
+                Description = description;
+            }
+        }*/
+
 
         public int addDrugToDB(Drug drug)
         {
@@ -37,22 +62,25 @@ namespace InventLab
             }
         }
 
-        public int updateDrug(Drug drug)
+        public int updateDrug(Drug drug, string oldName, string oldDescription)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "update drugs set name=@name, description=@description where name=@name, description=@description;";
+                string query = "UPDATE drugs SET name=@newName, description=@newDescription WHERE name=@oldName AND description=@oldDescription;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@name", drug.Name);
-                    command.Parameters.AddWithValue("@description", drug.Description);
+                    command.Parameters.AddWithValue("@newName", drug.Name);
+                    command.Parameters.AddWithValue("@newDescription", drug.Description);
+                    command.Parameters.AddWithValue("@oldName", oldName);
+                    command.Parameters.AddWithValue("@oldDescription", oldDescription);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
                 }
             }
         }
+
 
         public List<Drug> selectDrug()
         {
@@ -68,15 +96,18 @@ namespace InventLab
                         while (reader.Read())
                         {
                             Drug drug = new Drug();
-                            drug.Id = reader.GetInt32("id");
                             drug.Name = reader.GetString("name");
                            drug.Description = reader.GetString("description");
 
                             drugs.Add(drug);
+                           
                         }
+                        return drugs;
                     }
                 }
             }
         }
+
+      
     }
 }

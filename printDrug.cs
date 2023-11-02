@@ -12,15 +12,33 @@ namespace InventLab
 {
     public partial class printDrug : Form
     {
+     
+        private DrugDataAccess dataAccess = new DrugDataAccess();
+       
+      
         public printDrug()
         {
             InitializeComponent();
+            LoadDrugData(dataAccess.selectDrug());
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void tableDrug_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = tableDrug.Rows[e.RowIndex];
+                string name = selectedRow.Cells["name"].Value.ToString();
+                string description = selectedRow.Cells["description"].Value.ToString();
 
+                EditDrug editDrug = new EditDrug(name, description);
+                editDrug.Show();
+            }
         }
+        private void LoadDrugData(List<DrugDataAccess.Drug> drugs)
+        {
+            tableDrug.DataSource = drugs;
+        }
+
 
         private void titlePrintDrug_Click(object sender, EventArgs e)
         {

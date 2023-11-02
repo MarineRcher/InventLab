@@ -26,10 +26,9 @@ namespace InventLab
         private void button1_Click(object sender, EventArgs e)
         {
             Drug drug = new Drug(this.inputNameAddDrug.Text, this.inputDescriptionAddDrug.Text);
-            //dataAccess.addDrug(drug);
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
-            //updateDataGridView();
+            
         }
 
         public void updateDataGridView()
@@ -64,6 +63,11 @@ namespace InventLab
                 EditDrug editDrug = new EditDrug(name, description);
                 editDrug.Show();
             }
+        }
+
+        private void inputDescriptionAddDrug_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

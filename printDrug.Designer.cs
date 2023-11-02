@@ -42,7 +42,7 @@
             this.tableDrug.RowTemplate.Height = 24;
             this.tableDrug.Size = new System.Drawing.Size(692, 329);
             this.tableDrug.TabIndex = 0;
-            this.tableDrug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.tableDrug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableDrug_CellContentClick);
             // 
             // titlePrintDrug
             // 

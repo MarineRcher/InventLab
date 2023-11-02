@@ -53,6 +53,7 @@
             this.inputDescriptionAddDrug.Name = "inputDescriptionAddDrug";
             this.inputDescriptionAddDrug.Size = new System.Drawing.Size(339, 22);
             this.inputDescriptionAddDrug.TabIndex = 1;
+            this.inputDescriptionAddDrug.TextChanged += new System.EventHandler(this.inputDescriptionAddDrug_TextChanged);
             // 
             // buttonAddDrug
             // 

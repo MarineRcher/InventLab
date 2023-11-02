@@ -63,3 +63,4 @@ C:\Users\Administrateur\Desktop\InventLab\bin\Debug\System.Threading.Tasks.Exten
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.csproj.CopyComplete
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.EditDrug.resources
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.SignIn.resources
+C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.printDrug.resources
