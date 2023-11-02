@@ -61,7 +61,7 @@
             this.buttonAddDrug.Name = "buttonAddDrug";
             this.buttonAddDrug.Size = new System.Drawing.Size(257, 49);
             this.buttonAddDrug.TabIndex = 2;
-            this.buttonAddDrug.Text = "button1";
+            this.buttonAddDrug.Text = "Ajouter le médicament";
             this.buttonAddDrug.UseVisualStyleBackColor = true;
             this.buttonAddDrug.Click += new System.EventHandler(this.button1_Click);
             // 

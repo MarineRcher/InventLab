@@ -55,21 +55,22 @@
             this.InputNameDrugEdit.Name = "InputNameDrugEdit";
             this.InputNameDrugEdit.Size = new System.Drawing.Size(222, 22);
             this.InputNameDrugEdit.TabIndex = 1;
-            this.InputNameDrugEdit.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.InputNameDrugEdit.TextChanged += new System.EventHandler(this.InputNameDrugEdit_TextChanged);
             // 
             // inputDescriptionDrugEdit
             // 
-            this.inputDescriptionDrugEdit.Location = new System.Drawing.Point(269, 229);
+            this.inputDescriptionDrugEdit.Location = new System.Drawing.Point(269, 401);
             this.inputDescriptionDrugEdit.Name = "inputDescriptionDrugEdit";
             this.inputDescriptionDrugEdit.Size = new System.Drawing.Size(222, 22);
             this.inputDescriptionDrugEdit.TabIndex = 2;
+            this.inputDescriptionDrugEdit.TextChanged += new System.EventHandler(this.inputDescriptionDrugEdit_TextChanged);
             // 
             // labelDescriptionDrugEdit
             // 
             this.labelDescriptionDrugEdit.AutoSize = true;
             this.labelDescriptionDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescriptionDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(269, 197);
+            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(269, 357);
             this.labelDescriptionDrugEdit.Name = "labelDescriptionDrugEdit";
             this.labelDescriptionDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelDescriptionDrugEdit.Size = new System.Drawing.Size(146, 29);
@@ -93,7 +94,7 @@
             // 
             this.buttonDrugEdit.BackColor = System.Drawing.Color.DarkSalmon;
             this.buttonDrugEdit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.buttonDrugEdit.Location = new System.Drawing.Point(269, 304);
+            this.buttonDrugEdit.Location = new System.Drawing.Point(272, 233);
             this.buttonDrugEdit.Margin = new System.Windows.Forms.Padding(0);
             this.buttonDrugEdit.Name = "buttonDrugEdit";
             this.buttonDrugEdit.Size = new System.Drawing.Size(219, 50);
@@ -107,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(873, 697);
             this.Controls.Add(this.buttonDrugEdit);
             this.Controls.Add(this.labelNameDrugEdit);
             this.Controls.Add(this.labelDescriptionDrugEdit);

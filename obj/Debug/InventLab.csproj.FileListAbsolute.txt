@@ -62,3 +62,4 @@ C:\Users\Administrateur\Desktop\InventLab\bin\Debug\System.Runtime.CompilerServi
 C:\Users\Administrateur\Desktop\InventLab\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.csproj.CopyComplete
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.EditDrug.resources
+C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.SignIn.resources

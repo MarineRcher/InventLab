@@ -12,7 +12,7 @@ namespace InventLab
 {
     public partial class EditDrug : Form
     {
-      
+        private DrugDataAccess dataAccess = new DrugDataAccess();
         public EditDrug(string name, string description)
         {
             InitializeComponent();
@@ -30,19 +30,24 @@ namespace InventLab
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void InputNameDrugEdit_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void Modifier_Click(object sender, EventArgs e)
         {
-          
-           
+            Drug drug = new Drug(this.InputNameDrugEdit.Text, this.inputDescriptionDrugEdit.Text);
+            //dataAccess.addDrug(drug);
+            int result = dataAccess.updateDrug(drug);
+            MessageBox.Show(result.ToString());
+            //updateDataGridView();
+
         }
 
-      
+        private void inputDescriptionDrugEdit_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
