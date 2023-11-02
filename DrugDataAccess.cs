@@ -14,11 +14,7 @@ namespace InventLab
             public string Name { get; set; }
             public string Description { get; set; }
 
-            public Drug(string Name, string Description)
-            {
-                this.Name = Name;
-                this.Description = Description;
-            }
+          
             private string connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
 
             private List<Drug> drugs = new List<Drug>();

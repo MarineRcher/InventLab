@@ -25,18 +25,17 @@ namespace InventLab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Drug drug = new Drug(this.inputNameAddDrug.Text, this.inputDescriptionAddDrug.Text);
+            this.inputNameAddDrug.Text = Name;
+            this.inputDescriptionAddDrug.Text = Description;
+
+
+            Drug drug = new Drug(Name, Description);
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
             
         }
 
-        public void updateDataGridView()
-        {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = dataAccess.getDrugList();
-        }
-
+     
         private void FormDrug_Load(object sender, EventArgs e)
         {
 
@@ -50,19 +49,6 @@ namespace InventLab
         private void inputNameAddDrug_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           if(e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                string name = selectedRow.Cells["name"].Value.ToString();
-                string description = selectedRow.Cells["description"].Value.ToString();
-
-                EditDrug editDrug = new EditDrug(name, description);
-                editDrug.Show();
-            }
         }
 
         private void inputDescriptionAddDrug_TextChanged(object sender, EventArgs e)
