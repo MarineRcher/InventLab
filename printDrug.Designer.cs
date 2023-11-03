@@ -30,6 +30,7 @@
         {
             this.tableDrug = new System.Windows.Forms.DataGridView();
             this.titlePrintDrug = new System.Windows.Forms.Label();
+            this.deleteDrug = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,22 @@
             this.titlePrintDrug.Text = "Médicaments";
             this.titlePrintDrug.Click += new System.EventHandler(this.titlePrintDrug_Click);
             // 
+            // deleteDrug
+            // 
+            this.deleteDrug.Location = new System.Drawing.Point(43, 463);
+            this.deleteDrug.Name = "deleteDrug";
+            this.deleteDrug.Size = new System.Drawing.Size(260, 81);
+            this.deleteDrug.TabIndex = 2;
+            this.deleteDrug.Text = "Supprimer le médicament";
+            this.deleteDrug.UseVisualStyleBackColor = true;
+            this.deleteDrug.Click += new System.EventHandler(this.deleteDrug_Click);
+            // 
             // printDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 645);
+            this.Controls.Add(this.deleteDrug);
             this.Controls.Add(this.titlePrintDrug);
             this.Controls.Add(this.tableDrug);
             this.Name = "printDrug";
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView tableDrug;
         private System.Windows.Forms.Label titlePrintDrug;
+        private System.Windows.Forms.Button deleteDrug;
     }
 }

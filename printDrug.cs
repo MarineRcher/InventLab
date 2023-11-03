@@ -27,10 +27,10 @@ namespace InventLab
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = tableDrug.Rows[e.RowIndex];
-                string name = selectedRow.Cells["name"].Value.ToString();
-                string description = selectedRow.Cells["description"].Value.ToString();
+                string oldName = selectedRow.Cells["name"].Value.ToString();
+                string oldDescription = selectedRow.Cells["description"].Value.ToString();
 
-                EditDrug editDrug = new EditDrug(name, description);
+                EditDrug editDrug = new EditDrug(oldName, oldDescription);
                 editDrug.Show();
             }
         }
@@ -48,5 +48,19 @@ namespace InventLab
         {
 
         }
+
+        private void deleteDrug_Click(object sender, EventArgs e)
+        {
+            if (tableDrug.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = tableDrug.SelectedRows[0];
+                string name = selectedRow.Cells["name"].Value.ToString();
+                string description = selectedRow.Cells["description"].Value.ToString();
+                Drug drug = new Drug(name, description);
+                int result = dataAccess.deleteValue(drug);
+                MessageBox.Show(result.ToString());
+            }
+        }
+
     }
 }

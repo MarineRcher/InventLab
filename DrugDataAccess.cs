@@ -87,6 +87,23 @@ namespace InventLab
             }
         }
 
+        public int deleteValue(Drug drug)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "delete from drugs where name=@name and description=@description;";
+                using (MySqlCommand command = new MySqlCommand(query, conn)) 
+                {
+                    command.Parameters.AddWithValue("@name", drug.Name);
+                    command.Parameters.AddWithValue("@description", drug.Description);
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+
       
     }
 }

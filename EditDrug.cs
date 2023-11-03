@@ -41,7 +41,9 @@ namespace InventLab
 
         private void Modifier_Click(object sender, EventArgs e)
         {
-            Drug drug = new Drug(this.InputNameDrugEdit.Text, this.inputDescriptionDrugEdit.Text);
+            string name = InputNameDrugEdit.Text;
+           string description = inputDescriptionDrugEdit.Text;
+            Drug drug = new Drug(name, description);
             int result = dataAccess.updateDrug(drug, oldName, oldDescription); 
             MessageBox.Show(result.ToString());
 
