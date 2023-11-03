@@ -11,9 +11,6 @@ namespace InventLab
     internal class DrugDataAccess
     {
 
-            public string Name { get; set; }
-            public string Description { get; set; }
-
           
             private string connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
 
@@ -25,20 +22,6 @@ namespace InventLab
             this.drugs.Add(drug);
         }
 
-      /*  public List<Drug> getDrugList() { return this.drugs; }
-        public class Drug
-        {
-            public string Name { get; set; }
-            public string Description { get; set; }
-
-            public Drug() { } 
-
-            public Drug(string name, string description)
-            {
-                Name = name;
-                Description = description;
-            }
-        }*/
 
 
         public int addDrugToDB(Drug drug)
@@ -78,7 +61,7 @@ namespace InventLab
         }
 
 
-        public List<Drug> selectDrug()
+        public List<Drug> selectDrug(string name, string description)
         {
            
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -91,7 +74,7 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            Drug drug = new Drug();
+                            Drug drug = new Drug(name, description);
                             drug.Name = reader.GetString("name");
                            drug.Description = reader.GetString("description");
 

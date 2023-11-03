@@ -23,19 +23,18 @@ namespace InventLab
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddDrug_Click(object sender, EventArgs e)
         {
-            this.inputNameAddDrug.Text = Name;
-            this.inputDescriptionAddDrug.Text = Description;
+            string name = inputNameAddDrug.Text;
+            string description = inputDescriptionAddDrug.Text;
 
-
-            Drug drug = new Drug(Name, Description);
+            Drug drug = new Drug(name, description);
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
-            
         }
 
-     
+
+
         private void FormDrug_Load(object sender, EventArgs e)
         {
 

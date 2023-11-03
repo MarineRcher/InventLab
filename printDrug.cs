@@ -19,7 +19,7 @@ namespace InventLab
         public printDrug()
         {
             InitializeComponent();
-            LoadDrugData(dataAccess.selectDrug());
+            LoadDrugData(dataAccess.selectDrug(null, null));
         }
 
         public void tableDrug_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,10 +34,14 @@ namespace InventLab
                 editDrug.Show();
             }
         }
-        private void LoadDrugData(List<DrugDataAccess.Drug> drugs)
+        private void LoadDrugData(List<Drug> drugs)
         {
-            tableDrug.DataSource = drugs;
+            if (drugs != null)
+            {
+                tableDrug.DataSource = drugs;
+            }
         }
+
 
 
         private void titlePrintDrug_Click(object sender, EventArgs e)
