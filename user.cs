@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace InventLab
 {
-    internal class user
+    internal class User
     {
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string LastName { get; set; }
 
-        public User(string Name, string Description)
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+
+        public User(string Name, string LastName, string Email, string Password = null)
         {
             this.Name = Name;
-            this.Description = Description;
+            this.LastName = LastName;
+            this.Email = Email;
+            this.Password = Password;
         }
     }
 }

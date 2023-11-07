@@ -26,5 +26,10 @@ namespace InventLab
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
         }
+
+        private void titleSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
