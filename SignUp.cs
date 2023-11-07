@@ -12,23 +12,45 @@ namespace InventLab
 {
     public partial class signUp: Form
     {
+        private UserDataAccess dataAccess = new UserDataAccess();
         public signUp()
         {
             InitializeComponent();
         }
 
-        private void buttonSignUp_Click(object sender, EventArgs e)
-        {
-            string name = inputNameAddDrug.Text;
-            string description = inputDescriptionAddDrug.Text;
-
-            Drug drug = new Drug(name, description);
-            int result = dataAccess.addDrugToDB(drug);
-            MessageBox.Show(result.ToString());
-        }
+      
 
         private void titleSignUp_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void inputNameSignUp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSignUp_Click_1(object sender, EventArgs e)
+        {
+
+            string name = inputNameSignUp.Text;
+            string lastName = inputLastNameSignUp.Text;
+            string email = inputEmailSignUp.Text;
+            string password = inputPasswordSignUp.Text;
+            string passwordConfirm = inputPasswordConfirmationSignUp.Text;
+
+            if (password
+                .Equals(passwordConfirm))
+            {
+                User user = new User(name, lastName, email, password);
+                int result = dataAccess.addUserToDB(user);
+                MessageBox.Show(result.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Confirmation du mot de passe différent du mot de passe");
+            }
+
 
         }
     }

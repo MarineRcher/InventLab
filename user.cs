@@ -15,7 +15,7 @@ namespace InventLab
 
         public string Password { get; set; }
 
-        public User(string Name, string LastName, string Email, string Password = null)
+        public User(string Name = null, string LastName = null, string Email = null, string Password = null)
         {
             this.Name = Name;
             this.LastName = LastName;

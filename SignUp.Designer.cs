@@ -109,6 +109,7 @@
             this.inputNameSignUp.Name = "inputNameSignUp";
             this.inputNameSignUp.Size = new System.Drawing.Size(231, 22);
             this.inputNameSignUp.TabIndex = 6;
+            this.inputNameSignUp.TextChanged += new System.EventHandler(this.inputNameSignUp_TextChanged);
             // 
             // inputEmailSignUp
             // 
@@ -146,6 +147,7 @@
             this.buttonSignUp.TabIndex = 11;
             this.buttonSignUp.Text = "Inscription";
             this.buttonSignUp.UseVisualStyleBackColor = true;
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click_1);
             // 
             // signUp
             // 

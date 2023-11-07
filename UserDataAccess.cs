@@ -72,6 +72,7 @@ namespace InventLab
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+
                         while (reader.Read())
                         {
                             User user = new User(name, lastName, email);
@@ -87,6 +88,34 @@ namespace InventLab
                 }
             }
         }
+
+        public List<User> selectUser(string email, string password)
+        {
+            List<User> users = new List<User>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT name, lastName, email FROM users WHERE email=@email AND password =@password;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@password", password);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User(email);
+                            user.Email = reader.GetString("email");
+
+                            users.Add(user);
+                        }
+                        return users;
+                    }
+                }
+            }
+        }
+
 
         public int deleteUser(User user)
         {
