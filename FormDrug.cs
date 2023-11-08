@@ -27,8 +27,8 @@ namespace InventLab
         {
             string name = inputNameAddDrug.Text;
             string description = inputDescriptionAddDrug.Text;
-
-            Drug drug = new Drug(name, description);
+            int quantity = (int)inputQuantityAddDrug.Value;
+            Drug drug = new Drug(name, description, quantity);
             int result = dataAccess.addDrugToDB(drug);
             MessageBox.Show(result.ToString());
         }
@@ -51,6 +51,22 @@ namespace InventLab
         }
 
         private void inputDescriptionAddDrug_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+       
+
+        private void inputQuantityAddDrug_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputQuantityAddDrug_ValueChanged(object sender, EventArgs e)
         {
 
         }

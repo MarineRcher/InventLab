@@ -13,10 +13,16 @@ namespace InventLab
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public Drug(string Name, string Description)
+        public int Quantity { get; set; }
+
+        public Drug(string Name, string Description, int quantity = 0)
         {
             this.Name = Name;
             this.Description = Description;
+            this.Quantity = Quantity;
+
+
+
         }
     }
 }

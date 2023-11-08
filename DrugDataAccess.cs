@@ -29,11 +29,12 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO drugs (name, description) VALUES (@name, @description);";
+                string query = "INSERT INTO drugs (name, description, quantity) VALUES (@name, @description, @quantity);";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@name", drug.Name);
                     command.Parameters.AddWithValue("@description", drug.Description);
+                    command.Parameters.AddWithValue("@quantity", drug.Quantity);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -41,7 +42,7 @@ namespace InventLab
             }
         }
 
-        public int updateDrug(Drug drug, string oldName, string oldDescription)
+        public int updateNameAndDescriptionDrug(Drug drug, string oldName, string oldDescription)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -61,7 +62,7 @@ namespace InventLab
         }
 
 
-        public List<Drug> selectDrug(string name, string description)
+        public List<Drug> selectDrug(string name, string description, int quantity)
         {
            
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -74,9 +75,10 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            Drug drug = new Drug(name, description);
+                            Drug drug = new Drug(name, description, quantity);
                             drug.Name = reader.GetString("name");
                            drug.Description = reader.GetString("description");
+                            drug.Quantity = reader.GetInt32("quantity");
 
                             drugs.Add(drug);
                            
@@ -92,11 +94,12 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from drugs where name=@name and description=@description;";
+                string query = "delete from drugs where name=@name and description=@description and quantity=@quantity;";
                 using (MySqlCommand command = new MySqlCommand(query, conn)) 
                 {
                     command.Parameters.AddWithValue("@name", drug.Name);
                     command.Parameters.AddWithValue("@description", drug.Description);
+                    command.Parameters.AddWithValue("@quantity", drug.Quantity);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
