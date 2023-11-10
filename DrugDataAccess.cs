@@ -44,18 +44,20 @@ namespace InventLab
             }
         }
 
-        public int updateNameAndDescriptionDrug(Drug drug, string oldName, string oldDescription)
+        public int updateNameAndDescriptionDrug(Drug drug, string oldName, string oldDescription, int oldQuantity)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE drugs SET name=@newName, description=@newDescription WHERE name=@oldName AND description=@oldDescription;";
+                string query = "UPDATE drugs SET name=@newName, description=@newDescription, quantity=@newQuantity WHERE name=@oldName AND description=@oldDescription AND quantity=@oldQuantity;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@newName", drug.Name);
                     command.Parameters.AddWithValue("@newDescription", drug.Description);
                     command.Parameters.AddWithValue("@oldName", oldName);
                     command.Parameters.AddWithValue("@oldDescription", oldDescription);
+                    command.Parameters.AddWithValue("@oldQuantity", oldQuantity);
+                    command.Parameters.AddWithValue("@newQuantity", drug.Quantity);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -91,6 +93,34 @@ namespace InventLab
                 }
             }
         }
+
+/*        public List<Drug> searchDrug(string name, string description, int quantity)
+        {
+            this.drugs.Clear();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = " select * from where name=@name;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@name", drugs.name);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Drug drug = new Drug(name, description, quantity);
+                            drug.Name = reader.GetString("name");
+                            drug.Description = reader.GetString("description");
+                            drug.Quantity = reader.GetInt32("quantity");
+
+                            drugs.Add(drug);
+                        }
+                        return drugs;
+                    }
+                   
+                }
+            }
+        }*/
 
         public int deleteValue(Drug drug)
         {

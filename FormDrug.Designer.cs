@@ -37,6 +37,7 @@
             this.inputQuantityAddDrug = new System.Windows.Forms.NumericUpDown();
             this.tableDrug = new System.Windows.Forms.DataGridView();
             this.deleteDrug = new System.Windows.Forms.Button();
+            this.searchDrug = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +114,7 @@
             // tableDrug
             // 
             this.tableDrug.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableDrug.Location = new System.Drawing.Point(414, 56);
+            this.tableDrug.Location = new System.Drawing.Point(407, 111);
             this.tableDrug.Name = "tableDrug";
             this.tableDrug.RowHeadersWidth = 51;
             this.tableDrug.RowTemplate.Height = 24;
@@ -131,11 +132,21 @@
             this.deleteDrug.UseVisualStyleBackColor = true;
             this.deleteDrug.Click += new System.EventHandler(this.deleteDrug_Click_1);
             // 
+            // searchDrug
+            // 
+            this.searchDrug.Location = new System.Drawing.Point(469, 34);
+            this.searchDrug.Name = "searchDrug";
+            this.searchDrug.Size = new System.Drawing.Size(455, 22);
+            this.searchDrug.TabIndex = 12;
+            this.searchDrug.Text = "Rechercher";
+            this.searchDrug.TextChanged += new System.EventHandler(this.searchDrug_TextChanged);
+            // 
             // FormDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 554);
+            this.Controls.Add(this.searchDrug);
             this.Controls.Add(this.deleteDrug);
             this.Controls.Add(this.tableDrug);
             this.Controls.Add(this.inputQuantityAddDrug);
@@ -167,5 +178,6 @@
         private System.Windows.Forms.NumericUpDown inputQuantityAddDrug;
         private System.Windows.Forms.DataGridView tableDrug;
         private System.Windows.Forms.Button deleteDrug;
+        private System.Windows.Forms.TextBox searchDrug;
     }
 }

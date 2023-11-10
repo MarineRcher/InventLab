@@ -115,7 +115,9 @@ namespace InventLab
 
         }
 
-       
-      
+        private void searchDrug_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

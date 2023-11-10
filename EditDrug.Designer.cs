@@ -34,17 +34,20 @@
             this.labelDescriptionDrugEdit = new System.Windows.Forms.Label();
             this.labelNameDrugEdit = new System.Windows.Forms.Label();
             this.buttonDrugEdit = new System.Windows.Forms.Button();
+            this.quantityDrugEdit = new System.Windows.Forms.Label();
+            this.numericDrugEdit = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDrugEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // titleDrugEdit
             // 
             this.titleDrugEdit.AutoSize = true;
-            this.titleDrugEdit.Font = new System.Drawing.Font("Noto Sans Cond", 16.2F, System.Drawing.FontStyle.Bold);
+            this.titleDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.titleDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.titleDrugEdit.Location = new System.Drawing.Point(252, 26);
             this.titleDrugEdit.Name = "titleDrugEdit";
             this.titleDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.titleDrugEdit.Size = new System.Drawing.Size(298, 38);
+            this.titleDrugEdit.Size = new System.Drawing.Size(330, 32);
             this.titleDrugEdit.TabIndex = 0;
             this.titleDrugEdit.Text = "Modifier le médicament";
             this.titleDrugEdit.Click += new System.EventHandler(this.titleDrugEdit_Click);
@@ -59,7 +62,7 @@
             // 
             // inputDescriptionDrugEdit
             // 
-            this.inputDescriptionDrugEdit.Location = new System.Drawing.Point(269, 401);
+            this.inputDescriptionDrugEdit.Location = new System.Drawing.Point(269, 240);
             this.inputDescriptionDrugEdit.Name = "inputDescriptionDrugEdit";
             this.inputDescriptionDrugEdit.Size = new System.Drawing.Size(222, 22);
             this.inputDescriptionDrugEdit.TabIndex = 2;
@@ -70,7 +73,7 @@
             this.labelDescriptionDrugEdit.AutoSize = true;
             this.labelDescriptionDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescriptionDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(269, 357);
+            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(252, 208);
             this.labelDescriptionDrugEdit.Name = "labelDescriptionDrugEdit";
             this.labelDescriptionDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelDescriptionDrugEdit.Size = new System.Drawing.Size(146, 29);
@@ -94,7 +97,7 @@
             // 
             this.buttonDrugEdit.BackColor = System.Drawing.Color.DarkSalmon;
             this.buttonDrugEdit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.buttonDrugEdit.Location = new System.Drawing.Point(272, 233);
+            this.buttonDrugEdit.Location = new System.Drawing.Point(269, 449);
             this.buttonDrugEdit.Margin = new System.Windows.Forms.Padding(0);
             this.buttonDrugEdit.Name = "buttonDrugEdit";
             this.buttonDrugEdit.Size = new System.Drawing.Size(219, 50);
@@ -103,12 +106,34 @@
             this.buttonDrugEdit.UseVisualStyleBackColor = false;
             this.buttonDrugEdit.Click += new System.EventHandler(this.Modifier_Click);
             // 
+            // quantityDrugEdit
+            // 
+            this.quantityDrugEdit.AutoSize = true;
+            this.quantityDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.quantityDrugEdit.Location = new System.Drawing.Point(269, 318);
+            this.quantityDrugEdit.Name = "quantityDrugEdit";
+            this.quantityDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.quantityDrugEdit.Size = new System.Drawing.Size(111, 29);
+            this.quantityDrugEdit.TabIndex = 6;
+            this.quantityDrugEdit.Text = "Quantité";
+            this.quantityDrugEdit.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // numericDrugEdit
+            // 
+            this.numericDrugEdit.Location = new System.Drawing.Point(297, 393);
+            this.numericDrugEdit.Name = "numericDrugEdit";
+            this.numericDrugEdit.Size = new System.Drawing.Size(77, 22);
+            this.numericDrugEdit.TabIndex = 7;
+            // 
             // EditDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(873, 697);
+            this.Controls.Add(this.numericDrugEdit);
+            this.Controls.Add(this.quantityDrugEdit);
             this.Controls.Add(this.buttonDrugEdit);
             this.Controls.Add(this.labelNameDrugEdit);
             this.Controls.Add(this.labelDescriptionDrugEdit);
@@ -117,6 +142,7 @@
             this.Controls.Add(this.titleDrugEdit);
             this.Name = "EditDrug";
             this.Text = "EditDrug";
+            ((System.ComponentModel.ISupportInitialize)(this.numericDrugEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +156,7 @@
         private System.Windows.Forms.Label labelDescriptionDrugEdit;
         private System.Windows.Forms.Label labelNameDrugEdit;
         private System.Windows.Forms.Button buttonDrugEdit;
+        private System.Windows.Forms.Label quantityDrugEdit;
+        private System.Windows.Forms.NumericUpDown numericDrugEdit;
     }
 }
