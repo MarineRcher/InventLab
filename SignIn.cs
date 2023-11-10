@@ -39,6 +39,7 @@ namespace InventLab
                 else
                 {
                     MessageBox.Show("Vous êtes connecté");
+                    
                 }
             }
         }

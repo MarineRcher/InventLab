@@ -112,12 +112,6 @@
     <Compile Include="FormDrug.Designer.cs">
       <DependentUpon>FormDrug.cs</DependentUpon>
     </Compile>
-    <Compile Include="printDrug.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="printDrug.Designer.cs">
-      <DependentUpon>printDrug.cs</DependentUpon>
-    </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDrug.resx">
       <DependentUpon>FormDrug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="printDrug.resx">
-      <DependentUpon>printDrug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>

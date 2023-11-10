@@ -43,11 +43,12 @@ namespace InventLab
         {
             string name = InputNameDrugEdit.Text;
            string description = inputDescriptionDrugEdit.Text;
-            Drug drug = new Drug(name, description);
+       
+            Drug drug = new Drug(name, description, null);
             int result = dataAccess.updateNameAndDescriptionDrug(drug, oldName, oldDescription); 
             MessageBox.Show(result.ToString());
 
-
+           new FormDrug().Show();
 
         }
 

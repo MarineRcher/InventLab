@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace InventLab
@@ -35,6 +36,7 @@ namespace InventLab
                     command.Parameters.AddWithValue("@name", drug.Name);
                     command.Parameters.AddWithValue("@description", drug.Description);
                     command.Parameters.AddWithValue("@quantity", drug.Quantity);
+  
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -62,9 +64,9 @@ namespace InventLab
         }
 
 
-        public List<Drug> selectDrug(string name, string description, int quantity)
+        public List<Drug> selectDrug(string name, string description, int? quantity)
         {
-           
+           this.drugs = new List<Drug>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -81,7 +83,8 @@ namespace InventLab
                             drug.Quantity = reader.GetInt32("quantity");
 
                             drugs.Add(drug);
-                           
+
+                                                    
                         }
                         return drugs;
                     }

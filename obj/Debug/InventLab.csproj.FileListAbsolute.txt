@@ -102,7 +102,6 @@ C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.AssemblyReference
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.SuggestedBindingRedirects.cache
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.EditDrug.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.FormDrug.resources
-C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.printDrug.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.SignIn.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.signUp.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.Properties.Resources.resources
