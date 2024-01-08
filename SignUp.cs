@@ -35,6 +35,7 @@ namespace InventLab
 
             string name = inputNameSignUp.Text;
             string lastName = inputLastNameSignUp.Text;
+            string login = inputLogin.Text;
             string email = inputEmailSignUp.Text;
             string password = inputPasswordSignUp.Text;
             string passwordConfirm = inputPasswordConfirmationSignUp.Text;
@@ -42,15 +43,25 @@ namespace InventLab
             if (password
                 .Equals(passwordConfirm))
             {
-                User user = new User(name, lastName, email, password);
+                User user = new User(name, lastName, email, login, password);
                 int result = dataAccess.addUserToDB(user);
-                MessageBox.Show(result.ToString());
+               // MessageBox.Show(result.ToString());
             }
             else
             {
                 MessageBox.Show("Confirmation du mot de passe différent du mot de passe");
             }
 
+
+        }
+
+        private void inputLastNameSignUp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputLogin_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

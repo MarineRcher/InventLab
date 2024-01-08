@@ -36,6 +36,8 @@
             this.buttonDrugEdit = new System.Windows.Forms.Button();
             this.quantityDrugEdit = new System.Windows.Forms.Label();
             this.numericDrugEdit = new System.Windows.Forms.NumericUpDown();
+            this.nameContreIndic = new System.Windows.Forms.Label();
+            this.inputContreIndic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericDrugEdit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             this.labelDescriptionDrugEdit.AutoSize = true;
             this.labelDescriptionDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescriptionDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(252, 208);
+            this.labelDescriptionDrugEdit.Location = new System.Drawing.Point(269, 208);
             this.labelDescriptionDrugEdit.Name = "labelDescriptionDrugEdit";
             this.labelDescriptionDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelDescriptionDrugEdit.Size = new System.Drawing.Size(146, 29);
@@ -111,7 +113,7 @@
             this.quantityDrugEdit.AutoSize = true;
             this.quantityDrugEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantityDrugEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.quantityDrugEdit.Location = new System.Drawing.Point(269, 318);
+            this.quantityDrugEdit.Location = new System.Drawing.Point(269, 360);
             this.quantityDrugEdit.Name = "quantityDrugEdit";
             this.quantityDrugEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.quantityDrugEdit.Size = new System.Drawing.Size(111, 29);
@@ -121,10 +123,31 @@
             // 
             // numericDrugEdit
             // 
-            this.numericDrugEdit.Location = new System.Drawing.Point(297, 393);
+            this.numericDrugEdit.Location = new System.Drawing.Point(269, 404);
             this.numericDrugEdit.Name = "numericDrugEdit";
             this.numericDrugEdit.Size = new System.Drawing.Size(77, 22);
             this.numericDrugEdit.TabIndex = 7;
+            // 
+            // nameContreIndic
+            // 
+            this.nameContreIndic.AutoSize = true;
+            this.nameContreIndic.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameContreIndic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.nameContreIndic.Location = new System.Drawing.Point(269, 283);
+            this.nameContreIndic.Name = "nameContreIndic";
+            this.nameContreIndic.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.nameContreIndic.Size = new System.Drawing.Size(211, 29);
+            this.nameContreIndic.TabIndex = 8;
+            this.nameContreIndic.Text = "Contre indication";
+            this.nameContreIndic.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // inputContreIndic
+            // 
+            this.inputContreIndic.Location = new System.Drawing.Point(269, 315);
+            this.inputContreIndic.Name = "inputContreIndic";
+            this.inputContreIndic.Size = new System.Drawing.Size(222, 22);
+            this.inputContreIndic.TabIndex = 9;
+            this.inputContreIndic.TextChanged += new System.EventHandler(this.inputContreIndic_TextChanged);
             // 
             // EditDrug
             // 
@@ -132,6 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(873, 697);
+            this.Controls.Add(this.inputContreIndic);
+            this.Controls.Add(this.nameContreIndic);
             this.Controls.Add(this.numericDrugEdit);
             this.Controls.Add(this.quantityDrugEdit);
             this.Controls.Add(this.buttonDrugEdit);
@@ -158,5 +183,7 @@
         private System.Windows.Forms.Button buttonDrugEdit;
         private System.Windows.Forms.Label quantityDrugEdit;
         private System.Windows.Forms.NumericUpDown numericDrugEdit;
+        private System.Windows.Forms.Label nameContreIndic;
+        private System.Windows.Forms.TextBox inputContreIndic;
     }
 }

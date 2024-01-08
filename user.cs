@@ -13,14 +13,17 @@ namespace InventLab
 
         public string Email { get; set; }
 
+        public string Login { get; set; }
         public string Password { get; set; }
 
-        public User(string Name = null, string LastName = null, string Email = null, string Password = null)
+        public User(string Name = null, string LastName = null, string Email = null, string Login = null, string Password = null)
         {
             this.Name = Name;
             this.LastName = LastName;
             this.Email = Email;
+            this.Login = Login;
             this.Password = Password;
+          
         }
     }
 }

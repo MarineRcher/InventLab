@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Common;
 
 namespace InventLab
 {
@@ -21,7 +13,7 @@ namespace InventLab
         public FormDrug()
         {
             InitializeComponent();
-            LoadDrugData(dataAccess.selectDrug(null, null, null));
+            LoadDrugData(dataAccess.selectDrug(null, null, null, null)); ;
             tableDrug.Refresh();
         }
 
@@ -29,12 +21,13 @@ namespace InventLab
         {
             string name = inputNameAddDrug.Text;
             string description = inputDescriptionAddDrug.Text;
+            string contreIndic = inputContreIndication.Text;
             int quantity = (int)inputQuantityAddDrug.Value;
-            Drug drug = new Drug(name, description, quantity);
+            Drug drug = new Drug(name, description, contreIndic, quantity);
             int result = dataAccess.addDrugToDB(drug);
 
-            MessageBox.Show(result.ToString());
-            LoadDrugData(dataAccess.selectDrug(null, null, null));
+
+            LoadDrugData(dataAccess.selectDrug(null, null, null, null)); ;
             updateData();
         }
 
@@ -45,10 +38,11 @@ namespace InventLab
                 DataGridViewRow selectedRow = tableDrug.SelectedRows[0];
                 string name = selectedRow.Cells["name"].Value.ToString();
                 string description = selectedRow.Cells["description"].Value.ToString();
+                string contreIndic = selectedRow.Cells["contreIndication"].Value.ToString();
                 int quantity = (int)selectedRow.Cells["quantity"].Value;
-                Drug drug = new Drug(name, description, quantity);
+                Drug drug = new Drug(name, description, contreIndic, quantity);
                 int result = dataAccess.deleteValue(drug);
-                MessageBox.Show(result.ToString());
+               // MessageBox.Show(result.ToString());
                 updateData();
             }
         }
@@ -56,7 +50,7 @@ namespace InventLab
         {
             tableDrug.Refresh();
             this.tableDrug.DataSource = null;
-            this.tableDrug.DataSource = dataAccess.selectDrug(null, null, null);
+            this.tableDrug.DataSource = dataAccess.selectDrug(null, null,null, null);
         }
         private void LoadDrugData(List<Drug> drugs)
         {
@@ -72,8 +66,10 @@ namespace InventLab
                 DataGridViewRow selectedRow = tableDrug.Rows[e.RowIndex];
                 string oldName = selectedRow.Cells["name"].Value.ToString();
                 string oldDescription = selectedRow.Cells["description"].Value.ToString();
-
-                EditDrug editDrug = new EditDrug(oldName, oldDescription);
+                string oldContreIndic = selectedRow.Cells["contreIndication"].Value.ToString();
+                string quantityStr = selectedRow.Cells["quantity"].Value.ToString();
+                int oldQuantity = System.Convert.ToInt32(quantityStr);
+                EditDrug editDrug = new EditDrug(oldName, oldDescription,oldContreIndic, oldQuantity);
                 editDrug.Show();
             }
         }
@@ -116,6 +112,11 @@ namespace InventLab
         }
 
         private void searchDrug_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
         {
 
         }

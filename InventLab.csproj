@@ -107,6 +107,26 @@
     <Compile Include="EditDrug.Designer.cs">
       <DependentUpon>EditDrug.cs</DependentUpon>
     </Compile>
+    <Compile Include="formPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPatient.Designer.cs">
+      <DependentUpon>formPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPatient.Designer.cs">
+      <DependentUpon>GestionPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient.cs" />
+    <Compile Include="PatientDataAccess.cs" />
+    <Compile Include="ProfilPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilPatient.Designer.cs">
+      <DependentUpon>ProfilPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDrug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +151,15 @@
     <Compile Include="UserDataAccess.cs" />
     <EmbeddedResource Include="EditDrug.resx">
       <DependentUpon>EditDrug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPatient.resx">
+      <DependentUpon>formPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPatient.resx">
+      <DependentUpon>GestionPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilPatient.resx">
+      <DependentUpon>ProfilPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDrug.resx">
       <DependentUpon>FormDrug.cs</DependentUpon>

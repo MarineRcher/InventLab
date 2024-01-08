@@ -99,7 +99,6 @@ C:\Users\isitech2\Desktop\InventLab\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\isitech2\Desktop\InventLab\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\isitech2\Desktop\InventLab\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.AssemblyReference.cache
-C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.SuggestedBindingRedirects.cache
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.EditDrug.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.FormDrug.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.SignIn.resources
@@ -110,3 +109,6 @@ C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.CoreCompileInputs
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.csproj.CopyComplete
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.exe
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.pdb
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.formPatient.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.GestionPatient.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.ProfilPatient.resources

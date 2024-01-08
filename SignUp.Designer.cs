@@ -40,6 +40,8 @@
             this.inputPasswordSignUp = new System.Windows.Forms.TextBox();
             this.inputPasswordConfirmationSignUp = new System.Windows.Forms.TextBox();
             this.buttonSignUp = new System.Windows.Forms.Button();
+            this.loginUser = new System.Windows.Forms.Label();
+            this.inputLogin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // titleSignUp
@@ -57,7 +59,7 @@
             // 
             this.NameSignUp.AutoSize = true;
             this.NameSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameSignUp.Location = new System.Drawing.Point(239, 131);
+            this.NameSignUp.Location = new System.Drawing.Point(239, 68);
             this.NameSignUp.Name = "NameSignUp";
             this.NameSignUp.Size = new System.Drawing.Size(80, 25);
             this.NameSignUp.TabIndex = 1;
@@ -87,7 +89,7 @@
             // 
             this.lastNameSignUp.AutoSize = true;
             this.lastNameSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameSignUp.Location = new System.Drawing.Point(239, 223);
+            this.lastNameSignUp.Location = new System.Drawing.Point(239, 139);
             this.lastNameSignUp.Name = "lastNameSignUp";
             this.lastNameSignUp.Size = new System.Drawing.Size(140, 25);
             this.lastNameSignUp.TabIndex = 4;
@@ -105,7 +107,7 @@
             // 
             // inputNameSignUp
             // 
-            this.inputNameSignUp.Location = new System.Drawing.Point(244, 179);
+            this.inputNameSignUp.Location = new System.Drawing.Point(244, 96);
             this.inputNameSignUp.Name = "inputNameSignUp";
             this.inputNameSignUp.Size = new System.Drawing.Size(231, 22);
             this.inputNameSignUp.TabIndex = 6;
@@ -120,10 +122,11 @@
             // 
             // inputLastNameSignUp
             // 
-            this.inputLastNameSignUp.Location = new System.Drawing.Point(244, 265);
+            this.inputLastNameSignUp.Location = new System.Drawing.Point(244, 167);
             this.inputLastNameSignUp.Name = "inputLastNameSignUp";
             this.inputLastNameSignUp.Size = new System.Drawing.Size(231, 22);
             this.inputLastNameSignUp.TabIndex = 8;
+            this.inputLastNameSignUp.TextChanged += new System.EventHandler(this.inputLastNameSignUp_TextChanged);
             // 
             // inputPasswordSignUp
             // 
@@ -149,11 +152,31 @@
             this.buttonSignUp.UseVisualStyleBackColor = true;
             this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click_1);
             // 
+            // loginUser
+            // 
+            this.loginUser.AutoSize = true;
+            this.loginUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginUser.Location = new System.Drawing.Point(239, 215);
+            this.loginUser.Name = "loginUser";
+            this.loginUser.Size = new System.Drawing.Size(60, 25);
+            this.loginUser.TabIndex = 12;
+            this.loginUser.Text = "Login";
+            // 
+            // inputLogin
+            // 
+            this.inputLogin.Location = new System.Drawing.Point(244, 255);
+            this.inputLogin.Name = "inputLogin";
+            this.inputLogin.Size = new System.Drawing.Size(231, 22);
+            this.inputLogin.TabIndex = 13;
+            this.inputLogin.TextChanged += new System.EventHandler(this.inputLogin_TextChanged);
+            // 
             // signUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 810);
+            this.Controls.Add(this.inputLogin);
+            this.Controls.Add(this.loginUser);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.inputPasswordConfirmationSignUp);
             this.Controls.Add(this.inputPasswordSignUp);
@@ -187,5 +210,7 @@
         private System.Windows.Forms.TextBox inputPasswordSignUp;
         private System.Windows.Forms.TextBox inputPasswordConfirmationSignUp;
         private System.Windows.Forms.Button buttonSignUp;
+        private System.Windows.Forms.Label loginUser;
+        private System.Windows.Forms.TextBox inputLogin;
     }
 }

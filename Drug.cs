@@ -13,12 +13,15 @@ namespace InventLab
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public string ContreIndication { get; set; }
+
         public int Quantity { get; set; }
 
-        public Drug(string Name, string Description, int? Quantity )
+        public Drug(string Name, string Description, string ContreIndication, int? Quantity )
         {
             this.Name = Name;
             this.Description = Description;
+            this.ContreIndication = ContreIndication;
             this.Quantity = Quantity ?? 0;
         }
     }

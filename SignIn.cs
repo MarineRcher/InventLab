@@ -22,13 +22,13 @@ namespace InventLab
    
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(inputSignInEmail.Text) || string.IsNullOrEmpty(inputSignInPassword.Text)))
+            if ((string.IsNullOrEmpty(inputSignInLogin.Text) || string.IsNullOrEmpty(inputSignInPassword.Text)))
             {
-                MessageBox.Show("email ou mot de passe incorrect");
+                MessageBox.Show("login ou mot de passe incorrect");
             } else
             {
               
-                string email = inputSignInEmail.Text;
+                string email = inputSignInLogin.Text;
                 string password = inputSignInPassword.Text;
                 List<User> users = dataAccess.selectUser(email, password);
 
@@ -44,6 +44,9 @@ namespace InventLab
             }
         }
 
-      
+        private void inputSignInEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
