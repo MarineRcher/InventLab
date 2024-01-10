@@ -44,6 +44,7 @@
             this.buttonAddPatient = new System.Windows.Forms.Button();
             this.checkSexeManPatient = new System.Windows.Forms.CheckBox();
             this.checkWomenSexePatient = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // namePatient
@@ -62,6 +63,7 @@
             this.inputNamePatient.Name = "inputNamePatient";
             this.inputNamePatient.Size = new System.Drawing.Size(248, 22);
             this.inputNamePatient.TabIndex = 1;
+            this.inputNamePatient.TextChanged += new System.EventHandler(this.inputNamePatient_TextChanged);
             // 
             // antecedentPatient
             // 
@@ -157,6 +159,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(210, 24);
             this.comboBox2.TabIndex = 16;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // buttonAddPatient
             // 
@@ -190,11 +193,23 @@
             this.checkWomenSexePatient.UseVisualStyleBackColor = true;
             this.checkWomenSexePatient.CheckedChanged += new System.EventHandler(this.checkWomenSexePatient_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(635, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 22);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "+";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // formPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 606);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkWomenSexePatient);
             this.Controls.Add(this.checkSexeManPatient);
             this.Controls.Add(this.buttonAddPatient);
@@ -237,5 +252,6 @@
         private System.Windows.Forms.Button buttonAddPatient;
         private System.Windows.Forms.CheckBox checkSexeManPatient;
         private System.Windows.Forms.CheckBox checkWomenSexePatient;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -112,3 +112,4 @@ C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.pdb
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.formPatient.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.GestionPatient.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.ProfilPatient.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.addAllergy.resources

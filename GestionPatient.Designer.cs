@@ -32,6 +32,7 @@
             this.buttonDeletePatient = new System.Windows.Forms.Button();
             this.buttonAddPatientPage = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.profilPatient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablePatient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,16 +49,17 @@
             // 
             // buttonDeletePatient
             // 
-            this.buttonDeletePatient.Location = new System.Drawing.Point(705, 233);
+            this.buttonDeletePatient.Location = new System.Drawing.Point(705, 441);
             this.buttonDeletePatient.Name = "buttonDeletePatient";
             this.buttonDeletePatient.Size = new System.Drawing.Size(259, 72);
             this.buttonDeletePatient.TabIndex = 12;
             this.buttonDeletePatient.Text = "Supprimer ce patient";
             this.buttonDeletePatient.UseVisualStyleBackColor = true;
+            this.buttonDeletePatient.Click += new System.EventHandler(this.buttonDeletePatient_Click);
             // 
             // buttonAddPatientPage
             // 
-            this.buttonAddPatientPage.Location = new System.Drawing.Point(705, 113);
+            this.buttonAddPatientPage.Location = new System.Drawing.Point(705, 277);
             this.buttonAddPatientPage.Name = "buttonAddPatientPage";
             this.buttonAddPatientPage.Size = new System.Drawing.Size(259, 79);
             this.buttonAddPatientPage.TabIndex = 13;
@@ -75,11 +77,22 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Gestion des patients";
             // 
+            // profilPatient
+            // 
+            this.profilPatient.Location = new System.Drawing.Point(705, 105);
+            this.profilPatient.Name = "profilPatient";
+            this.profilPatient.Size = new System.Drawing.Size(259, 76);
+            this.profilPatient.TabIndex = 15;
+            this.profilPatient.Text = "Profil patient";
+            this.profilPatient.UseVisualStyleBackColor = true;
+            this.profilPatient.Click += new System.EventHandler(this.profilPatient_Click);
+            // 
             // GestionPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 743);
+            this.Controls.Add(this.profilPatient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddPatientPage);
             this.Controls.Add(this.buttonDeletePatient);
@@ -99,5 +112,6 @@
         private System.Windows.Forms.Button buttonDeletePatient;
         private System.Windows.Forms.Button buttonAddPatientPage;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button profilPatient;
     }
 }

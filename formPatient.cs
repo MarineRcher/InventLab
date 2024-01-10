@@ -17,11 +17,13 @@ namespace InventLab
         public formPatient()
         {
             InitializeComponent();
+           
         }
 
         private void formPatient_Load(object sender, EventArgs e)
         {
-
+            List<string> allergies = dataAccess.getAllergies();
+            comboBox2.DataSource = allergies;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace InventLab
             string birth = selectedDate.ToString("yyyy-MM-dd");
 
            
-            Patient patient = new Patient(name, lastName, birth, sexe);
+            Patient patient = new Patient(null, name, lastName, birth, sexe);
             
             int result = dataAccess.addPatientToDB(patient);
 
@@ -93,6 +95,20 @@ namespace InventLab
 
         }
 
-        
+        private void inputNamePatient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            addAllergy add = new addAllergy();
+            add.Show();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

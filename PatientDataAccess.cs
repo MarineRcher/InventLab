@@ -43,24 +43,27 @@ namespace InventLab
             }
         }
 
-        public List<Patient> getPatients(string name, string lastName, string birth, string sexe) {
+        public List<Patient> getPatients(int? id,string name, string lastName, string birth, string sexe) {
             this.patients = new List<Patient>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient";
+                string query = "select id_p, prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient";
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    using(MySqlDataReader reader = command.ExecuteReader())
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Patient patient = new Patient(name, lastName, birth, sexe);
+                            Patient patient = new Patient(id, name, lastName, birth, sexe);
+                            patient.Id = reader.GetInt32("id_p");
                             patient.Name = reader.GetString("prenom_p");
                             patient.LastName = reader.GetString("nom_p");
                             patient.Birth = reader.GetString("birth");
                             patient.Sexe = reader.GetString("sexe");
+                           
 
                             patients.Add(patient);  
                         }
@@ -73,5 +76,81 @@ namespace InventLab
             } 
            
         }
+        
+        public int deletePatient(Patient patient)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "delete from patient where id_p=@id;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@id", patient.Id);
+
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+
+        public int updateBirth(Patient patient)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE patient set birth=@newBirth where id_p=@id;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@newBirth", patient.Birth);
+                    command.Parameters.AddWithValue("@id", patient.Id);
+                   
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+
+        public List<string> getAllergies()
+        {
+            List<string> allergies = new List<string>();
+            using (MySqlConnection conn= new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select libelle_al from allergie;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            allergies.Add(reader.GetString("libelle_al"));
+                        }
+                        return allergies;
+                    }
+                }
+            }
+        }
+
+        public int addAllergy(string allergie)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "INSERT INTO allergie (libelle_al) VALUES (@allergie);";
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@allergie", allergie);
+                
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return (int)result;
+                }
+
+            }
+        }
+
     }
 }
