@@ -16,7 +16,9 @@ namespace InventLab
         public GestionPatient()
         {
             InitializeComponent();
-            LoadPatientsData(dataAccess.getPatients(null, null, null, null)) ;
+            LoadPatientsData(dataAccess.getPatients(null, null, null, null)) ; 
+           
+          tablePatient.Refresh();
         }      
      
        
@@ -27,15 +29,22 @@ namespace InventLab
    
         private void LoadPatientsData(List<Patient> patients)
         {
+          
             if (patients != null)
             {
                 tablePatient.DataSource = patients;
             }
+
         }
         private void buttonAddPatientPage_Click(object sender, EventArgs e)
         {
             formPatient formPatient = new formPatient();
             formPatient.Show();
+        }
+
+        private void tablePatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

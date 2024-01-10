@@ -29,7 +29,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO doctor (doc_name, doc_lastName, doc_email, doc_login, doc_password) VALUES (@name, @lastName, @email, @login, @password);";
+                string query = "INSERT INTO  medecin (prenom_m, nom_m, email_m, login_m, password_m) VALUES (@name, @lastName, @email, @login, @password);";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@name", user.Name);
@@ -49,7 +49,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE doctor SET doc_password=@newPassword WHERE doc_email=@email;";
+                string query = "UPDATE medecin SET password_m=@newPassword WHERE email_m=@email;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@newPassword", newPassword);
@@ -68,7 +68,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT doc_name, doc_lastName, doc_email, doc_login from doctor;";
+                string query = "SELECT prenom_m, nom_m, email_m, login_m from medecin;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -77,10 +77,10 @@ namespace InventLab
                         while (reader.Read())
                         {
                             User user = new User(name, lastName, email, login);
-                            user.Name = reader.GetString("doc_name");
-                            user.LastName = reader.GetString("doc_lastName");
-                            user.LastName = reader.GetString("doc_email");
-                            user.Login= reader.GetString("doc_login");
+                            user.Name = reader.GetString("prenom_m");
+                            user.LastName = reader.GetString("nom_m");
+                            user.LastName = reader.GetString("email_m");
+                            user.Login= reader.GetString("login_m");
 
                             users.Add(user);
 
@@ -98,7 +98,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT doc_login FROM doctor WHERE doc_login=@login AND doc_password=@password;";
+                string query = "SELECT login_m FROM medecin WHERE login_m=@login AND password_m=@password;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@login", login);
@@ -108,7 +108,7 @@ namespace InventLab
                         while (reader.Read())
                         {
                             User user = new User(login);
-                            user.Login = reader.GetString("doc_login");
+                            user.Login = reader.GetString("login_m");
 
                             users.Add(user);
                         }
@@ -124,7 +124,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from doctor where doc_name=@name and doc_lastName=@lastName and doc_email=@email;";
+                string query = "delete from medecin where prenom_m=@name and nom_m=@lastName and email_m=@email;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@name", user.Name);

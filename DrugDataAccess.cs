@@ -30,7 +30,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO medication (med_name, med_description, med_contraindication, med_quantity) VALUES (@name, @description, @contreIndic, @quantity);";
+                string query = "INSERT INTO medicament (libelle_med, description, contre_indication, quantity) VALUES (@name, @description, @contreIndic, @quantity);";
                
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -51,7 +51,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE medication SET med_name=@newName, med_description=@newDescription, med_contraindication=@newContreIndic, med_quantity=@newQuantity WHERE med_name=@oldName AND med_description=@oldDescription and med_contraindication=@oldContreIndic AND med_quantity=@oldQuantity;";
+                string query = "UPDATE medicament SET libelle_med=@newName, description=@newDescription, med_contraindication=@newContreIndic, quantity=@newQuantity WHERE libelle_med=@oldName AND description=@oldDescription and med_contraindication=@oldContreIndic AND quantity=@oldQuantity;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@newName", drug.Name);
@@ -76,7 +76,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select med_name, med_description, med_contraindication, med_quantity from medication;";
+                string query = "select libelle_med, description, contre_indication, quantity from medicament;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -84,10 +84,10 @@ namespace InventLab
                         while (reader.Read())
                         {
                             Drug drug = new Drug(name, description, contreIndic, quantity); ;
-                            drug.Name = reader.GetString("med_name");
-                           drug.Description = reader.GetString("med_description");
-                            drug.ContreIndication = reader.GetString("med_contraindication");
-                            drug.Quantity = reader.GetInt32("med_quantity");
+                            drug.Name = reader.GetString("libelle_med");
+                           drug.Description = reader.GetString("description");
+                            drug.ContreIndication = reader.GetString("contre_indication");
+                            drug.Quantity = reader.GetInt32("quantity");
 
                             drugs.Add(drug);
 
@@ -132,7 +132,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from medication where med_name=@name and med_description=@description and med_contraindication=@contreIndic and med_quantity=@quantity;";
+                string query = "delete from medicament where libelle_med=@name and description=@description and contre_indication=@contreIndic and quantity=@quantity;";
                 using (MySqlCommand command = new MySqlCommand(query, conn)) 
                 {
                     command.Parameters.AddWithValue("@name", drug.Name);

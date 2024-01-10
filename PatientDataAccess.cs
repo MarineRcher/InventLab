@@ -26,7 +26,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO patient (pat_name, pat_lastName, pat_birth, pat_sexe) VALUES (@name, @lastName, @birth, @sexe);";
+                string query = "INSERT INTO patient (prenom_p, nom_p, birth, sexe) VALUES (@name, @lastName, @birth, @sexe);";
                
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -43,12 +43,12 @@ namespace InventLab
             }
         }
 
-        public List<Patient> getPatients(string name, string lastName, string birth, string sexe) { 
-        
-           using (MySqlConnection conn = new MySqlConnection(connectionString))
+        public List<Patient> getPatients(string name, string lastName, string birth, string sexe) {
+            this.patients = new List<Patient>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select pat_name, pat_lastName, pat_birth, pat_sexe from patient";
+                string query = "select prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient";
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -57,16 +57,17 @@ namespace InventLab
                         while (reader.Read())
                         {
                             Patient patient = new Patient(name, lastName, birth, sexe);
-                            patient.Name = reader.GetString("pat_name");
-                            patient.LastName = reader.GetString("pat_lastName");
-                            patient.Birth = reader.GetString("pat_birth");
-                            patient.Sexe = reader.GetString("pat_sexe");
+                            patient.Name = reader.GetString("prenom_p");
+                            patient.LastName = reader.GetString("nom_p");
+                            patient.Birth = reader.GetString("birth");
+                            patient.Sexe = reader.GetString("sexe");
 
                             patients.Add(patient);  
                         }
                         return patients;    
-                        
+                       
                     }
+
                 }
                 
             } 

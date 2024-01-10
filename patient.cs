@@ -10,10 +10,10 @@ namespace InventLab
 
 
     {
-        public string Name;
-        public string LastName;
-        public string Birth;
-        public string Sexe;
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Birth { get; set; }
+        public string Sexe { get; set; }
 
         public Patient(string Name, string LastName, string Birth, string Sexe)
         {

@@ -44,6 +44,7 @@
             this.tablePatient.RowTemplate.Height = 24;
             this.tablePatient.Size = new System.Drawing.Size(597, 598);
             this.tablePatient.TabIndex = 11;
+            this.tablePatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablePatient_CellContentClick);
             // 
             // buttonDeletePatient
             // 
@@ -70,7 +71,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(175, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(438, 52);
+            this.label1.Size = new System.Drawing.Size(435, 51);
             this.label1.TabIndex = 14;
             this.label1.Text = "Gestion des patients";
             // 
