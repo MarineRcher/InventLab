@@ -105,6 +105,7 @@
     <Compile Include="addAllergy.Designer.cs">
       <DependentUpon>addAllergy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Allergy.cs" />
     <Compile Include="AllergyDataAccess.cs" />
     <Compile Include="Drug.cs" />
     <Compile Include="DrugDataAccess.cs" />

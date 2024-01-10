@@ -112,45 +112,9 @@ namespace InventLab
             }
         }
 
-        public List<string> getAllergies()
-        {
-            List<string> allergies = new List<string>();
-            using (MySqlConnection conn= new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "select libelle_al from allergie;";
-                using (MySqlCommand command = new MySqlCommand(query, conn))
-                {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            allergies.Add(reader.GetString("libelle_al"));
-                        }
-                        return allergies;
-                    }
-                }
-            }
-        }
+  
 
-        public int addAllergy(string allergie)
-        {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "INSERT INTO allergie (libelle_al) VALUES (@allergie);";
-
-                using (MySqlCommand command = new MySqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@allergie", allergie);
-                
-                    int result = command.ExecuteNonQuery();
-                    conn.Close();
-                    return (int)result;
-                }
-
-            }
-        }
+     
 
     }
 }

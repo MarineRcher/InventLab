@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableAllergiesPatient = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.printBirthPatient = new System.Windows.Forms.Label();
             this.printSexePatient = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ButtonEditBirth = new System.Windows.Forms.Button();
             this.editBirthPatient = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -103,15 +103,16 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "antecedents";
             // 
-            // dataGridView1
+            // tableAllergiesPatient
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(636, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 129);
-            this.dataGridView1.TabIndex = 5;
+            this.tableAllergiesPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableAllergiesPatient.Location = new System.Drawing.Point(636, 167);
+            this.tableAllergiesPatient.Name = "tableAllergiesPatient";
+            this.tableAllergiesPatient.RowHeadersWidth = 51;
+            this.tableAllergiesPatient.RowTemplate.Height = 24;
+            this.tableAllergiesPatient.Size = new System.Drawing.Size(432, 129);
+            this.tableAllergiesPatient.TabIndex = 5;
+            this.tableAllergiesPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -229,7 +230,7 @@
             this.Controls.Add(this.printSexePatient);
             this.Controls.Add(this.printBirthPatient);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tableAllergiesPatient);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -238,7 +239,7 @@
             this.Name = "ProfilPatient";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProfilPatient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -253,7 +254,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tableAllergiesPatient;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label printBirthPatient;
         private System.Windows.Forms.Label printSexePatient;

@@ -14,6 +14,7 @@ namespace InventLab
     public partial class formPatient : Form
     {
         private PatientDataAccess dataAccess = new PatientDataAccess();
+        private AllergyDataAccess dataAccessAllergy = new AllergyDataAccess();
         public formPatient()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace InventLab
 
         private void formPatient_Load(object sender, EventArgs e)
         {
-            List<string> allergies = dataAccess.getAllergies();
+            List<string> allergies = dataAccessAllergy.getAllergies();
             comboBox2.DataSource = allergies;
         }
 

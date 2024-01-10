@@ -12,7 +12,7 @@ namespace InventLab
 {
     public partial class addAllergy : Form
     {
-        private PatientDataAccess dataAccess = new PatientDataAccess();
+        private AllergyDataAccess dataAccess = new AllergyDataAccess();
         public addAllergy()
         {
             InitializeComponent();
@@ -22,6 +22,11 @@ namespace InventLab
         {
             string Allergie = inputNameAllergy.Text;
             dataAccess.addAllergy(Allergie);
+        }
+
+        private void inputNameAllergy_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

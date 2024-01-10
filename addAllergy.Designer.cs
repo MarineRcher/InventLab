@@ -51,6 +51,7 @@
             this.inputNameAllergy.Name = "inputNameAllergy";
             this.inputNameAllergy.Size = new System.Drawing.Size(300, 22);
             this.inputNameAllergy.TabIndex = 1;
+            this.inputNameAllergy.TextChanged += new System.EventHandler(this.inputNameAllergy_TextChanged);
             // 
             // label2
             // 

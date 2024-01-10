@@ -26,7 +26,11 @@ namespace InventLab
         {
 
         }
-   
+        public class Allergy
+        {
+            public string Libelle_al { get; set; }
+        }
+
         private void LoadPatientsData(List<Patient> patients)
         {
           
