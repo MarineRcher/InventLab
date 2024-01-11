@@ -82,7 +82,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from patient where id_p=@id;";
+                string query = "delete from gsb.a_eu where id_p=@id; delete from gsb.est where id_p=@id; delete from patient where id_p=@id;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", patient.Id);
@@ -112,9 +112,48 @@ namespace InventLab
             }
         }
 
-  
+        public int inscriptionPatientAllergies (Patient patient, string selectedAllergy)
+        {
+            using(MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "insert into est (id_al, id_p) values ((select id_al from allergie where libelle_al=@name),(select id_p from patient where nom_p=@lastName and prenom_p=@nameP and birth=@birth limit 1))";
+                using(MySqlCommand command = new MySqlCommand( query, conn))
+                {
+                    command.Parameters.AddWithValue("@name", selectedAllergy);
+                    command.Parameters.AddWithValue("@lastName", patient.LastName);
+                    command.Parameters.AddWithValue("@nameP", patient.Name);
+                    command.Parameters.AddWithValue("@birth", patient.Birth);
 
-     
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+        public int inscriptionPatientAntecedent(Patient patient, string selectedAntecedent)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "insert into a_eu (id_a, id_p) values ((select id_a from antecedent where libelle_a=@name),(select id_p from patient where nom_p=@lastName and prenom_p=@nameP and birth=@birth limit 1))";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@name", selectedAntecedent);
+                    command.Parameters.AddWithValue("@lastName", patient.LastName);
+                    command.Parameters.AddWithValue("@nameP", patient.Name);
+                    command.Parameters.AddWithValue("@birth", patient.Birth);
+
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+
+
+
+
 
     }
 }

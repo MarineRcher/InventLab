@@ -32,7 +32,6 @@
             this.inputNamePatient = new System.Windows.Forms.TextBox();
             this.antecedentPatient = new System.Windows.Forms.Label();
             this.lastNamePatient = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.inputLastNamePatient = new System.Windows.Forms.TextBox();
             this.sexePatient = new System.Windows.Forms.Label();
             this.allergyPatient = new System.Windows.Forms.Label();
@@ -45,6 +44,8 @@
             this.checkSexeManPatient = new System.Windows.Forms.CheckBox();
             this.checkWomenSexePatient = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // namePatient
@@ -82,13 +83,6 @@
             this.lastNamePatient.Size = new System.Drawing.Size(97, 16);
             this.lastNamePatient.TabIndex = 3;
             this.lastNamePatient.Text = "Nom de famille";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(419, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 22);
-            this.textBox2.TabIndex = 4;
             // 
             // inputLastNamePatient
             // 
@@ -204,11 +198,33 @@
             this.label1.Text = "+";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(419, 115);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 24);
+            this.comboBox1.TabIndex = 21;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(635, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 22);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "+";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // formPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 606);
+            this.ClientSize = new System.Drawing.Size(724, 606);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkWomenSexePatient);
             this.Controls.Add(this.checkSexeManPatient);
@@ -221,7 +237,6 @@
             this.Controls.Add(this.allergyPatient);
             this.Controls.Add(this.sexePatient);
             this.Controls.Add(this.inputLastNamePatient);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lastNamePatient);
             this.Controls.Add(this.antecedentPatient);
             this.Controls.Add(this.inputNamePatient);
@@ -240,7 +255,6 @@
         private System.Windows.Forms.TextBox inputNamePatient;
         private System.Windows.Forms.Label antecedentPatient;
         private System.Windows.Forms.Label lastNamePatient;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox inputLastNamePatient;
         private System.Windows.Forms.Label sexePatient;
         private System.Windows.Forms.Label allergyPatient;
@@ -253,5 +267,7 @@
         private System.Windows.Forms.CheckBox checkSexeManPatient;
         private System.Windows.Forms.CheckBox checkWomenSexePatient;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

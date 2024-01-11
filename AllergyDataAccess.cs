@@ -5,15 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static InventLab.GestionPatient;
 
 namespace InventLab
 {
     internal class AllergyDataAccess
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
-        List<string> Allergy = new List<string>();
-        public int addAllergy(Allergy allergy)
+
+        public class Allergy
+        {
+            public string Name { get; set; }
+           
+        }
+        public int addAllergy(string allergie)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -22,7 +30,7 @@ namespace InventLab
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@allergie", allergy.Nom);
+                    command.Parameters.AddWithValue("@allergie", allergie);
 
                     int result = command.ExecuteNonQuery();
                     conn.Close();
@@ -32,9 +40,9 @@ namespace InventLab
             }
         }
 
-        public List<Allergy> getAllergies()
+        public List<string> getAllergies()
         {
-      
+            List<string> allergies = new List<string>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -45,27 +53,26 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            Allergy allergy = new Allergy(nom);
-                            Allergy.Nom=reader.GetString("libelle_al"));
-
+                            allergies.Add(reader.GetString("libelle_al"));
                         }
-                        return Allergy;
+                        return allergies;
                     }
                 }
             }
         }
 
         //table est qui contient id allergie et patient
-      
 
-        public List<string> GetAllergyByPatient(int idPatient)
+
+        public List<Allergy> GetAllergyByPatient(int idPatient)
         {
+            List<Allergy> allergies = new List<Allergy>();
 
-          
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select libelle_al as Nom from (allergie, est) where allergie.id_al = est.id_al and id_p = @id";
+                string query = "SELECT allergie.libelle_al AS Nom FROM allergie INNER JOIN est ON allergie.id_al = est.id_al WHERE est.id_p = @id";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", idPatient);
@@ -73,17 +80,51 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
+                            allergies.Add(new Allergy { Name = reader.GetString("Nom") });
+                           
+                        }
 
-                            allergies.Add(reader.GetString("Nom"));
-
-                          
-                      
-                    }
                         return allergies;
-                       
                     }
+                }
             }
         }
-    }
+        public int addAllergyToPatient(string selectedAllergy, int idPatient)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "insert into est (id_al, id_p) values ((select id_al from allergie where libelle_al=@name), @id)";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@name", selectedAllergy);
+                    command.Parameters.AddWithValue("@id", idPatient);
+
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
+        public int deleteAllergyPatient(string allergie, Patient patient)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "delete from est where id_al=(select id_al from allergie where libelle_al=@allergie) and id_p=@idPatient;";
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@allergie", allergie);
+                    command.Parameters.AddWithValue("@idPatient", patient.Id);
+
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return (int)result;
+                }
+
+            }
+        }
+
     }
 }

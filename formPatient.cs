@@ -15,6 +15,9 @@ namespace InventLab
     {
         private PatientDataAccess dataAccess = new PatientDataAccess();
         private AllergyDataAccess dataAccessAllergy = new AllergyDataAccess();
+        private antecedentsDataAccess dataAccessAntecedent = new antecedentsDataAccess();
+        string selectedAllergy;
+        string selectedAntecedent;
         public formPatient()
         {
             InitializeComponent();
@@ -23,8 +26,11 @@ namespace InventLab
 
         private void formPatient_Load(object sender, EventArgs e)
         {
-            List<string> allergies = dataAccessAllergy.getAllergies();
+            List<string> allergies = dataAccessAllergy.getAllergies();  
             comboBox2.DataSource = allergies;
+
+            List<string> antecedents = dataAccessAntecedent.getAntecedents();
+            comboBox1.DataSource = antecedents;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,9 +77,12 @@ namespace InventLab
             
             int result = dataAccess.addPatientToDB(patient);
 
+            dataAccess.inscriptionPatientAllergies(patient, selectedAllergy);
+            dataAccess.inscriptionPatientAntecedent(patient, selectedAntecedent);
 
-          
-            
+
+
+
         }
         private void checkSexeManPatient_CheckedChanged(object sender, EventArgs e)
         {
@@ -109,7 +118,27 @@ namespace InventLab
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var comboBox = sender as System.Windows.Forms.ComboBox;
+            if (comboBox != null && comboBox.SelectedItem != null)
+            {
+                selectedAllergy = comboBox.SelectedItem.ToString();
+            }
+        }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AddAntecedent addAntecedent = new AddAntecedent();
+            addAntecedent.Show();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var comboBox = sender as System.Windows.Forms.ComboBox;
+            if (comboBox != null && comboBox.SelectedItem != null)
+            {
+                selectedAntecedent = comboBox.SelectedItem.ToString();
+            }
         }
     }
 }

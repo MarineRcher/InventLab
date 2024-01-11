@@ -136,5 +136,30 @@ namespace InventLab
                 }
             }
         }
+        public List<User> getUsers(string name)
+        {
+            List<User> users = new List<User>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT nom_m FROM medecin";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                  
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User(name);
+                            user.Name = reader.GetString("nom_m");
+
+                            users.Add(user);
+                        }
+                        return users;
+                    }
+                }
+            }
+        }
     }
 }

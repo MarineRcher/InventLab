@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableAllergiesPatient = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tableAntecedents = new System.Windows.Forms.DataGridView();
             this.printBirthPatient = new System.Windows.Forms.Label();
             this.printSexePatient = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             this.ButtonEditBirth = new System.Windows.Forms.Button();
             this.editBirthPatient = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableAntecedents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,9 +88,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(631, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 29);
+            this.label4.Size = new System.Drawing.Size(108, 29);
             this.label4.TabIndex = 3;
-            this.label4.Text = "allergies";
+            this.label4.Text = "Allergies";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
@@ -99,9 +99,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(631, 412);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 29);
+            this.label5.Size = new System.Drawing.Size(146, 29);
             this.label5.TabIndex = 4;
-            this.label5.Text = "antecedents";
+            this.label5.Text = "Antecedents";
             // 
             // tableAllergiesPatient
             // 
@@ -110,19 +110,20 @@
             this.tableAllergiesPatient.Name = "tableAllergiesPatient";
             this.tableAllergiesPatient.RowHeadersWidth = 51;
             this.tableAllergiesPatient.RowTemplate.Height = 24;
-            this.tableAllergiesPatient.Size = new System.Drawing.Size(432, 129);
+            this.tableAllergiesPatient.Size = new System.Drawing.Size(375, 129);
             this.tableAllergiesPatient.TabIndex = 5;
             this.tableAllergiesPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dataGridView2
+            // tableAntecedents
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(636, 456);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(432, 129);
-            this.dataGridView2.TabIndex = 6;
+            this.tableAntecedents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableAntecedents.Location = new System.Drawing.Point(636, 456);
+            this.tableAntecedents.Name = "tableAntecedents";
+            this.tableAntecedents.RowHeadersWidth = 51;
+            this.tableAntecedents.RowTemplate.Height = 24;
+            this.tableAntecedents.Size = new System.Drawing.Size(375, 129);
+            this.tableAntecedents.TabIndex = 6;
+            this.tableAntecedents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableAntecedents_CellContentClick);
             // 
             // printBirthPatient
             // 
@@ -146,37 +147,41 @@
             // 
             this.button1.Location = new System.Drawing.Point(636, 306);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 48);
+            this.button1.Size = new System.Drawing.Size(170, 48);
             this.button1.TabIndex = 9;
             this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(881, 306);
+            this.button2.Location = new System.Drawing.Point(837, 306);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 48);
+            this.button2.Size = new System.Drawing.Size(174, 48);
             this.button2.TabIndex = 10;
             this.button2.Text = "Supprimer";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(636, 603);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 48);
+            this.button3.Size = new System.Drawing.Size(170, 48);
             this.button3.TabIndex = 11;
             this.button3.Text = "Ajouter";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(881, 603);
+            this.button4.Location = new System.Drawing.Point(837, 603);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(187, 48);
+            this.button4.Size = new System.Drawing.Size(174, 48);
             this.button4.TabIndex = 12;
             this.button4.Text = "Supprimer";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // id
             // 
@@ -229,7 +234,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.printSexePatient);
             this.Controls.Add(this.printBirthPatient);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.tableAntecedents);
             this.Controls.Add(this.tableAllergiesPatient);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -240,7 +245,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProfilPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableAntecedents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,7 +260,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView tableAllergiesPatient;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView tableAntecedents;
         private System.Windows.Forms.Label printBirthPatient;
         private System.Windows.Forms.Label printSexePatient;
         private System.Windows.Forms.Button button1;

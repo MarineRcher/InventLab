@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static InventLab.AllergyDataAccess;
+using static InventLab.GestionPatient;
 
 namespace InventLab
 {
@@ -14,6 +17,8 @@ namespace InventLab
     {
         private PatientDataAccess dataAccess = new PatientDataAccess();
         private AllergyDataAccess dataAccessAllergy = new AllergyDataAccess();
+        private antecedentsDataAccess dataAccessAntecedents = new antecedentsDataAccess();
+       
         public ProfilPatient(Patient patient)
         {
             InitializeComponent();
@@ -30,21 +35,31 @@ namespace InventLab
             this.id.Visible =false;
 
             int idPatient = patient.Id;
-           LoadAllergies(dataAccessAllergy.GetAllergyByPatient(idPatient));
+            LoadAllergies(dataAccessAllergy.GetAllergyByPatient(idPatient));
+            LoadAntecedents(dataAccessAntecedents.GetAntecedentByPatient(idPatient));
 
-
-        }
-        
-        private void LoadAllergies(Allergy allergy)
-        {
-
-            if (allergy != null)
-            {
-                tableAllergiesPatient.DataSource = allergy;
            
-            }
 
+    }
+
+
+
+        private void LoadAllergies(List<AllergyDataAccess.Allergy> allergies)
+        {
+            if (allergies != null)
+            {
+                tableAllergiesPatient.DataSource = allergies;
+            }
         }
+        private void LoadAntecedents(List<antecedentsDataAccess.Antecedent> antecedents)
+        {
+            if (antecedents != null)
+            {
+                tableAntecedents.DataSource = antecedents;
+            }
+        }
+
+
         private void ProfilPatient_Load(object sender, EventArgs e)
         {
           
@@ -87,6 +102,59 @@ namespace InventLab
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+
+        {
+            int idPatient = Convert.ToInt32(id.Text);
+            Patient patient = new Patient(idPatient, null, null, null, null);
+            addAllergyToPatient add = new addAllergyToPatient( patient);
+            add.Show();
+            
+
+
+        }
+
+        private void tableAntecedents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (tableAllergiesPatient.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = tableAllergiesPatient.SelectedRows[0];
+                string allergie = selectedRow.Cells["Name"].Value.ToString();
+                int idPatient = Convert.ToInt32(id.Text);
+                Patient patient = new Patient(idPatient, null, null, null, null);
+                dataAccessAllergy.deleteAllergyPatient(allergie, patient);
+
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int idPatient = Convert.ToInt32(id.Text);
+            Patient patient = new Patient(idPatient, null, null, null, null);
+            AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient);
+            addAntecedent.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (tableAntecedents.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = tableAntecedents.SelectedRows[0];
+                string antecedent = selectedRow.Cells["Name"].Value.ToString();
+                int idPatient = Convert.ToInt32(id.Text);
+                Patient patient = new Patient(idPatient, null, null, null, null);
+                dataAccessAntecedents.deleteAntecedentPatient(antecedent, patient);
+
+            }
         }
     }
 }

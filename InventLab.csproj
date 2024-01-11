@@ -105,8 +105,32 @@
     <Compile Include="addAllergy.Designer.cs">
       <DependentUpon>addAllergy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Allergy.cs" />
+    <Compile Include="addAllergyToPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addAllergyToPatient.Designer.cs">
+      <DependentUpon>addAllergyToPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAntecedent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAntecedent.Designer.cs">
+      <DependentUpon>AddAntecedent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAntecedentPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAntecedentPatient.Designer.cs">
+      <DependentUpon>AddAntecedentPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addOrdonnance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addOrdonnance.Designer.cs">
+      <DependentUpon>addOrdonnance.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllergyDataAccess.cs" />
+    <Compile Include="antecedentsDataAccess.cs" />
     <Compile Include="Drug.cs" />
     <Compile Include="DrugDataAccess.cs" />
     <Compile Include="EditDrug.cs">
@@ -127,6 +151,8 @@
     <Compile Include="GestionPatient.Designer.cs">
       <DependentUpon>GestionPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordonnance.cs" />
+    <Compile Include="OrdonnanceDataAccess.cs" />
     <Compile Include="patient.cs" />
     <Compile Include="PatientDataAccess.cs" />
     <Compile Include="ProfilPatient.cs">
@@ -159,6 +185,18 @@
     <Compile Include="UserDataAccess.cs" />
     <EmbeddedResource Include="addAllergy.resx">
       <DependentUpon>addAllergy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addAllergyToPatient.resx">
+      <DependentUpon>addAllergyToPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAntecedent.resx">
+      <DependentUpon>AddAntecedent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAntecedentPatient.resx">
+      <DependentUpon>AddAntecedentPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addOrdonnance.resx">
+      <DependentUpon>addOrdonnance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDrug.resx">
       <DependentUpon>EditDrug.cs</DependentUpon>
