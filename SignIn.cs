@@ -38,7 +38,9 @@ namespace InventLab
                 }
                 else
                 {
-                    MessageBox.Show("Vous êtes connecté");
+                    HomePage home = new HomePage();
+                    home.Show();
+                   
                     
                 }
             }

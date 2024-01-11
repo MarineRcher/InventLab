@@ -29,5 +29,12 @@ namespace InventLab
             string antecedent = textBox1.Text;
             dataAccess.addAntecedent(antecedent);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HomePage home = new HomePage();
+            home.Show();
+            this.Close();
+        }
     }
 }

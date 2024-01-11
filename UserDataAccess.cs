@@ -62,13 +62,13 @@ namespace InventLab
         }
 
 
-        public List<User> selectUsers(string name, string lastName, string email, string login)
+        public List<User> selectUsers(int idMed, string name, string lastName, string email, string login)
         {
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT prenom_m, nom_m, email_m, login_m from medecin;";
+                string query = "SELECT id_m, prenom_m, nom_m, email_m, login_m from medecin;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -76,7 +76,8 @@ namespace InventLab
 
                         while (reader.Read())
                         {
-                            User user = new User(name, lastName, email, login);
+                            User user = new User(idMed, name, lastName, email, login);
+                            user.Id = reader.GetInt32("id_m");
                             user.Name = reader.GetString("prenom_m");
                             user.LastName = reader.GetString("nom_m");
                             user.LastName = reader.GetString("email_m");

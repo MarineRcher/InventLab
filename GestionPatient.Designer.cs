@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPatient));
             this.tablePatient = new System.Windows.Forms.DataGridView();
             this.buttonDeletePatient = new System.Windows.Forms.Button();
             this.buttonAddPatientPage = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.profilPatient = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablePatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePatient
@@ -87,11 +90,22 @@
             this.profilPatient.UseVisualStyleBackColor = true;
             this.profilPatient.Click += new System.EventHandler(this.profilPatient_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(863, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 51);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // GestionPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 743);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.profilPatient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddPatientPage);
@@ -101,6 +115,7 @@
             this.Text = "GestionPatient";
             this.Load += new System.EventHandler(this.GestionPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button buttonAddPatientPage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button profilPatient;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

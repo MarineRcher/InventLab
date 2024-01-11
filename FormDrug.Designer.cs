@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrug));
             this.inputNameAddDrug = new System.Windows.Forms.TextBox();
             this.inputDescriptionAddDrug = new System.Windows.Forms.TextBox();
             this.buttonAddDrug = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@
             this.searchDrug = new System.Windows.Forms.TextBox();
             this.inputContreIndication = new System.Windows.Forms.TextBox();
             this.contreIndication = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // inputNameAddDrug
@@ -160,11 +163,22 @@
             this.contreIndication.Text = "Contre indication";
             this.contreIndication.Click += new System.EventHandler(this.label1_Click_2);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1164, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // FormDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 554);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.contreIndication);
             this.Controls.Add(this.inputContreIndication);
             this.Controls.Add(this.searchDrug);
@@ -183,6 +197,7 @@
             this.Load += new System.EventHandler(this.FormDrug_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +217,6 @@
         private System.Windows.Forms.TextBox searchDrug;
         private System.Windows.Forms.TextBox inputContreIndication;
         private System.Windows.Forms.Label contreIndication;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

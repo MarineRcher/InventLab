@@ -116,3 +116,6 @@ C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.addAllergy.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.addAllergyToPatient.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.AddAntecedent.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.AddAntecedentPatient.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.addOrdonnance.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.HomePage.resources
+C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.GestionUsers.resources

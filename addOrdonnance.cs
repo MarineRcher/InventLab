@@ -18,12 +18,17 @@ namespace InventLab
         public addOrdonnance()
         {
             InitializeComponent();
-            List<string> users = dataAccessUser.getUsers() ;
-            comboBox2.DataSource = users;
+         //List<string> users = dataAccessUser.getUsers() ;
+            //comboBox2.DataSource = users;
 
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

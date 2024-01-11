@@ -11,14 +11,22 @@ using System.Windows.Forms;
 namespace InventLab
 {
     public partial class GestionPatient : Form
+
     {
+        
+
         private PatientDataAccess dataAccess = new PatientDataAccess();
         public GestionPatient()
         {
+            
             InitializeComponent();
+          
+           
+
             LoadPatientsData(dataAccess.getPatients(null, null, null, null, null)) ;
     
             tablePatient.Refresh();
+            
         }      
      
        
@@ -95,6 +103,13 @@ namespace InventLab
                 profilPatient.Show();
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HomePage home = new HomePage();
+            home.Show();
+            this.Close();
         }
     }
 }

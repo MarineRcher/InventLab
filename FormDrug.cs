@@ -120,5 +120,12 @@ namespace InventLab
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HomePage home = new HomePage();
+            home.Show();
+            this.Close();
+        }
     }
 }
