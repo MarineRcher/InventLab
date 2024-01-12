@@ -70,7 +70,7 @@ namespace InventLab
         }
 
 
-        public List<Drug> selectDrug(string name, string description, string contreIndic, int? quantity)
+        public List<Drug> selectDrug()
         {
            this.drugs = new List<Drug>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -83,7 +83,7 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            Drug drug = new Drug(name, description, contreIndic, quantity); ;
+                            Drug drug = new Drug(); ;
                             drug.Name = reader.GetString("libelle_med");
                            drug.Description = reader.GetString("description");
                             drug.ContreIndication = reader.GetString("contre_indication");

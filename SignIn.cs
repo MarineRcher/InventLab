@@ -32,7 +32,7 @@ namespace InventLab
 
                 string email = inputSignInLogin.Text;
                 string password = inputSignInPassword.Text;
-                List<User> users = dataAccess.selectUser(email, password, null);
+                List<User> users = dataAccess.selectUser(email, password);
 
                 if (users.Count == 0)
                 {
@@ -42,8 +42,11 @@ namespace InventLab
                 {
                     
                     string role = users[0].Role;
-
-                    HomePage home = new HomePage();
+                    UserSession userSession = new UserSession();
+                    userSession.CurrentUserId = users[0].Id;
+                    userSession.UserName = users[0].Name;
+                    userSession.UserLastName = users[0].LastName;
+                    HomePage home = new HomePage(userSession);
                     home.Show();
 
                    

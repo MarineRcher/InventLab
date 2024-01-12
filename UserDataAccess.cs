@@ -93,14 +93,14 @@ namespace InventLab
             }
         }
 
-        public List<User> selectUser(string login, string password, string role)
+        public List<User> selectUser(string login, string password)
         {
             List<User> users = new List<User>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT login_m, role FROM medecin WHERE login_m=@login AND password_m=@password;";
+                string query = "SELECT login_m, role, prenom_m, nom_m FROM medecin WHERE login_m=@login AND password_m=@password;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@login", login);
@@ -109,9 +109,11 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            User user = new User(null,login, role); ;
+                            User user = new User(null, login); ;
                             user.Login = reader.GetString("login_m");
                             user.Role = reader.GetString("role");
+                            user.Name = reader.GetString("prenom_m");
+                            user.LastName = reader.GetString("nom_m");
                             users.Add(user);
                         }
                         return users;

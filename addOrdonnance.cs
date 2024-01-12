@@ -32,5 +32,19 @@ namespace InventLab
         {
 
         }
+
+        private void addOrdonnance_Load(object sender, EventArgs e)
+        {
+            //print Date actuelle
+            DateTime thisDay = DateTime.Today;
+            string formattedDate = thisDay.ToString("dd/M/yyyy");
+            label4.Text = formattedDate;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

@@ -17,7 +17,14 @@ namespace InventLab
 
         public int Quantity { get; set; }
 
-        public Drug(string Name, string Description, string ContreIndication, int? Quantity )
+        public Drug()
+        {
+            this.Name = null;
+            this.Description = null;
+            this.ContreIndication = null;
+            this.Quantity = 0;
+        }
+                public Drug(string Name, string Description, string ContreIndication, int? Quantity )
         {
             this.Name = Name;
             this.Description = Description;

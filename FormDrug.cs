@@ -13,7 +13,7 @@ namespace InventLab
         public FormDrug()
         {
             InitializeComponent();
-            LoadDrugData(dataAccess.selectDrug(null, null, null, null)); ;
+            LoadDrugData(dataAccess.selectDrug()); ;
             tableDrug.Refresh();
         }
 
@@ -27,7 +27,7 @@ namespace InventLab
             int result = dataAccess.addDrugToDB(drug);
 
 
-            LoadDrugData(dataAccess.selectDrug(null, null, null, null)); ;
+            LoadDrugData(dataAccess.selectDrug()); ;
             updateData();
         }
 
@@ -50,7 +50,7 @@ namespace InventLab
         {
             tableDrug.Refresh();
             this.tableDrug.DataSource = null;
-            this.tableDrug.DataSource = dataAccess.selectDrug(null, null,null, null);
+            this.tableDrug.DataSource = dataAccess.selectDrug();
         }
         private void LoadDrugData(List<Drug> drugs)
         {

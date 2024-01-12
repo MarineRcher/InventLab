@@ -12,9 +12,12 @@ namespace InventLab
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        public HomePage(UserSession userSession )
         {
             InitializeComponent();
+            label2.Text = userSession.CurrentUserId.ToString();
+            label3.Text = userSession.UserName;
+            label4.Text = userSession.UserLastName;
         }
 
        
@@ -72,6 +75,24 @@ namespace InventLab
             this.Hide();
         }
 
-        
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

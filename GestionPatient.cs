@@ -16,12 +16,14 @@ namespace InventLab
         
 
         private PatientDataAccess dataAccess = new PatientDataAccess();
-        public GestionPatient()
+        public GestionPatient(UserSession userSession)
         {
             
             InitializeComponent();
-          
-           
+
+            label2.Text = userSession.CurrentUserId.ToString();
+            label3.Text = userSession.UserName;
+            label4.Text = userSession.UserLastName;
 
             LoadPatientsData(dataAccess.getPatients(null, null, null, null, null)) ;
     
@@ -107,9 +109,23 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage();
+            int ID = Convert.ToInt32(label2.Text);
+            string name = label3.Text;
+            string lastName = label4.Text;
+            UserSession userSession = new UserSession(ID, name, lastName);
+            HomePage home = new HomePage(UserSession userSession);
             home.Show();
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
