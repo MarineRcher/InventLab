@@ -73,6 +73,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(834, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+       
             // 
             // patientsToolStripMenuItem
             // 
@@ -108,7 +109,7 @@
             // inventaireToolStripMenuItem
             // 
             this.inventaireToolStripMenuItem.Name = "inventaireToolStripMenuItem";
-            this.inventaireToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inventaireToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.inventaireToolStripMenuItem.Text = "Inventaire";
             this.inventaireToolStripMenuItem.Click += new System.EventHandler(this.inventaireToolStripMenuItem_Click);
             // 
@@ -145,7 +146,7 @@
             // ajouterUneAllergieToolStripMenuItem
             // 
             this.ajouterUneAllergieToolStripMenuItem.Name = "ajouterUneAllergieToolStripMenuItem";
-            this.ajouterUneAllergieToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ajouterUneAllergieToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.ajouterUneAllergieToolStripMenuItem.Text = "Ajouter une allergie";
             this.ajouterUneAllergieToolStripMenuItem.Click += new System.EventHandler(this.ajouterUneAllergieToolStripMenuItem_Click);
             // 
@@ -207,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem patientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesPatientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajoutDunPatientToolStripMenuItem;

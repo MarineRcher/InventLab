@@ -29,7 +29,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO  medecin (prenom_m, nom_m, email_m, login_m, password_m) VALUES (@name, @lastName, @email, @login, @password);";
+                string query = "INSERT INTO  medecin (prenom_m, nom_m, email_m, login_m, password_m, role) VALUES (@name, @lastName, @email, @login, @password, @role);";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@name", user.Name);
@@ -37,6 +37,7 @@ namespace InventLab
                     command.Parameters.AddWithValue("@email", user.Email);
                     command.Parameters.AddWithValue("@login", user.Login);
                     command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@ole", user.Role);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -92,14 +93,14 @@ namespace InventLab
             }
         }
 
-        public List<User> selectUser(string login, string password)
+        public List<User> selectUser(string login, string password, string role)
         {
             List<User> users = new List<User>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT login_m FROM medecin WHERE login_m=@login AND password_m=@password;";
+                string query = "SELECT login_m, role FROM medecin WHERE login_m=@login AND password_m=@password;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@login", login);
@@ -108,9 +109,9 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            User user = new User(login);
+                            User user = new User(null,login, role); ;
                             user.Login = reader.GetString("login_m");
-
+                            user.Role = reader.GetString("role");
                             users.Add(user);
                         }
                         return users;
@@ -125,12 +126,11 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from medecin where prenom_m=@name and nom_m=@lastName and email_m=@email;";
+                string query = "delete from ordonnance where id_m=@id; delete from medecin where id_m=@id;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@name", user.Name);
-                    command.Parameters.AddWithValue("@lastName", user.LastName);
-                    command.Parameters.AddWithValue("@email", user.Email);
+                    command.Parameters.AddWithValue("@id", user.Id);
+                   
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -152,7 +152,7 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            User user = new User(name);
+                            User user = new User(null, name);
                             user.Name = reader.GetString("nom_m");
 
                             users.Add(user);
@@ -161,6 +161,32 @@ namespace InventLab
                     }
                 }
             }
+        }
+
+        public List<User> getRoles()
+        {
+            List<User> users = new List<User>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select distinct role from medecin";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using(MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User();
+                            user.Role = reader.GetString("role");
+
+                            users.Add(user);
+
+                        }
+                        return users;
+                    }
+                }
+            }
+          
         }
     }
 }

@@ -42,6 +42,8 @@
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.loginUser = new System.Windows.Forms.Label();
             this.inputLogin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // titleSignUp
@@ -144,7 +146,7 @@
             // 
             // buttonSignUp
             // 
-            this.buttonSignUp.Location = new System.Drawing.Point(244, 651);
+            this.buttonSignUp.Location = new System.Drawing.Point(244, 733);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(238, 41);
             this.buttonSignUp.TabIndex = 11;
@@ -170,11 +172,32 @@
             this.inputLogin.TabIndex = 13;
             this.inputLogin.TextChanged += new System.EventHandler(this.inputLogin_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(239, 647);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Role";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(244, 675);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 24);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // signUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 810);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.inputLogin);
             this.Controls.Add(this.loginUser);
             this.Controls.Add(this.buttonSignUp);
@@ -191,6 +214,7 @@
             this.Controls.Add(this.titleSignUp);
             this.Name = "signUp";
             this.Text = "signUp";
+            this.Load += new System.EventHandler(this.signUp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +236,7 @@
         private System.Windows.Forms.Button buttonSignUp;
         private System.Windows.Forms.Label loginUser;
         private System.Windows.Forms.TextBox inputLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

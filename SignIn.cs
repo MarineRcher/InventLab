@@ -19,18 +19,20 @@ namespace InventLab
             InitializeComponent();
         }
 
+       
    
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrEmpty(inputSignInLogin.Text) || string.IsNullOrEmpty(inputSignInPassword.Text)))
             {
                 MessageBox.Show("login ou mot de passe incorrect");
-            } else
+            }
+            else
             {
-              
+
                 string email = inputSignInLogin.Text;
                 string password = inputSignInPassword.Text;
-                List<User> users = dataAccess.selectUser(email, password);
+                List<User> users = dataAccess.selectUser(email, password, null);
 
                 if (users.Count == 0)
                 {
@@ -38,15 +40,51 @@ namespace InventLab
                 }
                 else
                 {
+                    
+                    string role = users[0].Role;
+
                     HomePage home = new HomePage();
                     home.Show();
+
                    
+                    if (role == "Admin")
+                    {
                     
+                        foreach (ToolStripItem item in home.menuStrip1.Items)
+                        {
+                            item.Visible = true;
+                            item.Enabled = true;
+                        }
+                    }
+                    else if (role == "Utilisateur")
+                    {
+                       
+                     
+                        foreach (ToolStripItem item in home.menuStrip1.Items)
+                        {
+                            switch (item.Name)
+                            {
+                                case "administrateurToolStripMenuItem":
+                             
+                                   
+                                    item.Visible = false;
+                                    item.Enabled = false;
+                                    break;
+                               
+                            }
+                        }
+                    }
                 }
             }
         }
 
+
         private void inputSignInEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
         {
 
         }

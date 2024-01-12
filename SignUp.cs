@@ -13,13 +13,13 @@ namespace InventLab
     public partial class signUp: Form
     {
         private UserDataAccess dataAccess = new UserDataAccess();
+        string selectedRole;
         public signUp()
         {
             InitializeComponent();
         }
 
       
-
         private void titleSignUp_Click(object sender, EventArgs e)
         {
 
@@ -39,11 +39,12 @@ namespace InventLab
             string email = inputEmailSignUp.Text;
             string password = inputPasswordSignUp.Text;
             string passwordConfirm = inputPasswordConfirmationSignUp.Text;
+         
 
             if (password
                 .Equals(passwordConfirm))
             {
-                User user = new User(name, lastName, email, login, password);
+                User user = new User(null, name, lastName, email, login, password, selectedRole);
                 int result = dataAccess.addUserToDB(user);
                // MessageBox.Show(result.ToString());
             }
@@ -63,6 +64,23 @@ namespace InventLab
         private void inputLogin_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void signUp_Load(object sender, EventArgs e)
+        {
+            List<User> users = dataAccess.getRoles();
+            List<string> roles = users.Select(user => user.Role).ToList();
+            comboBox1.DataSource = roles;
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var comboBox = sender as System.Windows.Forms.ComboBox;
+            if (comboBox != null && comboBox.SelectedItem != null)
+            {
+                selectedRole = comboBox.SelectedItem.ToString();
+            }
         }
     }
 }

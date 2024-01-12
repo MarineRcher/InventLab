@@ -30,7 +30,7 @@ namespace InventLab
             if (users != null)
             {
                 tableUsers.DataSource = users;
-                
+                this.tableUsers.Columns["Id"].Visible = false;
             }
         }
 
@@ -50,7 +50,7 @@ namespace InventLab
             {
                 DataGridViewRow selectedRow = tableUsers.SelectedRows[0];
 
-                int id = (int)selectedRow.Cells["id"].Value;
+                int id = (int)selectedRow.Cells["Id"].Value;
                 User user = new User(id, null, null, null, null, null);
                 int result = dataAccess.deleteUser(user);
                 // MessageBox.Show(result.ToString());

@@ -17,7 +17,9 @@ namespace InventLab
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public User(int? Id, string Name = null, string LastName = null, string Email = null, string Login = null, string Password = null)
+        public string Role { get; set; }
+
+        public User(int? Id = null, string Name = null, string LastName = null, string Email = null, string Login = null, string Password = null, string role = null)
         {
             this.Id = Id ?? 0;
             this.Name = Name;
@@ -25,7 +27,7 @@ namespace InventLab
             this.Email = Email;
             this.Login = Login;
             this.Password = Password;
-          
+            this.Role = Role;
         }
     }
 }

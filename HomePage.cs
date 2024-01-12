@@ -17,6 +17,7 @@ namespace InventLab
             InitializeComponent();
         }
 
+       
         private void gestionDesPatientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestionPatient gestionPatients = new GestionPatient();
@@ -57,18 +58,20 @@ namespace InventLab
                 this.Hide();
         }
 
-        private void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
+        public void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             signUp signUp = new signUp();
             signUp.Show();
             this.Hide();
         }
 
-        private void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        public void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestionUsers gestionUsers = new GestionUsers(); 
             gestionUsers.Show();
             this.Hide();
         }
+
+        
     }
 }
