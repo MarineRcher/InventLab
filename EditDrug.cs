@@ -17,7 +17,8 @@ namespace InventLab
         private string oldDescription;
         private string oldContreIndic;
         private int oldQuantity;
-        public EditDrug(string name, string description, string contreIndic, int quantity)
+        private User currentUser;
+        public EditDrug(string name, string description, string contreIndic, int quantity, User user)
         {
             InitializeComponent();
             oldName = name;
@@ -28,6 +29,7 @@ namespace InventLab
             this.inputDescriptionDrugEdit.Text = description;
             this.inputContreIndic.Text = contreIndic;
             this.numericDrugEdit.Value= quantity;
+            this.currentUser = user;
         }
 
         private void titleDrugEdit_Click(object sender, EventArgs e)
@@ -57,7 +59,8 @@ namespace InventLab
             int result = dataAccess.updateDrug(drug, oldName, oldDescription, oldContreIndic, oldQuantity); 
             MessageBox.Show(result.ToString());
 
-           new FormDrug().Show();
+           new FormDrug(this.currentUser).Show();
+
 
         }
 

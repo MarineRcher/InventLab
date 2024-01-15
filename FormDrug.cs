@@ -6,15 +6,15 @@ namespace InventLab
 {
     public partial class FormDrug : Form
     {
-
-       
-
+        private User currentUser;
         private DrugDataAccess dataAccess = new DrugDataAccess();
-        public FormDrug()
+        public FormDrug(User user)
         {
+          
             InitializeComponent();
             LoadDrugData(dataAccess.selectDrug()); ;
             tableDrug.Refresh();
+            this.currentUser = user;
         }
 
         private void buttonAddDrug_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace InventLab
                 string oldContreIndic = selectedRow.Cells["contreIndication"].Value.ToString();
                 string quantityStr = selectedRow.Cells["quantity"].Value.ToString();
                 int oldQuantity = System.Convert.ToInt32(quantityStr);
-                EditDrug editDrug = new EditDrug(oldName, oldDescription,oldContreIndic, oldQuantity);
+                EditDrug editDrug = new EditDrug(oldName, oldDescription,oldContreIndic, oldQuantity, this.currentUser);
                 editDrug.Show();
             }
         }
@@ -123,7 +123,7 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage();
+            HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
         }

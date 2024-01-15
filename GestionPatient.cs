@@ -13,17 +13,14 @@ namespace InventLab
     public partial class GestionPatient : Form
 
     {
-        
+        private User currentUser;
 
         private PatientDataAccess dataAccess = new PatientDataAccess();
-        public GestionPatient(UserSession userSession)
+        public GestionPatient(User user)
         {
             
             InitializeComponent();
-
-            label2.Text = userSession.CurrentUserId.ToString();
-            label3.Text = userSession.UserName;
-            label4.Text = userSession.UserLastName;
+          this.currentUser = user;
 
             LoadPatientsData(dataAccess.getPatients(null, null, null, null, null)) ;
     
@@ -55,7 +52,7 @@ namespace InventLab
         }
         private void buttonAddPatientPage_Click(object sender, EventArgs e)
         {
-            formPatient formPatient = new formPatient();
+            formPatient formPatient = new formPatient(this.currentUser);
             formPatient.Show();
         }
 
@@ -101,7 +98,7 @@ namespace InventLab
                 int id = (int)selectedRow.Cells["id"].Value;
                
                 Patient patient = new Patient(id, name, lastName, birth, sexe);
-                ProfilPatient profilPatient = new ProfilPatient(patient);
+                ProfilPatient profilPatient = new ProfilPatient(patient, this.currentUser);
                 profilPatient.Show();
 
             }
@@ -109,11 +106,8 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(label2.Text);
-            string name = label3.Text;
-            string lastName = label4.Text;
-            UserSession userSession = new UserSession(ID, name, lastName);
-            HomePage home = new HomePage(UserSession userSession);
+           
+            HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
         }
@@ -124,6 +118,11 @@ namespace InventLab
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

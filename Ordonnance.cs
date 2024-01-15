@@ -24,5 +24,22 @@ namespace InventLab
             this.Instruction = Instruction;
             this.Date = Date ;
         }
+        public Ordonnance( string Posologie, string Duree, string Instruction, string Date)
+        {
+           
+            this.Posologie = Posologie;
+            this.Duree = Duree;
+            this.Instruction = Instruction;
+            this.Date = Date;
+        }
+
+        public Ordonnance()
+        {
+            this.IdOrd = 0;
+            this.Posologie = null;
+            this.Duree = null;
+            this.Instruction = null;
+            this.Date = null;
+        }
     }
 }

@@ -264,6 +264,23 @@ CREATE TABLE IF NOT EXISTS `patient` (
 --
 -- Déchargement des données de la table `patient`
 --
+-- --------------------------------------------------------
+
+--
+-- Modification de la structure de la table `medecin`
+--
+ALTER TABLE `medecin`
+ADD COLUMN `role` varchar(50) DEFAULT NULL AFTER `password_m`;
+
+-- --------------------------------------------------------
+
+--
+-- Modification de la structure de la table `patient`
+--
+ALTER TABLE `patient`
+ADD COLUMN `id_m` int DEFAULT NULL AFTER `birth`,
+ADD CONSTRAINT `patient_Medecin_FK` FOREIGN KEY (`id_m`) REFERENCES `medecin` (`id_m`);
+
 
 INSERT INTO `patient` (`id_p`, `nom_p`, `prenom_p`, `sexe`, `birth`) VALUES
 (1, 'Dupont', 'Jean', 'M', '2024-01-10'),

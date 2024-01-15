@@ -13,10 +13,11 @@ namespace InventLab
     public partial class AddAntecedent : Form
     {
         antecedentsDataAccess dataAccess = new antecedentsDataAccess();
-        public AddAntecedent()
+        private User currentUser;
+        public AddAntecedent(User user)
         {
             InitializeComponent();
-            
+            this.currentUser = user;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -32,7 +33,8 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage();
+            
+            HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
         }

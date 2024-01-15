@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +19,14 @@ namespace InventLab
         private antecedentsDataAccess dataAccessAntecedent = new antecedentsDataAccess();
         string selectedAllergy;
         string selectedAntecedent;
-        public formPatient()
+        private User currentUser;
+        public formPatient(User user)
         {
             InitializeComponent();
-           
+            this.currentUser = user; 
         }
 
-        private void formPatient_Load(object sender, EventArgs e)
+        private void FormPatient_Load(object sender, EventArgs e)
         {
             List<string> allergies = dataAccessAllergy.getAllergies();  
             comboBox2.DataSource = allergies;
@@ -112,7 +114,7 @@ namespace InventLab
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            addAllergy add = new addAllergy();
+            addAllergy add = new addAllergy(this.currentUser);
             add.Show();
         }
 
@@ -127,7 +129,7 @@ namespace InventLab
 
         private void label2_Click(object sender, EventArgs e)
         {
-            AddAntecedent addAntecedent = new AddAntecedent();
+            AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
             addAntecedent.Show();
 
         }
@@ -143,7 +145,7 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage();
+            HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
         }

@@ -9,7 +9,7 @@ namespace InventLab
 {
     internal class Drug
     {
-
+        public int Id  { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -19,6 +19,7 @@ namespace InventLab
 
         public Drug()
         {
+            this.Id = 0;
             this.Name = null;
             this.Description = null;
             this.ContreIndication = null;
@@ -31,5 +32,6 @@ namespace InventLab
             this.ContreIndication = ContreIndication;
             this.Quantity = Quantity ?? 0;
         }
+
     }
 }

@@ -24,5 +24,11 @@ namespace InventLab
             this.Birth = Birth;
             this.Sexe = Sexe;
         }
+
+        public Patient()
+        {
+            this.Name= null;
+            this.Id = 0;
+        }
     }
 }

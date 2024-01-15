@@ -13,9 +13,11 @@ namespace InventLab
     public partial class addAllergy : Form
     {
         private AllergyDataAccess dataAccess = new AllergyDataAccess();
-        public addAllergy()
+        private User currentUser;
+        public addAllergy(User user)
         {
             InitializeComponent();
+            this.currentUser = user;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace InventLab
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage();
+            HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
         }

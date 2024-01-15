@@ -18,8 +18,8 @@ namespace InventLab
         private PatientDataAccess dataAccess = new PatientDataAccess();
         private AllergyDataAccess dataAccessAllergy = new AllergyDataAccess();
         private antecedentsDataAccess dataAccessAntecedents = new antecedentsDataAccess();
-       
-        public ProfilPatient(Patient patient)
+        private User currentUser;
+        public ProfilPatient(Patient patient, User user)
         {
             InitializeComponent();
 
@@ -38,9 +38,9 @@ namespace InventLab
             LoadAllergies(dataAccessAllergy.GetAllergyByPatient(idPatient));
             LoadAntecedents(dataAccessAntecedents.GetAntecedentByPatient(idPatient));
 
-           
+            this.currentUser = user;
 
-    }
+        }
 
 
 
@@ -109,7 +109,7 @@ namespace InventLab
         {
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, null, null, null, null);
-            addAllergyToPatient add = new addAllergyToPatient( patient);
+            addAllergyToPatient add = new addAllergyToPatient( patient, this.currentUser);
             add.Show();
             
 
@@ -139,7 +139,7 @@ namespace InventLab
         {
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, null, null, null, null);
-            AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient);
+            AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient, this.currentUser);
             addAntecedent.Show();
 
         }

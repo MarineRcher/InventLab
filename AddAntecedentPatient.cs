@@ -14,13 +14,16 @@ namespace InventLab
     {
         string selectedAntecedent;
         antecedentsDataAccess dataAccess = new antecedentsDataAccess();
-        public AddAntecedentPatient(Patient patient)
+        private User currentUser;
+        public AddAntecedentPatient(Patient patient, User user)
         {
             InitializeComponent();
             idP.Text = patient.Id.ToString();
             List<string> allergies = dataAccess.getAntecedents();
             listeAllergies.DataSource = allergies;
-          
+            this.currentUser = user;
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace InventLab
 
         private void label2_Click(object sender, EventArgs e)
         {
-            AddAntecedent addAntecedent = new AddAntecedent();
+            AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
             addAntecedent.Show();
         }
     }

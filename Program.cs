@@ -17,7 +17,7 @@ namespace InventLab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new addOrdonnance());
+            Application.Run(new SignIn());
         }
     }
 }

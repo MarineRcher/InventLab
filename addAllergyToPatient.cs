@@ -13,32 +13,41 @@ namespace InventLab
 {
     public partial class addAllergyToPatient : Form
     {
+        public class AllergyItem
+        {
+            public string Name { get; set; }
+            public bool IsChecked { get; set; }
+        }
         AllergyDataAccess dataAccess = new AllergyDataAccess();
-        string selectedAllergy; 
-
-        public addAllergyToPatient(Patient patient)
+       
+        private User currentUser;
+        public addAllergyToPatient(Patient patient, User user)
         {
             InitializeComponent();
 
          idP.Text = patient.Id.ToString();
             List<string> allergies = dataAccess.getAllergies();
-            listeAllergies.DataSource = allergies;
+            checkedListBoxAllergies.DataSource = allergies;
+            this.currentUser = user;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var comboBox = sender as System.Windows.Forms.ComboBox;
-            if (comboBox != null && comboBox.SelectedItem != null)
-            {
-                selectedAllergy = comboBox.SelectedItem.ToString();
-            }
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             int idPatient = Convert.ToInt32(idP.Text);
-            dataAccess.addAllergyToPatient(selectedAllergy, idPatient);
+            var allergies = checkedListBoxAllergies.DataSource as List<AllergyItem>;
+
+            foreach (AllergyItem item in allergies)
+            {
+                if (item.IsChecked)
+                {
+                    dataAccess.addAllergyToPatient(item.Name, idPatient);
+                }
+            }
         }
+
+
 
         private void idP_Click(object sender, EventArgs e)
         {
@@ -47,7 +56,7 @@ namespace InventLab
 
         private void label2_Click(object sender, EventArgs e)
         {
-            addAllergy add = new addAllergy();
+            addAllergy add = new addAllergy(this.currentUser);
             add.Show();
         }
 
@@ -57,6 +66,33 @@ namespace InventLab
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addAllergyToPatient_Load(object sender, EventArgs e)
+        {
+            var allergies = dataAccess.getAllergies()
+                .Select(a => new AllergyItem { Name = a, IsChecked = false })
+                .ToList();
+
+            int idPatient = Convert.ToInt32(idP.Text);
+            var patientAllergies = dataAccess.GetAllergyByPatient(idPatient);
+
+            foreach (var allergy in patientAllergies)
+            {
+                var found = allergies.FirstOrDefault(a => a.Name == allergy.Name);
+                if (found != null)
+                    found.IsChecked = true;
+            }
+
+            checkedListBoxAllergies.DataSource = allergies;
+            checkedListBoxAllergies.DisplayMember = "Name";
+            checkedListBoxAllergies.ValueMember = "IsChecked";
+        }
+
+
+        private void checkedListBoxAllergies_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

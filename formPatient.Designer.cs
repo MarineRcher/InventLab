@@ -257,7 +257,7 @@
             this.Controls.Add(this.namePatient);
             this.Name = "formPatient";
             this.Text = "formPatient";
-            this.Load += new System.EventHandler(this.formPatient_Load);
+            this.Load += new System.EventHandler(this.FormPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -13,11 +13,13 @@ namespace InventLab
     public partial class GestionUsers : Form
     {
         UserDataAccess dataAccess= new UserDataAccess();
-        public GestionUsers()
+        private User currentUser;
+        public GestionUsers(User user)
         {
             InitializeComponent();
             LoadUsersData(dataAccess.selectUsers(0,null, null, null, null)) ;
             tableUsers.Refresh();
+            this.currentUser = user;
         }
 
         private void GestionUsers_Load(object sender, EventArgs e)

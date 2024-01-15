@@ -53,7 +53,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
               
-                
+                conn.Open();
                 string query = "select id_p, prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient";
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
@@ -156,7 +156,38 @@ namespace InventLab
                 }
             }
         }
+        public List<Patient> getPatientByMed(int idMed)
+        {
+            this.patients = new List<Patient>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select id_p, concat( prenom_p, ' ', nom_p) as name from patient where id_m= @id";
 
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@id", idMed);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Patient patient = new Patient();
+                            patient.Id = reader.GetInt32("id_p");
+                            patient.Name = reader.GetString("name");
+                           
+
+
+                            patients.Add(patient);
+                        }
+                        return patients;
+
+                    }
+
+                }
+
+            }
+
+        }
 
 
 

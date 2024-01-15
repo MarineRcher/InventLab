@@ -37,7 +37,7 @@
             this.inventaireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordonnancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerLesOrdonnancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.créerUneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addOrdonnance = new System.Windows.Forms.ToolStripMenuItem();
             this.allergiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUneAllergieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antécédentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,9 +45,7 @@
             this.administrateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gestionMotDePasseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +119,7 @@
             // 
             this.ordonnancesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gérerLesOrdonnancesToolStripMenuItem,
-            this.créerUneToolStripMenuItem});
+            this.addOrdonnance});
             this.ordonnancesToolStripMenuItem.Name = "ordonnancesToolStripMenuItem";
             this.ordonnancesToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.ordonnancesToolStripMenuItem.Text = "Ordonnances";
@@ -131,13 +129,14 @@
             this.gérerLesOrdonnancesToolStripMenuItem.Name = "gérerLesOrdonnancesToolStripMenuItem";
             this.gérerLesOrdonnancesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.gérerLesOrdonnancesToolStripMenuItem.Text = "Gérer les ordonnances";
+            this.gérerLesOrdonnancesToolStripMenuItem.Click += new System.EventHandler(this.gérerLesOrdonnancesToolStripMenuItem_Click);
             // 
-            // créerUneToolStripMenuItem
+            // addOrdonnance
             // 
-            this.créerUneToolStripMenuItem.Name = "créerUneToolStripMenuItem";
-            this.créerUneToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.créerUneToolStripMenuItem.Text = "Créer une ordonnance";
-            this.créerUneToolStripMenuItem.Click += new System.EventHandler(this.créerUneToolStripMenuItem_Click);
+            this.addOrdonnance.Name = "addOrdonnance";
+            this.addOrdonnance.Size = new System.Drawing.Size(192, 22);
+            this.addOrdonnance.Text = "Créer une ordonnance";
+            this.addOrdonnance.Click += new System.EventHandler(this.créerUneToolStripMenuItem_Click);
             // 
             // allergiesToolStripMenuItem
             // 
@@ -173,7 +172,8 @@
             // 
             this.administrateurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inscriptionToolStripMenuItem,
-            this.gestionDesUtilisateursToolStripMenuItem});
+            this.gestionDesUtilisateursToolStripMenuItem,
+            this.gestionMotDePasseToolStripMenuItem});
             this.administrateurToolStripMenuItem.Name = "administrateurToolStripMenuItem";
             this.administrateurToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.administrateurToolStripMenuItem.Text = "Administrateur";
@@ -192,44 +192,18 @@
             this.gestionDesUtilisateursToolStripMenuItem.Text = "Gestion des utilisateurs";
             this.gestionDesUtilisateursToolStripMenuItem.Click += new System.EventHandler(this.gestionDesUtilisateursToolStripMenuItem_Click);
             // 
-            // label3
+            // gestionMotDePasseToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Prenom";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "nom";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "id";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.gestionMotDePasseToolStripMenuItem.Name = "gestionMotDePasseToolStripMenuItem";
+            this.gestionMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.gestionMotDePasseToolStripMenuItem.Text = "Gestion mot de passe";
+            this.gestionMotDePasseToolStripMenuItem.Click += new System.EventHandler(this.gestionMotDePasseToolStripMenuItem_Click);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 385);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -254,7 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem médicamentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventaireToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordonnancesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem créerUneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addOrdonnance;
         private System.Windows.Forms.ToolStripMenuItem gérerLesOrdonnancesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allergiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUneAllergieToolStripMenuItem;
@@ -263,8 +237,6 @@
         private System.Windows.Forms.ToolStripMenuItem administrateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscriptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesUtilisateursToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem gestionMotDePasseToolStripMenuItem;
     }
 }

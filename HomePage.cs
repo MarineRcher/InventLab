@@ -12,51 +12,56 @@ namespace InventLab
 {
     public partial class HomePage : Form
     {
-        public HomePage(UserSession userSession )
+        private User currentUser;
+        public HomePage(User user )
         {
             InitializeComponent();
-            label2.Text = userSession.CurrentUserId.ToString();
-            label3.Text = userSession.UserName;
-            label4.Text = userSession.UserLastName;
+            this.currentUser = user;
+         
         }
 
        
         private void gestionDesPatientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPatient gestionPatients = new GestionPatient();
+           
+            GestionPatient gestionPatients = new GestionPatient(this.currentUser);
             gestionPatients.Show();
             this.Hide();
         }
 
         private void créerUneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            addOrdonnance addOrd = new addOrdonnance(this.currentUser);
+                addOrd.Show();
         }
 
         private void ajoutDunPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formPatient addPatient = new formPatient();
+            formPatient addPatient = new formPatient(this.currentUser);
             addPatient.Show();
             this.Hide();
         }
 
+
         private void inventaireToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDrug formDrug = new FormDrug();
+          
+            FormDrug formDrug = new FormDrug(this.currentUser);
             formDrug.Show();
             this.Hide();
         }
 
         private void ajouterUneAllergieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addAllergy addal = new addAllergy();
+            addAllergy addal = new addAllergy(this.currentUser);
             addal.Show();
             this.Hide();
         }
 
         private void ajoutsDantécédentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddAntecedent addAntecedent = new AddAntecedent();
+         
+            AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
             addAntecedent.Show();
                 this.Hide();
         }
@@ -70,7 +75,7 @@ namespace InventLab
 
         public void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionUsers gestionUsers = new GestionUsers(); 
+            GestionUsers gestionUsers = new GestionUsers(this.currentUser); 
             gestionUsers.Show();
             this.Hide();
         }
@@ -93,6 +98,24 @@ namespace InventLab
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gérerLesOrdonnancesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionOrdonnance gestionOrdonnance = new GestionOrdonnance(this.currentUser);
+            gestionOrdonnance.Show();
+            this.Hide();
+        }
+
+        private void gestionMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionMotDePasse gestionMotDePasse = new GestionMotDePasse(this.currentUser);
+            gestionMotDePasse.Show();
         }
     }
 }
