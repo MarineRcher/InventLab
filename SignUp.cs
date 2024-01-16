@@ -14,9 +14,11 @@ namespace InventLab
     {
         private UserDataAccess dataAccess = new UserDataAccess();
         string selectedRole;
-        public signUp()
+        private User currentUser;
+        public signUp(User user)
         {
             InitializeComponent();
+            this.currentUser = user;
         }
 
       
@@ -44,8 +46,10 @@ namespace InventLab
             if (password
                 .Equals(passwordConfirm))
             {
-                User user = new User(null, name, lastName, email, login, password, selectedRole);
-                int result = dataAccess.addUserToDB(user);
+                
+                User user = new User(null, name, lastName, email, login, password);
+                
+                int result = dataAccess.addUserToDB(user, selectedRole);
                // MessageBox.Show(result.ToString());
             }
             else
@@ -76,11 +80,19 @@ namespace InventLab
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var comboBox = sender as System.Windows.Forms.ComboBox;
-            if (comboBox != null && comboBox.SelectedItem != null)
+           
+            if (comboBox1 != null && comboBox1.SelectedItem != null)
             {
-                selectedRole = comboBox.SelectedItem.ToString();
+                selectedRole = comboBox1.SelectedItem.ToString();
             }
+        }
+
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
         }
     }
 }

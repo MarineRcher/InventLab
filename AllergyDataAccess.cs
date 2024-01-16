@@ -99,7 +99,7 @@ namespace InventLab
                 {
                     command.Parameters.AddWithValue("@name", selectedAllergy);
                     command.Parameters.AddWithValue("@id", idPatient);
-
+                    
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;

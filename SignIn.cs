@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.BouncyCastle.Bcpg.OpenPgp;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace InventLab
 {
@@ -90,10 +92,35 @@ namespace InventLab
         {
 
         }
+        private void inputSignInPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+              
+           
+        }
+
+
 
         private void SignIn_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void askChangePassword_Click(object sender, EventArgs e)
+        {
+           AskChangePassword askChangePassword = new AskChangePassword();
+            askChangePassword.Show();
+        }
+     
+
+
+
+        private void inputSignInPassword_TextChanged(object sender, EventArgs e)
+        {
+
+            inputSignInPassword.PasswordChar = '*';
+
+            inputSignInPassword.MaxLength = 14;
+        }
+
     }
 }

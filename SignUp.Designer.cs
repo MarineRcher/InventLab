@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signUp));
             this.titleSignUp = new System.Windows.Forms.Label();
             this.NameSignUp = new System.Windows.Forms.Label();
             this.passwordSignUp = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.inputLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.HomePage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // titleSignUp
@@ -191,11 +194,23 @@
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // HomePage
+            // 
+            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
+            this.HomePage.Location = new System.Drawing.Point(677, 43);
+            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(68, 50);
+            this.HomePage.TabIndex = 20;
+            this.HomePage.TabStop = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
+            // 
             // signUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 810);
+            this.Controls.Add(this.HomePage);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputLogin);
@@ -215,6 +230,7 @@
             this.Name = "signUp";
             this.Text = "signUp";
             this.Load += new System.EventHandler(this.signUp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +254,6 @@
         private System.Windows.Forms.TextBox inputLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox HomePage;
     }
 }

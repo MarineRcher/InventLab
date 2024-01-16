@@ -197,6 +197,12 @@
     </Compile>
     <Compile Include="AllergyDataAccess.cs" />
     <Compile Include="antecedentsDataAccess.cs" />
+    <Compile Include="AskChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskChangePassword.Designer.cs">
+      <DependentUpon>AskChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drug.cs" />
     <Compile Include="DrugDataAccess.cs" />
     <Compile Include="EditDrug.cs">
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addOrdonnance.resx">
       <DependentUpon>addOrdonnance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskChangePassword.resx">
+      <DependentUpon>AskChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDrug.resx">
       <DependentUpon>EditDrug.cs</DependentUpon>

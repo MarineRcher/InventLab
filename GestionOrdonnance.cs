@@ -36,7 +36,7 @@ namespace InventLab
                 this.tableOrdonnance.Columns["idOrd"].Visible = false;
             }}
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDeleteOrdo_Click(object sender, EventArgs e)
         {
             if (tableOrdonnance.SelectedRows.Count > 0)
             {
@@ -56,6 +56,16 @@ namespace InventLab
             this.tableOrdonnance.DataSource = dataAccess.selectOrdonnances(currentUser.Id);
         }
 
+        private void printNameLastNameUser_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
+        }
     }
 }

@@ -29,10 +29,11 @@ namespace InventLab
             this.Hide();
         }
 
-        private void créerUneToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addOrdonnanceToolStripMenuItem_click(object sender, EventArgs e)
         {
             addOrdonnance addOrd = new addOrdonnance(this.currentUser);
                 addOrd.Show();
+            this.Hide();
         }
 
         private void ajoutDunPatientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace InventLab
 
         public void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            signUp signUp = new signUp();
+            signUp signUp = new signUp(this.currentUser);
             signUp.Show();
             this.Hide();
         }
@@ -116,6 +117,11 @@ namespace InventLab
         {
             GestionMotDePasse gestionMotDePasse = new GestionMotDePasse(this.currentUser);
             gestionMotDePasse.Show();
+        }
+
+        private void printWelcome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

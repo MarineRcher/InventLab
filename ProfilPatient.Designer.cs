@@ -31,24 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilPatient));
             this.NameAndLastname = new System.Windows.Forms.Label();
             this.birthPatient = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelSexe = new System.Windows.Forms.Label();
+            this.printAllergy = new System.Windows.Forms.Label();
+            this.printAntecedent = new System.Windows.Forms.Label();
             this.tableAllergiesPatient = new System.Windows.Forms.DataGridView();
             this.tableAntecedents = new System.Windows.Forms.DataGridView();
             this.printBirthPatient = new System.Windows.Forms.Label();
             this.printSexePatient = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonAddAllergyPatient = new System.Windows.Forms.Button();
+            this.buttonDeleteAllergyToPatient = new System.Windows.Forms.Button();
+            this.buttonAddToPatientAntecedent = new System.Windows.Forms.Button();
+            this.buttonDeleteAntecedentPatient = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.editBirth = new System.Windows.Forms.PictureBox();
             this.ButtonEditBirth = new System.Windows.Forms.Button();
             this.editBirthPatient = new System.Windows.Forms.DateTimePicker();
+            this.HomePage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableAntecedents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editBirth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // NameAndLastname
@@ -72,36 +74,36 @@
             this.birthPatient.TabIndex = 1;
             this.birthPatient.Text = "Date de naissance";
             // 
-            // label3
+            // labelSexe
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 267);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Sexe";
+            this.labelSexe.AutoSize = true;
+            this.labelSexe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSexe.Location = new System.Drawing.Point(38, 267);
+            this.labelSexe.Name = "labelSexe";
+            this.labelSexe.Size = new System.Drawing.Size(68, 29);
+            this.labelSexe.TabIndex = 2;
+            this.labelSexe.Text = "Sexe";
             // 
-            // label4
+            // printAllergy
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(631, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Allergies";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.printAllergy.AutoSize = true;
+            this.printAllergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printAllergy.Location = new System.Drawing.Point(631, 128);
+            this.printAllergy.Name = "printAllergy";
+            this.printAllergy.Size = new System.Drawing.Size(108, 29);
+            this.printAllergy.TabIndex = 3;
+            this.printAllergy.Text = "Allergies";
+            this.printAllergy.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // printAntecedent
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(631, 412);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 29);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Antecedents";
+            this.printAntecedent.AutoSize = true;
+            this.printAntecedent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printAntecedent.Location = new System.Drawing.Point(631, 412);
+            this.printAntecedent.Name = "printAntecedent";
+            this.printAntecedent.Size = new System.Drawing.Size(146, 29);
+            this.printAntecedent.TabIndex = 4;
+            this.printAntecedent.Text = "Antecedents";
             // 
             // tableAllergiesPatient
             // 
@@ -139,49 +141,49 @@
             this.printSexePatient.AutoSize = true;
             this.printSexePatient.Location = new System.Drawing.Point(40, 306);
             this.printSexePatient.Name = "printSexePatient";
-            this.printSexePatient.Size = new System.Drawing.Size(44, 16);
+            this.printSexePatient.Size = new System.Drawing.Size(104, 16);
             this.printSexePatient.TabIndex = 8;
-            this.printSexePatient.Text = "label7";
+            this.printSexePatient.Text = "printSexePatient";
             // 
-            // button1
+            // buttonAddAllergyPatient
             // 
-            this.button1.Location = new System.Drawing.Point(636, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 48);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddAllergyPatient.Location = new System.Drawing.Point(636, 306);
+            this.buttonAddAllergyPatient.Name = "buttonAddAllergyPatient";
+            this.buttonAddAllergyPatient.Size = new System.Drawing.Size(170, 48);
+            this.buttonAddAllergyPatient.TabIndex = 9;
+            this.buttonAddAllergyPatient.Text = "Ajouter";
+            this.buttonAddAllergyPatient.UseVisualStyleBackColor = true;
+            this.buttonAddAllergyPatient.Click += new System.EventHandler(this.buttonAddAllergyPatient_Click);
             // 
-            // button2
+            // buttonDeleteAllergyToPatient
             // 
-            this.button2.Location = new System.Drawing.Point(837, 306);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 48);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDeleteAllergyToPatient.Location = new System.Drawing.Point(837, 306);
+            this.buttonDeleteAllergyToPatient.Name = "buttonDeleteAllergyToPatient";
+            this.buttonDeleteAllergyToPatient.Size = new System.Drawing.Size(174, 48);
+            this.buttonDeleteAllergyToPatient.TabIndex = 10;
+            this.buttonDeleteAllergyToPatient.Text = "Supprimer";
+            this.buttonDeleteAllergyToPatient.UseVisualStyleBackColor = true;
+            this.buttonDeleteAllergyToPatient.Click += new System.EventHandler(this.buttonDeleteAllergyToPatient_Click);
             // 
-            // button3
+            // buttonAddToPatientAntecedent
             // 
-            this.button3.Location = new System.Drawing.Point(636, 603);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 48);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Ajouter";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonAddToPatientAntecedent.Location = new System.Drawing.Point(636, 603);
+            this.buttonAddToPatientAntecedent.Name = "buttonAddToPatientAntecedent";
+            this.buttonAddToPatientAntecedent.Size = new System.Drawing.Size(170, 48);
+            this.buttonAddToPatientAntecedent.TabIndex = 11;
+            this.buttonAddToPatientAntecedent.Text = "Ajouter";
+            this.buttonAddToPatientAntecedent.UseVisualStyleBackColor = true;
+            this.buttonAddToPatientAntecedent.Click += new System.EventHandler(this.buttonAddToPatientAntecedent_Click);
             // 
-            // button4
+            // buttonDeleteAntecedentPatient
             // 
-            this.button4.Location = new System.Drawing.Point(837, 603);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(174, 48);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Supprimer";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonDeleteAntecedentPatient.Location = new System.Drawing.Point(837, 603);
+            this.buttonDeleteAntecedentPatient.Name = "buttonDeleteAntecedentPatient";
+            this.buttonDeleteAntecedentPatient.Size = new System.Drawing.Size(174, 48);
+            this.buttonDeleteAntecedentPatient.TabIndex = 12;
+            this.buttonDeleteAntecedentPatient.Text = "Supprimer";
+            this.buttonDeleteAntecedentPatient.UseVisualStyleBackColor = true;
+            this.buttonDeleteAntecedentPatient.Click += new System.EventHandler(this.buttonDeleteAntecedentPatient_Click);
             // 
             // id
             // 
@@ -191,16 +193,16 @@
             this.id.Size = new System.Drawing.Size(0, 16);
             this.id.TabIndex = 13;
             // 
-            // pictureBox1
+            // editBirth
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(255, 170);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.editBirth.Image = ((System.Drawing.Image)(resources.GetObject("editBirth.Image")));
+            this.editBirth.Location = new System.Drawing.Point(255, 170);
+            this.editBirth.Name = "editBirth";
+            this.editBirth.Size = new System.Drawing.Size(23, 22);
+            this.editBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editBirth.TabIndex = 14;
+            this.editBirth.TabStop = false;
+            this.editBirth.Click += new System.EventHandler(this.editBirth_Click);
             // 
             // ButtonEditBirth
             // 
@@ -219,26 +221,38 @@
             this.editBirthPatient.Size = new System.Drawing.Size(246, 22);
             this.editBirthPatient.TabIndex = 18;
             // 
+            // HomePage
+            // 
+            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
+            this.HomePage.Location = new System.Drawing.Point(993, 40);
+            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(59, 50);
+            this.HomePage.TabIndex = 19;
+            this.HomePage.TabStop = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
+            // 
             // ProfilPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 682);
+            this.Controls.Add(this.HomePage);
             this.Controls.Add(this.editBirthPatient);
             this.Controls.Add(this.ButtonEditBirth);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.editBirth);
             this.Controls.Add(this.id);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDeleteAntecedentPatient);
+            this.Controls.Add(this.buttonAddToPatientAntecedent);
+            this.Controls.Add(this.buttonDeleteAllergyToPatient);
+            this.Controls.Add(this.buttonAddAllergyPatient);
             this.Controls.Add(this.printSexePatient);
             this.Controls.Add(this.printBirthPatient);
             this.Controls.Add(this.tableAntecedents);
             this.Controls.Add(this.tableAllergiesPatient);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.printAntecedent);
+            this.Controls.Add(this.printAllergy);
+            this.Controls.Add(this.labelSexe);
             this.Controls.Add(this.birthPatient);
             this.Controls.Add(this.NameAndLastname);
             this.Name = "ProfilPatient";
@@ -246,7 +260,8 @@
             this.Load += new System.EventHandler(this.ProfilPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableAntecedents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editBirth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,20 +271,21 @@
 
         private System.Windows.Forms.Label NameAndLastname;
         private System.Windows.Forms.Label birthPatient;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelSexe;
+        private System.Windows.Forms.Label printAllergy;
+        private System.Windows.Forms.Label printAntecedent;
         private System.Windows.Forms.DataGridView tableAllergiesPatient;
         private System.Windows.Forms.DataGridView tableAntecedents;
         private System.Windows.Forms.Label printBirthPatient;
         private System.Windows.Forms.Label printSexePatient;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonAddAllergyPatient;
+        private System.Windows.Forms.Button buttonDeleteAllergyToPatient;
+        private System.Windows.Forms.Button buttonAddToPatientAntecedent;
+        private System.Windows.Forms.Button buttonDeleteAntecedentPatient;
         private System.Windows.Forms.Label id;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox editBirth;
         private System.Windows.Forms.Button ButtonEditBirth;
         private System.Windows.Forms.DateTimePicker editBirthPatient;
+        private System.Windows.Forms.PictureBox HomePage;
     }
 }

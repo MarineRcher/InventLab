@@ -40,15 +40,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.titleAddNewPatient = new System.Windows.Forms.Label();
             this.timePickerBirth = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAllergy = new System.Windows.Forms.ComboBox();
             this.buttonAddPatient = new System.Windows.Forms.Button();
             this.checkSexeManPatient = new System.Windows.Forms.CheckBox();
             this.checkWomenSexePatient = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAntecedent = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.HomePage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // namePatient
@@ -149,14 +149,14 @@
             this.timePickerBirth.TabIndex = 14;
             this.timePickerBirth.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // comboBox2
+            // comboBoxAllergy
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(419, 212);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 24);
-            this.comboBox2.TabIndex = 16;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxAllergy.FormattingEnabled = true;
+            this.comboBoxAllergy.Location = new System.Drawing.Point(419, 212);
+            this.comboBoxAllergy.Name = "comboBoxAllergy";
+            this.comboBoxAllergy.Size = new System.Drawing.Size(210, 24);
+            this.comboBoxAllergy.TabIndex = 16;
+            this.comboBoxAllergy.SelectedIndexChanged += new System.EventHandler(this.comboBoxAllergy_SelectedIndexChanged);
             // 
             // buttonAddPatient
             // 
@@ -201,14 +201,14 @@
             this.label1.Text = "+";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // comboBox1
+            // comboBoxAntecedent
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(419, 115);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 24);
-            this.comboBox1.TabIndex = 21;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxAntecedent.FormattingEnabled = true;
+            this.comboBoxAntecedent.Location = new System.Drawing.Point(419, 115);
+            this.comboBoxAntecedent.Name = "comboBoxAntecedent";
+            this.comboBoxAntecedent.Size = new System.Drawing.Size(210, 24);
+            this.comboBoxAntecedent.TabIndex = 21;
+            this.comboBoxAntecedent.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntecedent_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -221,29 +221,29 @@
             this.label2.Text = "+";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pictureBox1
+            // HomePage
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(639, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 58);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
+            this.HomePage.Location = new System.Drawing.Point(639, 15);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(58, 58);
+            this.HomePage.TabIndex = 23;
+            this.HomePage.TabStop = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
             // 
             // formPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 606);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.HomePage);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxAntecedent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkWomenSexePatient);
             this.Controls.Add(this.checkSexeManPatient);
             this.Controls.Add(this.buttonAddPatient);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxAllergy);
             this.Controls.Add(this.timePickerBirth);
             this.Controls.Add(this.titleAddNewPatient);
             this.Controls.Add(this.label7);
@@ -258,7 +258,7 @@
             this.Name = "formPatient";
             this.Text = "formPatient";
             this.Load += new System.EventHandler(this.FormPatient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,13 +277,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label titleAddNewPatient;
         private System.Windows.Forms.DateTimePicker timePickerBirth;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxAllergy;
         private System.Windows.Forms.Button buttonAddPatient;
         private System.Windows.Forms.CheckBox checkSexeManPatient;
         private System.Windows.Forms.CheckBox checkWomenSexePatient;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxAntecedent;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox HomePage;
     }
 }

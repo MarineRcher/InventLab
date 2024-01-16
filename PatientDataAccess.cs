@@ -48,7 +48,7 @@ namespace InventLab
             }
         }
 
-        public List<Patient> getPatients(int? id,string name, string lastName, string birth, string sexe) {
+        public List<Patient> getPatients() {
             this.patients = new List<Patient>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -63,7 +63,7 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            Patient patient = new Patient(id, name, lastName, birth, sexe);
+                            Patient patient = new Patient();
                             patient.Id = reader.GetInt32("id_p");
                             patient.Name = reader.GetString("prenom_p");
                             patient.LastName = reader.GetString("nom_p");

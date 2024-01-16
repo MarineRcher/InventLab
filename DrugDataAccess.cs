@@ -99,33 +99,36 @@ namespace InventLab
             }
         }
 
-/*        public List<Drug> searchDrug(string name, string description, int quantity)
+      public List<Drug> searchDrug(string name)
         {
-            this.drugs.Clear();
+            this.drugs = new List<Drug>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = " select * from where name=@name;";
+                string query = " select libelle_med, description, contre_indication, quantity from medicament where libelle_med like @name ;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@name", drugs.name);
+                    command.Parameters.AddWithValue("@name", name);
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Drug drug = new Drug(name, description, quantity);
-                            drug.Name = reader.GetString("name");
+
+                            Drug drug = new Drug(); ;
+                            drug.Name = reader.GetString("libelle_med");
                             drug.Description = reader.GetString("description");
+                            drug.ContreIndication = reader.GetString("contre_indication");
                             drug.Quantity = reader.GetInt32("quantity");
 
                             drugs.Add(drug);
+
                         }
                         return drugs;
                     }
                    
                 }
             }
-        }*/
+        }
 
         public int deleteValue(Drug drug)
         {

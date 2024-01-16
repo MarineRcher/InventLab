@@ -17,7 +17,7 @@ namespace InventLab
         public GestionUsers(User user)
         {
             InitializeComponent();
-            LoadUsersData(dataAccess.selectUsers(0,null, null, null, null)) ;
+            LoadUsersData(dataAccess.selectUsers()) ;
             tableUsers.Refresh();
             this.currentUser = user;
         }
@@ -44,9 +44,10 @@ namespace InventLab
         {
             tableUsers.Refresh();
             this.tableUsers.DataSource = null;
-            this.tableUsers.DataSource = dataAccess.selectUsers(0, null, null, null, null);
+            this.tableUsers.DataSource = dataAccess.selectUsers();
+            this.tableUsers.Columns["Id"].Visible = false;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDeleteUser_Click(object sender, EventArgs e)
         {
             if (tableUsers.SelectedRows.Count > 0)
             {
@@ -58,6 +59,19 @@ namespace InventLab
                 // MessageBox.Show(result.ToString());
                 updateData();
             }
+        }
+
+        private void gestUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace InventLab
             InitializeComponent();
           this.currentUser = user;
 
-            LoadPatientsData(dataAccess.getPatients(null, null, null, null, null)) ;
+            LoadPatientsData(dataAccess.getPatients()) ;
     
             tablePatient.Refresh();
             
@@ -48,7 +48,8 @@ namespace InventLab
         {
             tablePatient.Refresh();
             this.tablePatient.DataSource = null;
-            this.tablePatient.DataSource = dataAccess.getPatients(null, null, null, null, null);
+            this.tablePatient.DataSource = dataAccess.getPatients();
+            this.tablePatient.Columns["id"].Visible = false;
         }
         private void buttonAddPatientPage_Click(object sender, EventArgs e)
         {
@@ -58,17 +59,7 @@ namespace InventLab
 
         private void tablePatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-               // DataGridViewRow selectedRow = tablePatient.Rows[e.RowIndex];
-               // int id = selectedRow.Cells["id"].Value;
-               // string oldName = selectedRow.Cells["name"].Value.ToString();
-               // string oldLastname = selectedRow.Cells["lastname"].Value.ToString();
-               // string oldBirth = selectedRow.Cells["birth"].Value.ToString();
-               // string oldSexe = selectedRow.Cells["sexe"].Value.ToString();
-                //FormPatient formPatient = new FormPatient(oldName, oldLastname, oldBirth, oldSexe);
-                //formPatient.Show();
-            }
+            
         }
 
         private void buttonDeletePatient_Click(object sender, EventArgs e)
@@ -104,7 +95,7 @@ namespace InventLab
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
            
             HomePage home = new HomePage(this.currentUser);
@@ -123,6 +114,11 @@ namespace InventLab
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleGestionPatients_Click(object sender, EventArgs e)
         {
 
         }

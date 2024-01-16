@@ -29,22 +29,22 @@ namespace InventLab
             InitializeComponent();
 
             this.currentUser = user;
-             label9.Text = currentUser.Name;
-            label10.Text = currentUser.LastName;
+             printNameMedecin.Text = currentUser.Name;
+            printLastNameMedecin.Text = currentUser.LastName;
             int idMed = currentUser.Id;
-
+            Console.WriteLine(idMed);
             List<Patient> patients = dataAccessPatient.getPatientByMed(idMed);
 
 
-            comboBox1.DataSource = patients;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "Id";
+            comboBoxPatient.DataSource = patients;
+            comboBoxPatient.DisplayMember = "Name";
+            comboBoxPatient.ValueMember = "Id";
             List<Drug> drugs = dataAccessMed.selectNameDrug();
 
 
-            comboBox2.DataSource = drugs;
-            comboBox2.DisplayMember = "Name";
-            comboBox2.ValueMember = "Id";
+            comboBoxMedicaments.DataSource = drugs;
+            comboBoxMedicaments.DisplayMember = "Name";
+            comboBoxMedicaments.ValueMember = "Id";
 
 
         }
@@ -70,10 +70,10 @@ namespace InventLab
             //print Date actuelle
             DateTime thisDay = DateTime.Today;
             string formattedDate = thisDay.ToString("dd/M/yyyy");
-            label4.Text = formattedDate;
+            DateActuelle.Text = formattedDate;
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void DateActuelle_Click(object sender, EventArgs e)
         {
 
 
@@ -89,7 +89,7 @@ namespace InventLab
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxPatient_SelectedIndexChanged(object sender, EventArgs e)
         {
             var comboBox = sender as System.Windows.Forms.ComboBox;
             if (comboBox != null && comboBox.SelectedItem != null)
@@ -100,16 +100,16 @@ namespace InventLab
 
         }
 
-        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBoxMedicaments_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddOrdonnance_Click(object sender, EventArgs e)
         {
             int Id_m = this.currentUser.Id;
-            int id_p = Convert.ToInt32(comboBox1.SelectedValue);
-            int Id_med = Convert.ToInt32(comboBox2.SelectedValue);
+            int id_p = Convert.ToInt32(comboBoxPatient.SelectedValue);
+            int Id_med = Convert.ToInt32(comboBoxMedicaments.SelectedValue);
 
            
             var allergiesAndMeds = dataAccess.selectAllergieAndMedIncompatibles(id_p, Id_med);
@@ -137,9 +137,9 @@ namespace InventLab
             }
 
             // Continuer avec l'ajout de l'ordonnance si tout va bien
-            string posologie = textBox1.Text;
-            string duree = textBox4.Text;
-            string instruction = textBox3.Text;
+            string posologie = inputPosologie.Text;
+            string duree = inputDureeTraitement.Text;
+            string instruction = inputInstruction.Text;
             DateTime thisDay = DateTime.Today;
             string date = thisDay.ToString("yyyy-MM-dd");
             Ordonnance ordonnance = new Ordonnance(posologie, duree, instruction, date);
@@ -162,7 +162,7 @@ namespace InventLab
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonExportPDF_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "PDF Files|*.pdf";
@@ -177,17 +177,16 @@ namespace InventLab
                     {
                         Document document = new Document(pdf);
 
-                        // Ajouter le contenu de votre PDF
-                        document.Add(new Paragraph("Ordonnance"));
-                        document.Add(new Paragraph("Médecin: " + currentUser.Name + " " + currentUser.LastName));
-                        document.Add(new Paragraph("Date: " + label4.Text));
-                        document.Add(new Paragraph("Médicament : " + comboBox2.Text));
-                        document.Add(new Paragraph("Patient : " + comboBox1.Text));
-                        document.Add(new Paragraph("Posologie: " + textBox1.Text));
-                        document.Add(new Paragraph("Durée: " + textBox4.Text));
-                        document.Add(new Paragraph("Instructions: " + textBox3.Text));
+                     
 
-                        // Continuez à ajouter d'autres informations si nécessaire
+                        document.Add(new Paragraph("Ordonnance du patient comboBoxPatient.Text"));
+                        document.Add(new Paragraph("Par le médecin: " + currentUser.Name + " " + currentUser.LastName));
+                        document.Add(new Paragraph("En date du : " + DateActuelle.Text) );
+                        document.Add(new Paragraph("Médicament : " + comboBoxMedicaments.Text));
+               
+                        document.Add(new Paragraph("Posologie: " + inputPosologie.Text));
+                        document.Add(new Paragraph("Durée: " + inputDureeTraitement.Text));
+                        document.Add(new Paragraph("Instructions: " + inputInstruction.Text));
 
                         MessageBox.Show("PDF créé avec succès !");
                     }
@@ -195,5 +194,12 @@ namespace InventLab
             }
         }
 
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
+        }
     }
 }

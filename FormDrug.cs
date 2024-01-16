@@ -57,6 +57,7 @@ namespace InventLab
             if (drugs != null)
             {
                 tableDrug.DataSource = drugs;
+                this.tableDrug.Columns["Id"].Visible = false;
             }
         }
         public void tableDrug_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,6 +114,13 @@ namespace InventLab
 
         private void searchDrug_TextChanged(object sender, EventArgs e)
         {
+           
+            string name = searchDrug.Text;
+            name = name + "%";
+            dataAccess.searchDrug(name);
+            List<Drug> searchedDrugs = dataAccess.searchDrug(name);
+
+            LoadDrugData(searchedDrugs);
 
         }
 
@@ -121,7 +129,7 @@ namespace InventLab
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
             HomePage home = new HomePage(this.currentUser);
             home.Show();

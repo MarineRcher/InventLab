@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,12 +30,19 @@ namespace InventLab
             this.Password = Password;
             this.Role = Role;
         }
-        public User(int Id, string UserNameName, string LastName)
+        public User(int Id, string Name, string LastName)
         {
             this.Id = Id;
             this.Name = Name;
             this.LastName = LastName;
 
+        }
+        public User(string Name, string LastName, string Email, string Login)
+        {
+            this.Name = Name;
+            this.LastName = LastName;
+            this.Email = Email;
+            this.Login = Login;
         }
         public User()
         {

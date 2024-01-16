@@ -20,23 +20,28 @@ namespace InventLab
             this.currentUser = user;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void inputAntecedent_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddAntecedent_Click(object sender, EventArgs e)
         {
-            string antecedent = textBox1.Text;
+            string antecedent = inputAntecedent.Text;
             dataAccess.addAntecedent(antecedent);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
             
             HomePage home = new HomePage(this.currentUser);
             home.Show();
             this.Close();
+        }
+
+        private void AddAntecedent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

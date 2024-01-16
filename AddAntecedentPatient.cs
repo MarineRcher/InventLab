@@ -8,21 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace InventLab
 {
     public partial class AddAntecedentPatient : Form
     {
-        string selectedAntecedent;
+        public class AntecedentsItem
+        {
+            public string Name { get; set; }
+            public bool IsChecked { get; set; }
+        }
+  
         antecedentsDataAccess dataAccess = new antecedentsDataAccess();
         private User currentUser;
         public AddAntecedentPatient(Patient patient, User user)
         {
             InitializeComponent();
+            label2.Text = patient.Name;
+            label3.Text = patient.LastName;
             idP.Text = patient.Id.ToString();
-            List<string> allergies = dataAccess.getAntecedents();
-            listeAllergies.DataSource = allergies;
+           idP.Visible = false;
+            List<string> antecedents = dataAccess.getAntecedents();
+            checkedListBoxAntecedent.DataSource = antecedents;
             this.currentUser = user;
-
 
         }
 
@@ -33,23 +41,40 @@ namespace InventLab
 
         private void listeAntecedents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var comboBox = sender as System.Windows.Forms.ComboBox;
-            if (comboBox != null && comboBox.SelectedItem != null)
-            {
-                selectedAntecedent = comboBox.SelectedItem.ToString();
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int idPatient = Convert.ToInt32(idP.Text);
-            dataAccess.addAntecedentToPatient(selectedAntecedent, idPatient);
+            var antecdents = checkedListBoxAntecedent.CheckedItems;
+            foreach(AntecedentsItem item in antecdents) { 
+                dataAccess.addAntecedentToPatient(item.Name, idPatient);
+            }
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
             AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
             addAntecedent.Show();
+        }
+
+        private void checkedListBoxAntecedent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAntecedentPatient_Load(object sender, EventArgs e)
+        {
+
+            var antecedents = dataAccess.getAntecedents()
+               .Select(a => new AntecedentsItem { Name = a, IsChecked = false })
+               .ToList();
+
+            checkedListBoxAntecedent.DataSource = antecedents;
+            checkedListBoxAntecedent.DisplayMember = "Name";
+            checkedListBoxAntecedent.ValueMember = "IsChecked";
         }
     }
 }

@@ -23,8 +23,9 @@ namespace InventLab
         {
             InitializeComponent();
 
-           
-          
+            tableAllergiesPatient.Refresh();
+            tableAntecedents.Refresh();
+
             // Print nom et prénom patient
             NameAndLastname.Text = patient.Name + " " + patient.LastName;
             printBirthPatient.Text = patient.Birth;
@@ -42,6 +43,7 @@ namespace InventLab
 
         }
 
+    
 
 
         private void LoadAllergies(List<AllergyDataAccess.Allergy> allergies)
@@ -75,12 +77,12 @@ namespace InventLab
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void editBirth_Click(object sender, EventArgs e)
         {
             editBirthPatient.Visible = true;
-            pictureBox1.Visible = false;
+            editBirth.Visible = false;
             printBirthPatient.Visible=false;
-            pictureBox1.Visible = false;
+            editBirth.Visible = false;
             ButtonEditBirth.Visible = true;
           
         }
@@ -104,14 +106,14 @@ namespace InventLab
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddAllergyPatient_Click(object sender, EventArgs e)
 
         {
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, null, null, null, null);
             addAllergyToPatient add = new addAllergyToPatient( patient, this.currentUser);
             add.Show();
-            
+           
 
 
         }
@@ -121,7 +123,7 @@ namespace InventLab
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDeleteAllergyToPatient_Click(object sender, EventArgs e)
         {
             if (tableAllergiesPatient.SelectedRows.Count > 0)
             {
@@ -130,21 +132,21 @@ namespace InventLab
                 int idPatient = Convert.ToInt32(id.Text);
                 Patient patient = new Patient(idPatient, null, null, null, null);
                 dataAccessAllergy.deleteAllergyPatient(allergie, patient);
-
+                updateDataAllergies();
             }
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonAddToPatientAntecedent_Click(object sender, EventArgs e)
         {
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, null, null, null, null);
             AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient, this.currentUser);
             addAntecedent.Show();
-
+          
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonDeleteAntecedentPatient_Click(object sender, EventArgs e)
         {
             if (tableAntecedents.SelectedRows.Count > 0)
             {
@@ -153,8 +155,29 @@ namespace InventLab
                 int idPatient = Convert.ToInt32(id.Text);
                 Patient patient = new Patient(idPatient, null, null, null, null);
                 dataAccessAntecedents.deleteAntecedentPatient(antecedent, patient);
-
+                updateDataAntecedent();
             }
+        }
+        public void updateDataAntecedent()
+        {
+            int idPatient = Convert.ToInt32(id.Text);
+            tableAntecedents.Refresh();
+            this.tableAntecedents.DataSource = null;
+            this.tableAntecedents.DataSource = dataAccessAntecedents.GetAntecedentByPatient(idPatient);
+        }
+
+        public void updateDataAllergies()
+        {
+            int idPatient = Convert.ToInt32(id.Text);
+            tableAllergiesPatient.Refresh();
+            this.tableAllergiesPatient.DataSource = null;
+            this.tableAllergiesPatient.DataSource = dataAccessAllergy.GetAllergyByPatient(idPatient);
+        }
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
         }
     }
 }

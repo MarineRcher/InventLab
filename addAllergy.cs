@@ -20,7 +20,7 @@ namespace InventLab
             this.currentUser = user;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddAllergy_Click(object sender, EventArgs e)
         {
             string Allergie = inputNameAllergy.Text;
             dataAccess.addAllergy(Allergie);
@@ -36,7 +36,7 @@ namespace InventLab
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
             HomePage home = new HomePage(this.currentUser);
             home.Show();

@@ -30,5 +30,10 @@ namespace InventLab
             this.Name= null;
             this.Id = 0;
         }
+        public Patient(int Id)
+        {
+           
+            this.Id =Id;
+        }
     }
 }

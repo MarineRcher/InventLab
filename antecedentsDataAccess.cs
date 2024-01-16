@@ -27,7 +27,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open(); 
-                string query = "SELECT antecedent.libelle_a AS Nom FROM (antecedent, a_eu) INNER JOIN est ON antecedent.id_a = a_eu.id_a WHERE est.id_p =@id";
+                string query = "SELECT distinct antecedent.libelle_a AS Nom FROM (antecedent, a_eu) INNER JOIN est ON antecedent.id_a = a_eu.id_a WHERE a_eu.id_p =@id";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", idPatient);

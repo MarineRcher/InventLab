@@ -24,8 +24,11 @@ namespace InventLab
         public addAllergyToPatient(Patient patient, User user)
         {
             InitializeComponent();
+            label2.Text = patient.Name;
+            label3.Text = patient.LastName;
 
          idP.Text = patient.Id.ToString();
+            idP.Visible = false;
             List<string> allergies = dataAccess.getAllergies();
             checkedListBoxAllergies.DataSource = allergies;
             this.currentUser = user;
@@ -36,14 +39,11 @@ namespace InventLab
         private void button1_Click(object sender, EventArgs e)
         {
             int idPatient = Convert.ToInt32(idP.Text);
-            var allergies = checkedListBoxAllergies.DataSource as List<AllergyItem>;
+            var allergies = checkedListBoxAllergies.CheckedItems;
 
             foreach (AllergyItem item in allergies)
             {
-                if (item.IsChecked)
-                {
-                    dataAccess.addAllergyToPatient(item.Name, idPatient);
-                }
+                dataAccess.addAllergyToPatient(item.Name, idPatient);
             }
         }
 
@@ -76,15 +76,7 @@ namespace InventLab
                 .Select(a => new AllergyItem { Name = a, IsChecked = false })
                 .ToList();
 
-            int idPatient = Convert.ToInt32(idP.Text);
-            var patientAllergies = dataAccess.GetAllergyByPatient(idPatient);
-
-            foreach (var allergy in patientAllergies)
-            {
-                var found = allergies.FirstOrDefault(a => a.Name == allergy.Name);
-                if (found != null)
-                    found.IsChecked = true;
-            }
+     
 
             checkedListBoxAllergies.DataSource = allergies;
             checkedListBoxAllergies.DisplayMember = "Name";

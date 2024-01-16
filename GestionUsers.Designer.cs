@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsers));
+            this.gestUser = new System.Windows.Forms.Label();
             this.tableUsers = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDeleteUser = new System.Windows.Forms.Button();
+            this.HomePage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // gestUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestion des utilisateurs";
+            this.gestUser.AutoSize = true;
+            this.gestUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestUser.Location = new System.Drawing.Point(215, 9);
+            this.gestUser.Name = "gestUser";
+            this.gestUser.Size = new System.Drawing.Size(335, 32);
+            this.gestUser.TabIndex = 0;
+            this.gestUser.Text = "Gestion des utilisateurs";
+            this.gestUser.Click += new System.EventHandler(this.gestUser_Click);
             // 
             // tableUsers
             // 
@@ -55,28 +59,41 @@
             this.tableUsers.TabIndex = 1;
             this.tableUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableUsers_CellContentClick);
             // 
-            // button1
+            // buttonDeleteUser
             // 
-            this.button1.Location = new System.Drawing.Point(599, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 51);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Supprimer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDeleteUser.Location = new System.Drawing.Point(599, 354);
+            this.buttonDeleteUser.Name = "buttonDeleteUser";
+            this.buttonDeleteUser.Size = new System.Drawing.Size(189, 51);
+            this.buttonDeleteUser.TabIndex = 2;
+            this.buttonDeleteUser.Text = "Supprimer";
+            this.buttonDeleteUser.UseVisualStyleBackColor = true;
+            this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
+            // 
+            // HomePage
+            // 
+            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
+            this.HomePage.Location = new System.Drawing.Point(688, 23);
+            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(59, 50);
+            this.HomePage.TabIndex = 17;
+            this.HomePage.TabStop = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
             // 
             // GestionUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.HomePage);
+            this.Controls.Add(this.buttonDeleteUser);
             this.Controls.Add(this.tableUsers);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gestUser);
             this.Name = "GestionUsers";
             this.Text = "GestionUsers";
             this.Load += new System.EventHandler(this.GestionUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,8 +101,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label gestUser;
         private System.Windows.Forms.DataGridView tableUsers;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDeleteUser;
+        private System.Windows.Forms.PictureBox HomePage;
     }
 }

@@ -29,10 +29,10 @@ namespace InventLab
         private void FormPatient_Load(object sender, EventArgs e)
         {
             List<string> allergies = dataAccessAllergy.getAllergies();  
-            comboBox2.DataSource = allergies;
+            comboBoxAllergy.DataSource = allergies;
 
             List<string> antecedents = dataAccessAntecedent.getAntecedents();
-            comboBox1.DataSource = antecedents;
+            comboBoxAntecedent.DataSource = antecedents;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace InventLab
             add.Show();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxAllergy_SelectedIndexChanged(object sender, EventArgs e)
         {
             var comboBox = sender as System.Windows.Forms.ComboBox;
             if (comboBox != null && comboBox.SelectedItem != null)
@@ -134,7 +134,7 @@ namespace InventLab
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxAntecedent_SelectedIndexChanged(object sender, EventArgs e)
         {
             var comboBox = sender as System.Windows.Forms.ComboBox;
             if (comboBox != null && comboBox.SelectedItem != null)
@@ -143,7 +143,7 @@ namespace InventLab
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
             HomePage home = new HomePage(this.currentUser);
             home.Show();

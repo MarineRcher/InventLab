@@ -34,6 +34,7 @@
             this.labelSignInPassword = new System.Windows.Forms.Label();
             this.labelSignInLogin = new System.Windows.Forms.Label();
             this.buttonSignIn = new System.Windows.Forms.Button();
+            this.askChangePassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // inputSignInLogin
@@ -50,6 +51,7 @@
             this.inputSignInPassword.Name = "inputSignInPassword";
             this.inputSignInPassword.Size = new System.Drawing.Size(361, 22);
             this.inputSignInPassword.TabIndex = 1;
+            this.inputSignInPassword.TextChanged += new System.EventHandler(this.inputSignInPassword_TextChanged);
             // 
             // titleSignIn
             // 
@@ -91,11 +93,23 @@
             this.buttonSignIn.UseVisualStyleBackColor = true;
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
+            // askChangePassword
+            // 
+            this.askChangePassword.AutoSize = true;
+            this.askChangePassword.Location = new System.Drawing.Point(474, 352);
+            this.askChangePassword.Name = "askChangePassword";
+            this.askChangePassword.Size = new System.Drawing.Size(270, 16);
+            this.askChangePassword.TabIndex = 6;
+            this.askChangePassword.Text = "Demande une modification du mot de passe";
+            this.askChangePassword.Click += new System.EventHandler(this.askChangePassword_Click);
+            // 
             // SignIn
             // 
+            this.AcceptButton = this.buttonSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 657);
+            this.Controls.Add(this.askChangePassword);
             this.Controls.Add(this.buttonSignIn);
             this.Controls.Add(this.labelSignInLogin);
             this.Controls.Add(this.labelSignInPassword);
@@ -118,5 +132,6 @@
         private System.Windows.Forms.Label labelSignInPassword;
         private System.Windows.Forms.Label labelSignInLogin;
         private System.Windows.Forms.Button buttonSignIn;
+        private System.Windows.Forms.Label askChangePassword;
     }
 }

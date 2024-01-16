@@ -24,7 +24,7 @@ namespace InventLab
 
 
 
-        public int addUserToDB(User user)
+        public int addUserToDB(User user, string selectedRole)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -38,7 +38,7 @@ namespace InventLab
                     command.Parameters.AddWithValue("@email", user.Email);
                     command.Parameters.AddWithValue("@login", user.Login);
                     command.Parameters.AddWithValue("@password", user.Password);
-                    command.Parameters.AddWithValue("@ole", user.Role);
+                    command.Parameters.AddWithValue("@role", selectedRole);
                     int result = command.ExecuteNonQuery();
                     conn.Close();
                     return result;
@@ -51,7 +51,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE medecin SET password_m=@newPassword WHERE id_m=@id;";
+                string query = "UPDATE medecin SET password_m=@newPassword and modificationMotDePasse = ' ' WHERE id_m=@id;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@newPassword", newPassword);
@@ -63,10 +63,31 @@ namespace InventLab
             }
         }
 
-
-        public List<User> selectUsers(int idMed, string name, string lastName, string email, string login)
+        public int updateAskPasswordUser(User user)
         {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE medecin SET modificationMotDePasse = 'Yes' WHERE nom_m=@LastName and prenom_m=@Name and email_m=@email and login_m=@login ;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                   
+                   
+                    command.Parameters.AddWithValue("@Name", user.Name);
+                    command.Parameters.AddWithValue("@LastName", user.LastName);
+                    command.Parameters.AddWithValue("@email", user.Email);
+                    command.Parameters.AddWithValue("@login", user.Login);
+                    Console.WriteLine(user.LastName);
+                    int result = command.ExecuteNonQuery();
+                    conn.Close();
+                    return result;
+                }
+            }
+        }
 
+        public List<User> selectUsers()
+        {
+            List<User> users = new List<User>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -78,7 +99,7 @@ namespace InventLab
 
                         while (reader.Read())
                         {
-                            User user = new User(idMed, name, lastName, email, login);
+                            User user = new User();
                             user.Id = reader.GetInt32("id_m");
                             user.Name = reader.GetString("prenom_m");
                             user.LastName = reader.GetString("nom_m");
@@ -146,7 +167,7 @@ namespace InventLab
             }
         }
 
-        public List<User> getUsers(string name)
+        public List<User> getUsers()
         {
             List<User> users = new List<User>();
 
@@ -161,7 +182,7 @@ namespace InventLab
                     {
                         while (reader.Read())
                         {
-                            User user = new User(null, name);
+                            User user = new User();
                             user.Name = reader.GetString("nom_m");
 
                             users.Add(user);

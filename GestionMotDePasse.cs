@@ -17,7 +17,7 @@ namespace InventLab
         public GestionMotDePasse(User user)
         {
             InitializeComponent();
-            LoadPasswordData(dataAccess.getUserEditPassword());
+           LoadPasswordData(dataAccess.getUserEditPassword());
 
             tablePassword.Refresh();
             this.currentUser = user;
@@ -28,19 +28,23 @@ namespace InventLab
             if (users != null)
             {
                 tablePassword.DataSource = users;
-               this.tablePassword.Columns["Id"].Visible = false;
-            }
+            this.tablePassword.Columns["Id"].Visible = false;
+            this.tablePassword.Columns["Email"].Visible = false;
+            this.tablePassword.Columns["Login"].Visible = false;
+                this.tablePassword.Columns["Password"].Visible = false;
+                this.tablePassword.Columns["Role"].Visible = false;
+            }  
 
         }
        
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablePassword_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             if (e.RowIndex >= 0)
             {
                DataGridViewRow selectedRow = tablePassword.Rows[e.RowIndex];
                 int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-               string name = selectedRow.Cells["name"].Value.ToString();
+               string name = selectedRow.Cells["Name"].Value.ToString();
                string lastName = selectedRow.Cells["LastName"].Value.ToString();
                User user = new User(id, name, lastName);
                 EditPassword editPassword = new EditPassword(user, this.currentUser);
@@ -51,6 +55,15 @@ namespace InventLab
         private void GestionMotDePasse_Load(object sender, EventArgs e)
         {
 
+         
+        }
+
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+
+            HomePage home = new HomePage(this.currentUser);
+            home.Show();
+            this.Close();
         }
     }
 }

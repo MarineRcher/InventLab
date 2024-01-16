@@ -28,62 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionOrdonnance));
             this.tableOrdonnance = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.printTitleOrdo = new System.Windows.Forms.Label();
+            this.printNameLastNameUser = new System.Windows.Forms.Label();
+            this.buttonDeleteOrdo = new System.Windows.Forms.Button();
+            this.HomePage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableOrdonnance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // tableOrdonnance
             // 
             this.tableOrdonnance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableOrdonnance.Location = new System.Drawing.Point(21, 103);
+            this.tableOrdonnance.Location = new System.Drawing.Point(28, 127);
+            this.tableOrdonnance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableOrdonnance.Name = "tableOrdonnance";
-            this.tableOrdonnance.Size = new System.Drawing.Size(564, 335);
+            this.tableOrdonnance.RowHeadersWidth = 51;
+            this.tableOrdonnance.Size = new System.Drawing.Size(752, 412);
             this.tableOrdonnance.TabIndex = 0;
             // 
-            // label1
+            // printTitleOrdo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ordonnances de";
+            this.printTitleOrdo.AutoSize = true;
+            this.printTitleOrdo.Location = new System.Drawing.Point(392, 31);
+            this.printTitleOrdo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.printTitleOrdo.Name = "printTitleOrdo";
+            this.printTitleOrdo.Size = new System.Drawing.Size(107, 16);
+            this.printTitleOrdo.TabIndex = 1;
+            this.printTitleOrdo.Text = "Ordonnances de";
             // 
-            // label2
+            // printNameLastNameUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Prenom et nom";
+            this.printNameLastNameUser.AutoSize = true;
+            this.printNameLastNameUser.Location = new System.Drawing.Point(508, 31);
+            this.printNameLastNameUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.printNameLastNameUser.Name = "printNameLastNameUser";
+            this.printNameLastNameUser.Size = new System.Drawing.Size(97, 16);
+            this.printNameLastNameUser.TabIndex = 2;
+            this.printNameLastNameUser.Text = "Prenom et nom";
+            this.printNameLastNameUser.Click += new System.EventHandler(this.printNameLastNameUser_Click);
             // 
-            // button1
+            // buttonDeleteOrdo
             // 
-            this.button1.Location = new System.Drawing.Point(591, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 65);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Supprimer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDeleteOrdo.Location = new System.Drawing.Point(788, 459);
+            this.buttonDeleteOrdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDeleteOrdo.Name = "buttonDeleteOrdo";
+            this.buttonDeleteOrdo.Size = new System.Drawing.Size(263, 80);
+            this.buttonDeleteOrdo.TabIndex = 3;
+            this.buttonDeleteOrdo.Text = "Supprimer";
+            this.buttonDeleteOrdo.UseVisualStyleBackColor = true;
+            this.buttonDeleteOrdo.Click += new System.EventHandler(this.buttonDeleteOrdo_Click);
+            // 
+            // HomePage
+            // 
+            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
+            this.HomePage.Location = new System.Drawing.Point(930, 40);
+            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(68, 50);
+            this.HomePage.TabIndex = 5;
+            this.HomePage.TabStop = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
             // 
             // GestionOrdonnance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.HomePage);
+            this.Controls.Add(this.buttonDeleteOrdo);
+            this.Controls.Add(this.printNameLastNameUser);
+            this.Controls.Add(this.printTitleOrdo);
             this.Controls.Add(this.tableOrdonnance);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GestionOrdonnance";
             this.Text = "GestionOrdonnance";
             this.Load += new System.EventHandler(this.GestionOrdonnance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableOrdonnance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +115,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tableOrdonnance;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label printTitleOrdo;
+        private System.Windows.Forms.Label printNameLastNameUser;
+        private System.Windows.Forms.Button buttonDeleteOrdo;
+        private System.Windows.Forms.PictureBox HomePage;
     }
 }
