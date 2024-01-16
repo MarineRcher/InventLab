@@ -33,6 +33,7 @@ namespace InventLab
             {
                 tableUsers.DataSource = users;
                 this.tableUsers.Columns["Id"].Visible = false;
+                this.tableUsers.Columns["Password"].Visible = false;
             }
         }
 
@@ -46,6 +47,7 @@ namespace InventLab
             this.tableUsers.DataSource = null;
             this.tableUsers.DataSource = dataAccess.selectUsers();
             this.tableUsers.Columns["Id"].Visible = false;
+            this.tableUsers.Columns["Password"].Visible = false;
         }
         private void buttonDeleteUser_Click(object sender, EventArgs e)
         {
@@ -54,7 +56,7 @@ namespace InventLab
                 DataGridViewRow selectedRow = tableUsers.SelectedRows[0];
 
                 int id = (int)selectedRow.Cells["Id"].Value;
-                User user = new User(id, null, null, null, null, null);
+                User user = new User(id);
                 int result = dataAccess.deleteUser(user);
                 // MessageBox.Show(result.ToString());
                 updateData();

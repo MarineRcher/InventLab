@@ -54,34 +54,34 @@ namespace InventLab
                     Console.WriteLine(user.Id);
                     HomePage home = new HomePage(user);
                     home.Show();
-
-                   
-                    if (role == "Admin")
+                    this.Hide();
+                    if (role == "admin")
                     {
-                    
+
                         foreach (ToolStripItem item in home.menuStrip1.Items)
                         {
                             item.Visible = true;
                             item.Enabled = true;
                         }
+
                     }
-                    else if (role == "Utilisateur")
+                    else if (role == "utilisateur")
                     {
-                       
-                     
                         foreach (ToolStripItem item in home.menuStrip1.Items)
                         {
                             switch (item.Name)
                             {
                                 case "administrateurToolStripMenuItem":
-                             
-                                   
+
+
                                     item.Visible = false;
                                     item.Enabled = false;
                                     break;
-                               
+
                             }
                         }
+
+                        
                     }
                 }
             }

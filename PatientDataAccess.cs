@@ -23,7 +23,7 @@ namespace InventLab
         }
 
 
-        public int addPatientToDB(Patient patient)
+        public int addPatientToDB(Patient patient, int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -31,7 +31,7 @@ namespace InventLab
                 {
                     conn.Open();
                 }
-                string query = "INSERT INTO patient (prenom_p, nom_p, birth, sexe) VALUES (@name, @lastName, @birth, @sexe);";
+                string query = "INSERT INTO patient (prenom_p, nom_p, birth, sexe, id_m) VALUES (@name, @lastName, @birth, @sexe, @idmedecin);";
                
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -39,6 +39,7 @@ namespace InventLab
                     command.Parameters.AddWithValue("@lastName", patient.LastName);
                     command.Parameters.AddWithValue("@birth", patient.Birth);
                     command.Parameters.AddWithValue("@sexe", patient.Sexe);
+                    command.Parameters.AddWithValue("@idmedecin", id);
                  
                     int result = command.ExecuteNonQuery();
                     conn.Close();

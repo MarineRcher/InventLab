@@ -70,7 +70,7 @@ namespace InventLab
                 DataGridViewRow selectedRow = tablePatient.SelectedRows[0];
               
                 int id = (int)selectedRow.Cells["id"].Value;
-                Patient patient = new Patient(id, null, null, null, null);
+                Patient patient = new Patient(id);
                 int result = dataAccess.deletePatient(patient);
                 // MessageBox.Show(result.ToString());
                updateData();

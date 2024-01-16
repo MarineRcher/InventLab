@@ -73,11 +73,11 @@ namespace InventLab
             DateTimePicker timePickerBirth = new DateTimePicker(); 
             DateTime selectedDate = timePickerBirth.Value; 
             string birth = selectedDate.ToString("yyyy-MM-dd");
-
+            int id = currentUser.Id;
            
-            Patient patient = new Patient(null, name, lastName, birth, sexe);
+            Patient patient = new Patient( name, lastName, birth, sexe);
             
-            int result = dataAccess.addPatientToDB(patient);
+            int result = dataAccess.addPatientToDB(patient, id);
 
             dataAccess.inscriptionPatientAllergies(patient, selectedAllergy);
             dataAccess.inscriptionPatientAntecedent(patient, selectedAntecedent);

@@ -269,3 +269,4 @@ C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.EditPassword.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.GestionMotDePasse.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.GestionOrdonnance.resources
 C:\Users\isitech2\Desktop\InventLab\obj\Debug\InventLab.AskChangePassword.resources
+C:\Users\Marine\Desktop\InventLab\obj\Debug\InventLab.AskChangePassword.resources

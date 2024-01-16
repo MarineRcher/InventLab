@@ -51,7 +51,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE medicament SET libelle_med=@newName, description=@newDescription, med_contraindication=@newContreIndic, quantity=@newQuantity WHERE libelle_med=@oldName AND description=@oldDescription and med_contraindication=@oldContreIndic AND quantity=@oldQuantity;";
+                string query = "UPDATE medicament SET libelle_med=@newName, description=@newDescription, contre_indication=@newContreIndic, quantity=@newQuantity WHERE libelle_med=@oldName AND description=@oldDescription and contre_indication=@oldContreIndic AND quantity=@oldQuantity;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@newName", drug.Name);

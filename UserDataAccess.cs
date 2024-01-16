@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace InventLab
 {
@@ -51,9 +52,11 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE medecin SET password_m=@newPassword and modificationMotDePasse = ' ' WHERE id_m=@id;";
+                string query = "UPDATE medecin SET password_m=@newPassword, modificationMotDePasse = ' ' WHERE id_m=@id;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
+                    Console.WriteLine(id_m);
+                    Console.WriteLine(newPassword);
                     command.Parameters.AddWithValue("@newPassword", newPassword);
                     command.Parameters.AddWithValue("@id", id_m);
                     int result = command.ExecuteNonQuery();
@@ -91,7 +94,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT id_m, prenom_m, nom_m, email_m, login_m from medecin;";
+                string query = "SELECT id_m, prenom_m, nom_m, email_m, login_m, role from medecin;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -103,9 +106,9 @@ namespace InventLab
                             user.Id = reader.GetInt32("id_m");
                             user.Name = reader.GetString("prenom_m");
                             user.LastName = reader.GetString("nom_m");
-                            user.LastName = reader.GetString("email_m");
+                            user.Email = reader.GetString("email_m");
                             user.Login = reader.GetString("login_m");
-
+                            user.Role = reader.GetString("role");
                             users.Add(user);
 
                         }

@@ -20,18 +20,14 @@ namespace InventLab
 
         private void buttonAskChangePassword_Click(object sender, EventArgs e)
         {
-           /*
+           
             string LastName = inputLastName.Text;
             string Name = inputName.Text;
            
             string Login = inputLogin.Text;
             string Email = inputEmail.Text;
-            */
-            string LastName = "richer";
-            string Name = "marine";
-
-            string Login = "marine";
-            string Email = "marine.richergmailcom";
+            
+         
             User user = new User(Name, LastName, Email, Login);
           
             dataAccess.updateAskPasswordUser(user);
