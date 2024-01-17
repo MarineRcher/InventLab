@@ -27,7 +27,7 @@ namespace InventLab
         {
             if ((string.IsNullOrEmpty(inputSignInLogin.Text) || string.IsNullOrEmpty(inputSignInPassword.Text)))
             {
-                MessageBox.Show("login ou mot de passe incorrect");
+                MessageBox.Show("Entrer votre login et mot de passe");
             }
             else
             {
@@ -51,7 +51,7 @@ namespace InventLab
                         LastName = users[0].LastName,
                        
                     };
-                    Console.WriteLine(user.Id);
+                   
                     HomePage home = new HomePage(user);
                     home.Show();
                     this.Hide();
