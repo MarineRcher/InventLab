@@ -51,7 +51,7 @@ namespace InventLab
                         LastName = users[0].LastName,
                        
                     };
-                    Console.WriteLine(user.Id);
+                   
                     HomePage home = new HomePage(user);
                     home.Show();
                     this.Hide();
