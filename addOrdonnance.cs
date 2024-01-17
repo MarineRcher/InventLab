@@ -23,11 +23,11 @@ namespace InventLab
         private User currentUser;
         private string selectedPatient;
         private string selectedNameMed;
-
-        public addOrdonnance(User user)
+        private GestionOrdonnance gestionOrdonnanceForm;
+        public addOrdonnance(User user, GestionOrdonnance gestionOrdonnanceForm)
         {
             InitializeComponent();
-
+            this.gestionOrdonnanceForm = gestionOrdonnanceForm;
             this.currentUser = user;
              printNameMedecin.Text = currentUser.Name;
             printLastNameMedecin.Text = currentUser.LastName;
@@ -145,6 +145,8 @@ namespace InventLab
             Ordonnance ordonnance = new Ordonnance(posologie, duree, instruction, date);
 
             dataAccess.addOrdonnanceToDB(ordonnance, Id_m, Id_med, id_p);
+            gestionOrdonnanceForm.updateData();
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -179,7 +181,7 @@ namespace InventLab
 
                      
 
-                        document.Add(new Paragraph("Ordonnance du patient comboBoxPatient.Text"));
+                        document.Add(new Paragraph("Ordonnance du patient " + comboBoxPatient.Text));
                         document.Add(new Paragraph("Par le médecin: " + currentUser.Name + " " + currentUser.LastName));
                         document.Add(new Paragraph("En date du : " + DateActuelle.Text) );
                         document.Add(new Paragraph("Médicament : " + comboBoxMedicaments.Text));
@@ -194,12 +196,6 @@ namespace InventLab
             }
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+       
     }
 }

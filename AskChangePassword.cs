@@ -31,6 +31,7 @@ namespace InventLab
             User user = new User(Name, LastName, Email, Login);
           
             dataAccess.updateAskPasswordUser(user);
+            this.Close();
         }
     }
 }

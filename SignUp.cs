@@ -15,10 +15,12 @@ namespace InventLab
         private UserDataAccess dataAccess = new UserDataAccess();
         string selectedRole;
         private User currentUser;
-        public signUp(User user)
+        private GestionUsers gestionUsers;
+        public signUp(User user, GestionUsers gestionUsers)
         {
             InitializeComponent();
             this.currentUser = user;
+            this.gestionUsers = gestionUsers;
         }
 
       
@@ -51,10 +53,12 @@ namespace InventLab
                 
                 int result = dataAccess.addUserToDB(user, selectedRole);
                // MessageBox.Show(result.ToString());
+               gestionUsers.updateData();
+               this.Close();
             }
             else
             {
-                MessageBox.Show("Confirmation du mot de passe différent du mot de passe");
+                MessageBox.Show("Veuillez entrer les memes mots de passes");
             }
 
 
@@ -87,12 +91,6 @@ namespace InventLab
             }
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+      
     }
 }

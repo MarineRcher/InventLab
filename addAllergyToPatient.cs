@@ -18,20 +18,21 @@ namespace InventLab
             public string Name { get; set; }
             public bool IsChecked { get; set; }
         }
+        private ProfilPatient profilPatient;
         AllergyDataAccess dataAccess = new AllergyDataAccess();
        
         private User currentUser;
-        public addAllergyToPatient(Patient patient, User user)
+        public addAllergyToPatient(Patient patient, User user, ProfilPatient profilPatient)
         {
             InitializeComponent();
-            label2.Text = patient.Name;
-            label3.Text = patient.LastName;
+           
 
          idP.Text = patient.Id.ToString();
             idP.Visible = false;
             List<string> allergies = dataAccess.getAllergies();
             checkedListBoxAllergies.DataSource = allergies;
             this.currentUser = user;
+            this.profilPatient = profilPatient;
         }
 
 
@@ -45,6 +46,8 @@ namespace InventLab
             {
                 dataAccess.addAllergyToPatient(item.Name, idPatient);
             }
+            profilPatient.updateDataAllergies();
+            this.Close();
         }
 
 

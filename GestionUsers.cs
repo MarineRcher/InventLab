@@ -20,6 +20,7 @@ namespace InventLab
             LoadUsersData(dataAccess.selectUsers()) ;
             tableUsers.Refresh();
             this.currentUser = user;
+            tableUsers.ReadOnly = true;
         }
 
         private void GestionUsers_Load(object sender, EventArgs e)
@@ -68,12 +69,12 @@ namespace InventLab
 
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
+       
 
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
+        private void addUser_Click(object sender, EventArgs e)
+        {
+            signUp up = new signUp(this.currentUser, this);
+            up.Show();
         }
     }
 }

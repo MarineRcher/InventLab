@@ -19,8 +19,10 @@ namespace InventLab
             InitializeComponent();
             this.currentUser = user;
             LoadOrdonnancesData(dataAccess.selectOrdonnances(currentUser.Id));
-
+            tableOrdonnance.ReadOnly = true;
             tableOrdonnance.Refresh();
+            printNameUser.Text = currentUser.Name;
+                printLastNameUser.Text = currentUser.LastName;
         }
 
         private void GestionOrdonnance_Load(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace InventLab
             tableOrdonnance.Refresh();
             this.tableOrdonnance.DataSource = null;
             this.tableOrdonnance.DataSource = dataAccess.selectOrdonnances(currentUser.Id);
+            this.tableOrdonnance.Columns["idOrd"].Visible = false;
         }
 
         private void printNameLastNameUser_Click(object sender, EventArgs e)
@@ -61,11 +64,12 @@ namespace InventLab
 
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
+     
+
+        private void addOrdo_Click(object sender, EventArgs e)
         {
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
+            addOrdonnance addOrd = new addOrdonnance(this.currentUser, this);
+            addOrd.Show();
         }
     }
 }

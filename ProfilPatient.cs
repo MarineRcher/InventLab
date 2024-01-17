@@ -40,7 +40,8 @@ namespace InventLab
             LoadAntecedents(dataAccessAntecedents.GetAntecedentByPatient(idPatient));
 
             this.currentUser = user;
-
+            tableAllergiesPatient.ReadOnly = true;
+            tableAntecedents.ReadOnly = true;
         }
 
     
@@ -82,7 +83,7 @@ namespace InventLab
             editBirthPatient.Visible = true;
             editBirth.Visible = false;
             printBirthPatient.Visible=false;
-            editBirth.Visible = false;
+          
             ButtonEditBirth.Visible = true;
           
         }
@@ -99,6 +100,12 @@ namespace InventLab
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, name, lastName, newBirth, sexe);
             dataAccess.updateBirth(patient);
+
+           
+            editBirth.Visible = true;
+            printBirthPatient.Visible = true;
+            ButtonEditBirth.Visible = false;
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,9 +116,11 @@ namespace InventLab
         private void buttonAddAllergyPatient_Click(object sender, EventArgs e)
 
         {
+            
             int idPatient = Convert.ToInt32(id.Text);
-            Patient patient = new Patient(idPatient, null, null, null, null);
-            addAllergyToPatient add = new addAllergyToPatient( patient, this.currentUser);
+          
+            Patient patient = new Patient(idPatient);
+            addAllergyToPatient add = new addAllergyToPatient( patient, this.currentUser, this);
             add.Show();
            
 
@@ -141,7 +150,7 @@ namespace InventLab
         {
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, null, null, null, null);
-            AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient, this.currentUser);
+            AddAntecedentPatient addAntecedent = new AddAntecedentPatient(patient, this.currentUser, this);
             addAntecedent.Show();
           
         }
@@ -173,11 +182,6 @@ namespace InventLab
             this.tableAllergiesPatient.DataSource = null;
             this.tableAllergiesPatient.DataSource = dataAccessAllergy.GetAllergyByPatient(idPatient);
         }
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+        
     }
 }

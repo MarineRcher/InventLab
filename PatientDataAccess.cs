@@ -39,7 +39,7 @@ namespace InventLab
                     command.Parameters.AddWithValue("@lastName", patient.LastName);
                     command.Parameters.AddWithValue("@birth", patient.Birth);
                     command.Parameters.AddWithValue("@sexe", patient.Sexe);
-                    command.Parameters.AddWithValue("@idmedecin", id);
+                    command.Parameters.AddWithValue("@idmedecin", id); 
                  
                     int result = command.ExecuteNonQuery();
                     conn.Close();
@@ -49,17 +49,17 @@ namespace InventLab
             }
         }
 
-        public List<Patient> getPatients() {
+        public List<Patient> getPatients(int Id) {
             this.patients = new List<Patient>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
               
                 conn.Open();
-                string query = "select id_p, prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient";
+                string query = "select id_p, prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient where id_m=@id";
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-
+                    command.Parameters.AddWithValue("@id", Id);
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

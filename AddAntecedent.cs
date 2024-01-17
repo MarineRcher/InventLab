@@ -29,16 +29,10 @@ namespace InventLab
         {
             string antecedent = inputAntecedent.Text;
             dataAccess.addAntecedent(antecedent);
-        }
-
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-            
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
             this.Close();
         }
 
+       
         private void AddAntecedent_Load(object sender, EventArgs e)
         {
 

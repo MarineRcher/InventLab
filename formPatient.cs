@@ -20,10 +20,13 @@ namespace InventLab
         string selectedAllergy;
         string selectedAntecedent;
         private User currentUser;
-        public formPatient(User user)
+
+        private GestionPatient gestionPatientForm;
+        public formPatient(User user, GestionPatient gestionPatientForm)
         {
             InitializeComponent();
-            this.currentUser = user; 
+            this.currentUser = user;
+            this.gestionPatientForm = gestionPatientForm;
         }
 
         private void FormPatient_Load(object sender, EventArgs e)
@@ -83,7 +86,8 @@ namespace InventLab
             dataAccess.inscriptionPatientAntecedent(patient, selectedAntecedent);
 
 
-
+            gestionPatientForm.updateData();
+            this.Close();
 
         }
         private void checkSexeManPatient_CheckedChanged(object sender, EventArgs e)
@@ -143,11 +147,6 @@ namespace InventLab
             }
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+       
     }
 }

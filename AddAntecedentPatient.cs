@@ -18,20 +18,20 @@ namespace InventLab
             public string Name { get; set; }
             public bool IsChecked { get; set; }
         }
-  
+
+        private ProfilPatient profilPatient;
         antecedentsDataAccess dataAccess = new antecedentsDataAccess();
         private User currentUser;
-        public AddAntecedentPatient(Patient patient, User user)
+        public AddAntecedentPatient(Patient patient, User user, ProfilPatient profilPatient)
         {
             InitializeComponent();
-            label2.Text = patient.Name;
-            label3.Text = patient.LastName;
+           
             idP.Text = patient.Id.ToString();
            idP.Visible = false;
             List<string> antecedents = dataAccess.getAntecedents();
             checkedListBoxAntecedent.DataSource = antecedents;
             this.currentUser = user;
-
+            this.profilPatient = profilPatient;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,13 +52,12 @@ namespace InventLab
                 dataAccess.addAntecedentToPatient(item.Name, idPatient);
             }
            
+            profilPatient.updateDataAntecedent();
+            this.Close();
+           
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
-            addAntecedent.Show();
-        }
+     
 
         private void checkedListBoxAntecedent_Load(object sender, EventArgs e)
         {

@@ -16,7 +16,21 @@ namespace InventLab
 
         public string Date { get; set; }
 
-        public Ordonnance(int IdOrd, string Posologie, string Duree, string Instruction, string Date)
+        public string NomPatient { get; set; }
+        public string PrenomPatient { get; set; }
+        public string LibelleMedicament { get; set; }
+
+        public Ordonnance(int IdOrd, string Posologie, string Duree, string Instruction, string Date, string NomPatient, string PrenomPatient, string LibelleMedicament)
+        {
+            this.IdOrd = IdOrd;
+            this.Posologie = Posologie;
+            this.Duree = Duree;
+            this.Instruction = Instruction;
+            this.Date = Date ;
+            this.NomPatient = NomPatient;
+            this.PrenomPatient = PrenomPatient;
+            this.LibelleMedicament = LibelleMedicament;
+        }  public Ordonnance(int IdOrd, string Posologie, string Duree, string Instruction, string Date)
         {
             this.IdOrd = IdOrd;
             this.Posologie = Posologie;

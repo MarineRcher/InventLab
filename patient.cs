@@ -43,5 +43,12 @@ namespace InventLab
             this.Birth = Birth;
             this.Sexe = Sexe;
         }
+        public Patient(string Name, string LastName)
+        {
+
+            this.Name = Name;
+            this.LastName = LastName;
+            
+        }
     }
 }

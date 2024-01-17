@@ -82,12 +82,13 @@ namespace InventLab
 
         public List<Ordonnance> selectOrdonnances(int idMed)
         {
+            
             this.ordonnances = new List<Ordonnance>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select id_o, posologie, duree_traitement, instruction_specifique, DATE_FORMAT(date_o, '%d/%m/%Y') as date_o from ordonnance where id_m=@idMed;";
+                string query = "select a.id_o, a.posologie, a.duree_traitement, a.instruction_specifique, DATE_FORMAT(a.date_o, '%d/%m/%Y') as date_o, p.nom_p as Nom_Patient, p.prenom_p as Prenom_Patient, m.libelle_med as Nom_medicament from gsb.ordonnance a join gsb.patient p on p.id_p = a.id_p join gsb.medicament m on m.id_med= a.id_med where a.id_m=@idMed;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@idMed", idMed);
@@ -102,12 +103,13 @@ namespace InventLab
                             ordonnance.Duree = reader.GetString("duree_traitement");
                             ordonnance.Instruction = reader.GetString("instruction_specifique");
                             ordonnance.Date = reader.GetString("date_o");
-
+                            ordonnance.NomPatient = reader.GetString("Nom_Patient"); 
+                            ordonnance.PrenomPatient = reader.GetString("Prenom_Patient");
+                            ordonnance.LibelleMedicament = reader.GetString("Nom_medicament"); 
                             ordonnances.Add(ordonnance);
 
-
                         }
-                        return ordonnances;
+                        return (ordonnances);
                     }
                 }
             }

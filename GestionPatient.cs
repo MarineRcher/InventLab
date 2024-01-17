@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace InventLab
 {
@@ -21,9 +23,9 @@ namespace InventLab
             
             InitializeComponent();
           this.currentUser = user;
-
-            LoadPatientsData(dataAccess.getPatients()) ;
-    
+          int idMed = currentUser.Id;
+            LoadPatientsData(dataAccess.getPatients(idMed));
+            tablePatient.ReadOnly = true;
             tablePatient.Refresh();
             
         }      
@@ -46,15 +48,18 @@ namespace InventLab
         }
         public void updateData()
         {
+
             tablePatient.Refresh();
             this.tablePatient.DataSource = null;
-            this.tablePatient.DataSource = dataAccess.getPatients();
+            int idMed = currentUser.Id;
+            this.tablePatient.DataSource = dataAccess.getPatients(idMed);
             this.tablePatient.Columns["id"].Visible = false;
         }
         private void buttonAddPatientPage_Click(object sender, EventArgs e)
         {
-            formPatient formPatient = new formPatient(this.currentUser);
+            formPatient formPatient = new formPatient(this.currentUser, this);
             formPatient.Show();
+
         }
 
         private void tablePatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,6 +78,7 @@ namespace InventLab
                 Patient patient = new Patient(id);
                 int result = dataAccess.deletePatient(patient);
                 // MessageBox.Show(result.ToString());
+
                updateData();
             }
         }

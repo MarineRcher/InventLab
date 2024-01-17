@@ -24,6 +24,7 @@ namespace InventLab
         {
             string Allergie = inputNameAllergy.Text;
             dataAccess.addAllergy(Allergie);
+            this.Close();
         }
 
         private void inputNameAllergy_TextChanged(object sender, EventArgs e)
@@ -36,11 +37,6 @@ namespace InventLab
 
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+     
     }
 }

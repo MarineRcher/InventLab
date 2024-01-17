@@ -26,22 +26,10 @@ namespace InventLab
            
             GestionPatient gestionPatients = new GestionPatient(this.currentUser);
             gestionPatients.Show();
-            this.Hide();
         }
 
-        private void addOrdonnanceToolStripMenuItem_click(object sender, EventArgs e)
-        {
-            addOrdonnance addOrd = new addOrdonnance(this.currentUser);
-                addOrd.Show();
-            this.Hide();
-        }
+      
 
-        private void ajoutDunPatientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formPatient addPatient = new formPatient(this.currentUser);
-            addPatient.Show();
-            this.Hide();
-        }
 
 
         private void inventaireToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,14 +37,14 @@ namespace InventLab
           
             FormDrug formDrug = new FormDrug(this.currentUser);
             formDrug.Show();
-            this.Hide();
+           
         }
 
         private void ajouterUneAllergieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             addAllergy addal = new addAllergy(this.currentUser);
             addal.Show();
-            this.Hide();
+            
         }
 
         private void ajoutsDantécédentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,21 +52,16 @@ namespace InventLab
          
             AddAntecedent addAntecedent = new AddAntecedent(this.currentUser);
             addAntecedent.Show();
-                this.Hide();
+             
         }
 
-        public void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            signUp signUp = new signUp(this.currentUser);
-            signUp.Show();
-            this.Hide();
-        }
+        
 
         public void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestionUsers gestionUsers = new GestionUsers(this.currentUser); 
             gestionUsers.Show();
-            this.Hide();
+          
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -110,7 +93,7 @@ namespace InventLab
         {
             GestionOrdonnance gestionOrdonnance = new GestionOrdonnance(this.currentUser);
             gestionOrdonnance.Show();
-            this.Hide();
+       
         }
 
         private void gestionMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)

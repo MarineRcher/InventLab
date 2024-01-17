@@ -15,13 +15,15 @@ namespace InventLab
     {
         private User currentUser;
         UserDataAccess dataAccess = new UserDataAccess();
-        public EditPassword(User user, User currentUser)
+        private GestionMotDePasse gestionMotDePasse;
+        public EditPassword(User user, User currentUser, GestionMotDePasse gestionMotDePasse)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             label3.Text = user.Name + ' ' + user.LastName;
             label5.Text = user.Id.ToString();
             label5.Visible = false;
+            this.gestionMotDePasse = gestionMotDePasse;
         }
 
         private void EditPassword_Load(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace InventLab
                 if (password.Equals(passwordConfirm))
                 {
                     dataAccess.updatePasswordUser(id, password);
+                    gestionMotDePasse.updateData(); ;
                 }
                 else
                 {

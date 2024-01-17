@@ -15,6 +15,7 @@ namespace InventLab
             LoadDrugData(dataAccess.selectDrug()); ;
             tableDrug.Refresh();
             this.currentUser = user;
+            tableDrug.ReadOnly = true;
         }
 
         private void buttonAddDrug_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace InventLab
             tableDrug.Refresh();
             this.tableDrug.DataSource = null;
             this.tableDrug.DataSource = dataAccess.selectDrug();
+            this.tableDrug.Columns["Id"].Visible = false;
         }
         private void LoadDrugData(List<Drug> drugs)
         {
@@ -70,7 +72,7 @@ namespace InventLab
                 string oldContreIndic = selectedRow.Cells["contreIndication"].Value.ToString();
                 string quantityStr = selectedRow.Cells["quantity"].Value.ToString();
                 int oldQuantity = System.Convert.ToInt32(quantityStr);
-                EditDrug editDrug = new EditDrug(oldName, oldDescription,oldContreIndic, oldQuantity, this.currentUser);
+                EditDrug editDrug = new EditDrug(oldName, oldDescription,oldContreIndic, oldQuantity, this.currentUser, this);
                 editDrug.Show();
             }
         }
@@ -129,11 +131,6 @@ namespace InventLab
 
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
-        {
-            HomePage home = new HomePage(this.currentUser);
-            home.Show();
-            this.Close();
-        }
+        
     }
 }

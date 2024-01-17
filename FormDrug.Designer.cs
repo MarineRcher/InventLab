@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrug));
             this.inputNameAddDrug = new System.Windows.Forms.TextBox();
             this.inputDescriptionAddDrug = new System.Windows.Forms.TextBox();
             this.buttonAddDrug = new System.Windows.Forms.Button();
@@ -41,37 +40,32 @@
             this.searchDrug = new System.Windows.Forms.TextBox();
             this.inputContreIndication = new System.Windows.Forms.TextBox();
             this.contreIndicationDRug = new System.Windows.Forms.Label();
-            this.HomePage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // inputNameAddDrug
             // 
-            this.inputNameAddDrug.Location = new System.Drawing.Point(35, 111);
-            this.inputNameAddDrug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputNameAddDrug.Location = new System.Drawing.Point(26, 90);
             this.inputNameAddDrug.Name = "inputNameAddDrug";
-            this.inputNameAddDrug.Size = new System.Drawing.Size(339, 22);
+            this.inputNameAddDrug.Size = new System.Drawing.Size(255, 20);
             this.inputNameAddDrug.TabIndex = 0;
             this.inputNameAddDrug.TextChanged += new System.EventHandler(this.inputNameAddDrug_TextChanged);
             // 
             // inputDescriptionAddDrug
             // 
-            this.inputDescriptionAddDrug.Location = new System.Drawing.Point(35, 206);
-            this.inputDescriptionAddDrug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputDescriptionAddDrug.Location = new System.Drawing.Point(26, 167);
             this.inputDescriptionAddDrug.Name = "inputDescriptionAddDrug";
-            this.inputDescriptionAddDrug.Size = new System.Drawing.Size(339, 22);
+            this.inputDescriptionAddDrug.Size = new System.Drawing.Size(255, 20);
             this.inputDescriptionAddDrug.TabIndex = 1;
             this.inputDescriptionAddDrug.TextChanged += new System.EventHandler(this.inputDescriptionAddDrug_TextChanged);
             // 
             // buttonAddDrug
             // 
-            this.buttonAddDrug.Location = new System.Drawing.Point(35, 464);
-            this.buttonAddDrug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddDrug.Location = new System.Drawing.Point(26, 377);
             this.buttonAddDrug.Name = "buttonAddDrug";
-            this.buttonAddDrug.Size = new System.Drawing.Size(339, 49);
+            this.buttonAddDrug.Size = new System.Drawing.Size(254, 40);
             this.buttonAddDrug.TabIndex = 2;
             this.buttonAddDrug.Text = "Ajouter le médicament";
             this.buttonAddDrug.UseVisualStyleBackColor = true;
@@ -80,10 +74,9 @@
             // labelNameAddDrug
             // 
             this.labelNameAddDrug.AutoSize = true;
-            this.labelNameAddDrug.Location = new System.Drawing.Point(32, 70);
-            this.labelNameAddDrug.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNameAddDrug.Location = new System.Drawing.Point(24, 57);
             this.labelNameAddDrug.Name = "labelNameAddDrug";
-            this.labelNameAddDrug.Size = new System.Drawing.Size(113, 16);
+            this.labelNameAddDrug.Size = new System.Drawing.Size(89, 13);
             this.labelNameAddDrug.TabIndex = 4;
             this.labelNameAddDrug.Text = "Nom médicament";
             this.labelNameAddDrug.Click += new System.EventHandler(this.label1_Click);
@@ -91,51 +84,49 @@
             // labelDescriptionAddDrug
             // 
             this.labelDescriptionAddDrug.AutoSize = true;
-            this.labelDescriptionAddDrug.Location = new System.Drawing.Point(32, 171);
-            this.labelDescriptionAddDrug.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescriptionAddDrug.Location = new System.Drawing.Point(24, 139);
             this.labelDescriptionAddDrug.Name = "labelDescriptionAddDrug";
-            this.labelDescriptionAddDrug.Size = new System.Drawing.Size(152, 16);
+            this.labelDescriptionAddDrug.Size = new System.Drawing.Size(120, 13);
             this.labelDescriptionAddDrug.TabIndex = 5;
             this.labelDescriptionAddDrug.Text = "Description médicament";
             // 
             // inputQuantityFormDrug
             // 
             this.inputQuantityFormDrug.AutoSize = true;
-            this.inputQuantityFormDrug.Location = new System.Drawing.Point(32, 350);
-            this.inputQuantityFormDrug.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.inputQuantityFormDrug.Location = new System.Drawing.Point(24, 284);
             this.inputQuantityFormDrug.Name = "inputQuantityFormDrug";
-            this.inputQuantityFormDrug.Size = new System.Drawing.Size(56, 16);
+            this.inputQuantityFormDrug.Size = new System.Drawing.Size(47, 13);
             this.inputQuantityFormDrug.TabIndex = 7;
             this.inputQuantityFormDrug.Text = "Quantité";
             this.inputQuantityFormDrug.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // inputQuantityAddDrug
             // 
-            this.inputQuantityAddDrug.Location = new System.Drawing.Point(35, 388);
-            this.inputQuantityAddDrug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inputQuantityAddDrug.Location = new System.Drawing.Point(26, 315);
+            this.inputQuantityAddDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.inputQuantityAddDrug.Name = "inputQuantityAddDrug";
-            this.inputQuantityAddDrug.Size = new System.Drawing.Size(59, 22);
+            this.inputQuantityAddDrug.Size = new System.Drawing.Size(44, 20);
             this.inputQuantityAddDrug.TabIndex = 9;
             this.inputQuantityAddDrug.ValueChanged += new System.EventHandler(this.inputQuantityAddDrug_ValueChanged);
             // 
             // tableDrug
             // 
             this.tableDrug.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableDrug.Location = new System.Drawing.Point(420, 96);
-            this.tableDrug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableDrug.Location = new System.Drawing.Point(315, 78);
+            this.tableDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableDrug.Name = "tableDrug";
             this.tableDrug.RowHeadersWidth = 51;
             this.tableDrug.RowTemplate.Height = 24;
-            this.tableDrug.Size = new System.Drawing.Size(597, 402);
+            this.tableDrug.Size = new System.Drawing.Size(448, 327);
             this.tableDrug.TabIndex = 10;
             this.tableDrug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableDrug_CellContentClick);
             // 
             // deleteDrug
             // 
-            this.deleteDrug.Location = new System.Drawing.Point(1032, 417);
-            this.deleteDrug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteDrug.Location = new System.Drawing.Point(774, 339);
+            this.deleteDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteDrug.Name = "deleteDrug";
-            this.deleteDrug.Size = new System.Drawing.Size(260, 81);
+            this.deleteDrug.Size = new System.Drawing.Size(195, 66);
             this.deleteDrug.TabIndex = 11;
             this.deleteDrug.Text = "Supprimer le médicament";
             this.deleteDrug.UseVisualStyleBackColor = true;
@@ -143,59 +134,47 @@
             // 
             // searchDrug
             // 
-            this.searchDrug.Location = new System.Drawing.Point(469, 34);
-            this.searchDrug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchDrug.Location = new System.Drawing.Point(352, 28);
+            this.searchDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchDrug.Name = "searchDrug";
-            this.searchDrug.Size = new System.Drawing.Size(455, 22);
+            this.searchDrug.Size = new System.Drawing.Size(342, 20);
             this.searchDrug.TabIndex = 12;
             this.searchDrug.Text = "Rechercher";
             this.searchDrug.TextChanged += new System.EventHandler(this.searchDrug_TextChanged);
             // 
             // inputContreIndication
             // 
-            this.inputContreIndication.Location = new System.Drawing.Point(35, 283);
-            this.inputContreIndication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inputContreIndication.Location = new System.Drawing.Point(26, 230);
+            this.inputContreIndication.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.inputContreIndication.Name = "inputContreIndication";
-            this.inputContreIndication.Size = new System.Drawing.Size(339, 22);
+            this.inputContreIndication.Size = new System.Drawing.Size(255, 20);
             this.inputContreIndication.TabIndex = 13;
             // 
             // contreIndicationDRug
             // 
             this.contreIndicationDRug.AutoSize = true;
-            this.contreIndicationDRug.Location = new System.Drawing.Point(35, 254);
+            this.contreIndicationDRug.Location = new System.Drawing.Point(26, 206);
+            this.contreIndicationDRug.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contreIndicationDRug.Name = "contreIndicationDRug";
-            this.contreIndicationDRug.Size = new System.Drawing.Size(106, 16);
+            this.contreIndicationDRug.Size = new System.Drawing.Size(86, 13);
             this.contreIndicationDRug.TabIndex = 14;
             this.contreIndicationDRug.Text = "Contre indication";
             this.contreIndicationDRug.Click += new System.EventHandler(this.label1_Click_2);
             // 
-            // HomePage
-            // 
-            this.HomePage.Image = ((System.Drawing.Image)(resources.GetObject("HomePage.Image")));
-            this.HomePage.Location = new System.Drawing.Point(1164, 34);
-            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HomePage.Name = "HomePage";
-            this.HomePage.Size = new System.Drawing.Size(61, 62);
-            this.HomePage.TabIndex = 15;
-            this.HomePage.TabStop = false;
-            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(572, 236);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(429, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 16;
             // 
             // FormDrug
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 554);
+            this.ClientSize = new System.Drawing.Size(971, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.HomePage);
             this.Controls.Add(this.contreIndicationDRug);
             this.Controls.Add(this.inputContreIndication);
             this.Controls.Add(this.searchDrug);
@@ -208,13 +187,11 @@
             this.Controls.Add(this.buttonAddDrug);
             this.Controls.Add(this.inputDescriptionAddDrug);
             this.Controls.Add(this.inputNameAddDrug);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDrug";
             this.Text = "FormDrug";
             this.Load += new System.EventHandler(this.FormDrug_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +211,6 @@
         private System.Windows.Forms.TextBox searchDrug;
         private System.Windows.Forms.TextBox inputContreIndication;
         private System.Windows.Forms.Label contreIndicationDRug;
-        private System.Windows.Forms.PictureBox HomePage;
         private System.Windows.Forms.Label label3;
     }
 }
