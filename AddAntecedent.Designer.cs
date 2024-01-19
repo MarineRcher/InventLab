@@ -37,28 +37,27 @@
             // 
             this.titleAntecedent.AutoSize = true;
             this.titleAntecedent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleAntecedent.Location = new System.Drawing.Point(25, 24);
-            this.titleAntecedent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleAntecedent.Location = new System.Drawing.Point(33, 30);
             this.titleAntecedent.Name = "titleAntecedent";
-            this.titleAntecedent.Size = new System.Drawing.Size(245, 26);
+            this.titleAntecedent.Size = new System.Drawing.Size(314, 32);
             this.titleAntecedent.TabIndex = 0;
             this.titleAntecedent.Text = "Ajouter un antécédent";
             // 
             // inputAntecedent
             // 
-            this.inputAntecedent.Location = new System.Drawing.Point(87, 167);
-            this.inputAntecedent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inputAntecedent.Location = new System.Drawing.Point(116, 206);
+            this.inputAntecedent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputAntecedent.Name = "inputAntecedent";
-            this.inputAntecedent.Size = new System.Drawing.Size(174, 20);
+            this.inputAntecedent.Size = new System.Drawing.Size(231, 22);
             this.inputAntecedent.TabIndex = 1;
             this.inputAntecedent.TextChanged += new System.EventHandler(this.inputAntecedent_TextChanged);
             // 
             // buttonAddAntecedent
             // 
-            this.buttonAddAntecedent.Location = new System.Drawing.Point(102, 223);
-            this.buttonAddAntecedent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddAntecedent.Location = new System.Drawing.Point(136, 274);
+            this.buttonAddAntecedent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddAntecedent.Name = "buttonAddAntecedent";
-            this.buttonAddAntecedent.Size = new System.Drawing.Size(136, 46);
+            this.buttonAddAntecedent.Size = new System.Drawing.Size(181, 57);
             this.buttonAddAntecedent.TabIndex = 2;
             this.buttonAddAntecedent.Text = "Ajouter";
             this.buttonAddAntecedent.UseVisualStyleBackColor = true;
@@ -66,13 +65,14 @@
             // 
             // AddAntecedent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.buttonAddAntecedent;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 427);
+            this.ClientSize = new System.Drawing.Size(469, 526);
             this.Controls.Add(this.buttonAddAntecedent);
             this.Controls.Add(this.inputAntecedent);
             this.Controls.Add(this.titleAntecedent);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddAntecedent";
             this.Text = "AddAntecedent";
             this.Load += new System.EventHandler(this.AddAntecedent_Load);

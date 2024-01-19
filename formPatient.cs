@@ -27,6 +27,7 @@ namespace InventLab
             InitializeComponent();
             this.currentUser = user;
             this.gestionPatientForm = gestionPatientForm;
+            DateTimePicker timePickerBirth = new DateTimePicker();
         }
 
         private void FormPatient_Load(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace InventLab
             string name = inputNamePatient.Text;
             string lastName = inputLastNamePatient.Text;
 
-            DateTimePicker timePickerBirth = new DateTimePicker(); 
+           
             DateTime selectedDate = timePickerBirth.Value; 
             string birth = selectedDate.ToString("yyyy-MM-dd");
             int id = currentUser.Id;

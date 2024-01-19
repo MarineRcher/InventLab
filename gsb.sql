@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 12 jan. 2024 à 08:07
+-- Généré le : ven. 19 jan. 2024 à 09:51
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf-8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données : `gsb`
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `allergie` (
   `id_al` int NOT NULL AUTO_INCREMENT,
   `libelle_al` varchar(50) NOT NULL,
   PRIMARY KEY (`id_al`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `allergie`
@@ -42,7 +42,7 @@ INSERT INTO `allergie` (`id_al`, `libelle_al`) VALUES
 (1, 'Allergie à l\'aspirine'),
 (2, 'Allergie au paracétamol'),
 (3, 'Réaction allergique aux pénicillines'),
-(4, 'test'),
+(4, ''),
 (5, 'allergie au soleil');
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `antecedent` (
   `id_a` int NOT NULL AUTO_INCREMENT,
   `libelle_a` varchar(50) NOT NULL,
   PRIMARY KEY (`id_a`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `antecedent`
@@ -78,7 +78,7 @@ INSERT INTO `antecedent` (`id_a`, `libelle_a`) VALUES
 (13, 'Dépendance'),
 (14, 'Porphyrie aiguë'),
 (15, 'Saignement actif'),
-(16, 'test');
+(16, '');
 
 -- --------------------------------------------------------
 
@@ -92,14 +92,20 @@ CREATE TABLE IF NOT EXISTS `a_eu` (
   `id_p` int NOT NULL,
   PRIMARY KEY (`id_a`,`id_p`),
   KEY `a_eu_Patient0_FK` (`id_p`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `a_eu`
 --
 
 INSERT INTO `a_eu` (`id_a`, `id_p`) VALUES
-(1, 1);
+(5, 1),
+(6, 1),
+(7, 1),
+(13, 9),
+(4, 10),
+(16, 11),
+(9, 12);
 
 -- --------------------------------------------------------
 
@@ -113,15 +119,20 @@ CREATE TABLE IF NOT EXISTS `est` (
   `id_p` int NOT NULL,
   PRIMARY KEY (`id_al`,`id_p`),
   KEY `est_Patient0_FK` (`id_p`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `est`
 --
 
 INSERT INTO `est` (`id_al`, `id_p`) VALUES
-(1, 1),
-(2, 1);
+(2, 1),
+(4, 1),
+(5, 1),
+(5, 9),
+(3, 10),
+(4, 11),
+(4, 12);
 
 -- --------------------------------------------------------
 
@@ -139,15 +150,15 @@ CREATE TABLE IF NOT EXISTS `incompatible` (
   KEY `incompatible_Medicament0_FK` (`id_med`),
   KEY `incompatible_Allergie1_FK` (`id_al`),
   KEY `incompatible_Medicament2_FK` (`id_med_Medicament`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `incompatible`
 --
 
 INSERT INTO `incompatible` (`id_a`, `id_med`, `id_al`, `id_med_Medicament`) VALUES
-(NULL, 3, 1, NULL),
-(1, 4, NULL, NULL);
+(1, 3, 1, 2),
+(1, 4, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -163,16 +174,21 @@ CREATE TABLE IF NOT EXISTS `medecin` (
   `login_m` varchar(50) NOT NULL,
   `email_m` varchar(100) NOT NULL,
   `password_m` varchar(255) NOT NULL,
-  `role` varchar(10) DEFAULT NULL,
+  `role` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `modificationMotDePasse` varchar(7) NOT NULL,
   PRIMARY KEY (`id_m`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `medecin`
 --
 
-INSERT INTO `medecin` (`id_m`, `nom_m`, `prenom_m`, `login_m`, `email_m`, `password_m`, `role`) VALUES
-(1, 'dupont', 'jean', 'admin', 'admin@gmail.com', 'admin', NULL);
+INSERT INTO `medecin` (`id_m`, `nom_m`, `prenom_m`, `login_m`, `email_m`, `password_m`, `role`, `modificationMotDePasse`) VALUES
+(2, 'richer', 'marine', 'marine', 'marine.richergmailcom', 'password', 'Admin', 'Yes'),
+(5, 'Veiniel', 'Arthur', 'medecinVeiniel', 'arthur.veiniel@gmail.com', '123456', 'Utilisateur', ''),
+(6, 'Panneau', 'Sylvie', 'informatiqueSupport', 'Sylvie.Panneau@gmail.com', 'gr7mopA7', 'Admin', 'Yes'),
+(7, 'Lopez', 'Marianne', 'medecinLopez', 'marianne.lopez@gmail.com', 'motdepasse', 'Utilisateur', ''),
+(13, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -188,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `medicament` (
   `description` varchar(50) NOT NULL,
   `quantity` int NOT NULL,
   PRIMARY KEY (`id_med`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `medicament`
@@ -198,7 +214,7 @@ INSERT INTO `medicament` (`id_med`, `libelle_med`, `contre_indication`, `descrip
 (1, 'Aspirine', 'Allergie à l\'aspirine', 'maux de tête', 6),
 (2, 'Paracétamol', 'Allergie au paracétamol', 'maux de tête', 6),
 (3, 'Ibuprofène', 'Ulcères gastriques actifs', 'maux de tête', 6),
-(4, 'Amoxicilline', 'Réaction allergique aux pénicillines', 'maux de tête', 6),
+(4, 'Amoxicilline', 'Réaction allergique aux pénicillines', 'maux de tête', 4),
 (5, 'Ciprofloxacine', 'Tendinite', 'maux de tête', 6),
 (6, 'Metformine', 'Insuffisance rénale', 'maux de tête', 6),
 (7, 'Omeprazole', 'Grossesse', 'maux de tête', 6),
@@ -236,14 +252,14 @@ CREATE TABLE IF NOT EXISTS `ordonnance` (
   KEY `ordonnance_Medecin_FK` (`id_m`),
   KEY `ordonnance_Patient0_FK` (`id_p`),
   KEY `ordonnance_Medicament1_FK` (`id_med`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `ordonnance`
 --
 
 INSERT INTO `ordonnance` (`id_o`, `posologie`, `duree_traitement`, `instruction_specifique`, `id_m`, `id_p`, `id_med`, `date_o`) VALUES
-(1, '1 cachet, 3 fois par jour', 5, 'Pendant le repas', 1, 1, 1, '0000-00-00');
+(2, 'Maux de tete', 2, 'Toutes les 4 heures', 2, 1, 1, '2024-01-16');
 
 -- --------------------------------------------------------
 
@@ -254,37 +270,25 @@ INSERT INTO `ordonnance` (`id_o`, `posologie`, `duree_traitement`, `instruction_
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE IF NOT EXISTS `patient` (
   `id_p` int NOT NULL AUTO_INCREMENT,
-  `nom_p` varchar(50) CHARACTER SET utf-8 COLLATE utf-8_unicode_ci NOT NULL,
+  `nom_p` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `prenom_p` varchar(50) NOT NULL,
   `sexe` char(5) NOT NULL,
   `birth` date NOT NULL,
-  PRIMARY KEY (`id_p`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf-8 COLLATE=utf-8_unicode_ci;
+  `id_m` int DEFAULT NULL,
+  PRIMARY KEY (`id_p`),
+  KEY `patient_Medecin_FK` (`id_m`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `patient`
 --
--- --------------------------------------------------------
 
---
--- Modification de la structure de la table `medecin`
---
-ALTER TABLE `medecin`
-ADD COLUMN `role` varchar(50) DEFAULT NULL AFTER `password_m`;
-
--- --------------------------------------------------------
-
---
--- Modification de la structure de la table `patient`
---
-ALTER TABLE `patient`
-ADD COLUMN `id_m` int DEFAULT NULL AFTER `birth`,
-ADD CONSTRAINT `patient_Medecin_FK` FOREIGN KEY (`id_m`) REFERENCES `medecin` (`id_m`);
-
-
-INSERT INTO `patient` (`id_p`, `nom_p`, `prenom_p`, `sexe`, `birth`) VALUES
-(1, 'Dupont', 'Jean', 'M', '2024-01-10'),
-(4, 'dupont', 'karine', 'F', '2024-01-11');
+INSERT INTO `patient` (`id_p`, `nom_p`, `prenom_p`, `sexe`, `birth`, `id_m`) VALUES
+(1, 'Dupont', 'Jean', 'H', '2024-01-10', 2),
+(9, 'Berlin', 'Mathis', 'H', '2024-01-16', 5),
+(10, 'Poli', 'Laure', 'F', '2024-01-16', 5),
+(11, 'Arras', 'Paul', 'H', '2024-01-16', 5),
+(12, 'GAILLETON', 'David', 'H', '2024-01-01', 2);
 
 --
 -- Contraintes pour les tables déchargées
@@ -320,6 +324,12 @@ ALTER TABLE `ordonnance`
   ADD CONSTRAINT `ordonnance_Medecin_FK` FOREIGN KEY (`id_m`) REFERENCES `medecin` (`id_m`),
   ADD CONSTRAINT `ordonnance_Medicament1_FK` FOREIGN KEY (`id_med`) REFERENCES `medicament` (`id_med`),
   ADD CONSTRAINT `ordonnance_Patient0_FK` FOREIGN KEY (`id_p`) REFERENCES `patient` (`id_p`);
+
+--
+-- Contraintes pour la table `patient`
+--
+ALTER TABLE `patient`
+  ADD CONSTRAINT `patient_Medecin_FK` FOREIGN KEY (`id_m`) REFERENCES `medecin` (`id_m`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

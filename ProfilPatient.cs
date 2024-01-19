@@ -23,7 +23,7 @@ namespace InventLab
         public ProfilPatient(int Id, User user)
         {
             InitializeComponent();
-
+            DateTimePicker editBirthPatient = new DateTimePicker();
             tableAllergiesPatient.Refresh();
             tableAntecedents.Refresh();
 
@@ -41,7 +41,7 @@ namespace InventLab
             tableAllergiesPatient.ReadOnly = true;
             tableAntecedents.ReadOnly = true;
             BirthTimePicker.Visible = false;
-
+         
         }
 
         private void LoadPatientsData(List<Patient> patients)
@@ -99,7 +99,8 @@ namespace InventLab
             printBirthPatient.Visible=false;
           
             ButtonEditBirth.Visible = true;
-          
+            
+
         }
 
         private void ButtonEditBirth_Click(object sender, EventArgs e)
@@ -107,8 +108,8 @@ namespace InventLab
 
             string name = "null";
             string lastName = "null";
-            DateTimePicker editBirthPatient = new DateTimePicker();
-            DateTime selectedDate = editBirthPatient.Value;
+           
+            DateTime selectedDate = BirthTimePicker.Value;
             string newBirth = selectedDate.ToString("yyyy-MM-dd");
           
             string sexe = "null";
