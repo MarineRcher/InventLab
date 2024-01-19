@@ -33,6 +33,9 @@ namespace InventLab
             this.tablePassword.Columns["Login"].Visible = false;
                 this.tablePassword.Columns["Password"].Visible = false;
                 this.tablePassword.Columns["Role"].Visible = false;
+                tablePassword.Columns["Name"].HeaderText = "Prénom";
+                tablePassword.Columns["LastName"].HeaderText = "Nom de famille";
+             
             }  
 
         }
@@ -46,7 +49,8 @@ namespace InventLab
             this.tablePassword.Columns["Login"].Visible = false;
             this.tablePassword.Columns["Password"].Visible = false;
             this.tablePassword.Columns["Role"].Visible = false;
-
+            tablePassword.Columns["Name"].HeaderText = "Prénom";
+            tablePassword.Columns["LastName"].HeaderText = "Nom de famille";
         }
 
         private void tablePassword_CellContentClick(object sender, DataGridViewCellEventArgs e)

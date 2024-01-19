@@ -43,7 +43,7 @@
             this.tableOrdonnance.Location = new System.Drawing.Point(21, 103);
             this.tableOrdonnance.Name = "tableOrdonnance";
             this.tableOrdonnance.RowHeadersWidth = 51;
-            this.tableOrdonnance.Size = new System.Drawing.Size(564, 335);
+            this.tableOrdonnance.Size = new System.Drawing.Size(837, 478);
             this.tableOrdonnance.TabIndex = 0;
             // 
             // printTitleOrdo
@@ -58,7 +58,7 @@
             // printNameUser
             // 
             this.printNameUser.AutoSize = true;
-            this.printNameUser.Location = new System.Drawing.Point(386, 25);
+            this.printNameUser.Location = new System.Drawing.Point(377, 25);
             this.printNameUser.Name = "printNameUser";
             this.printNameUser.Size = new System.Drawing.Size(46, 13);
             this.printNameUser.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // buttonDeleteOrdo
             // 
-            this.buttonDeleteOrdo.Location = new System.Drawing.Point(591, 373);
+            this.buttonDeleteOrdo.Location = new System.Drawing.Point(883, 516);
             this.buttonDeleteOrdo.Name = "buttonDeleteOrdo";
             this.buttonDeleteOrdo.Size = new System.Drawing.Size(197, 65);
             this.buttonDeleteOrdo.TabIndex = 3;
@@ -78,7 +78,7 @@
             // printLastNameUser
             // 
             this.printLastNameUser.AutoSize = true;
-            this.printLastNameUser.Location = new System.Drawing.Point(438, 25);
+            this.printLastNameUser.Location = new System.Drawing.Point(418, 25);
             this.printLastNameUser.Name = "printLastNameUser";
             this.printLastNameUser.Size = new System.Drawing.Size(27, 13);
             this.printLastNameUser.TabIndex = 6;
@@ -86,7 +86,7 @@
             // 
             // addOrdo
             // 
-            this.addOrdo.Location = new System.Drawing.Point(591, 253);
+            this.addOrdo.Location = new System.Drawing.Point(883, 392);
             this.addOrdo.Name = "addOrdo";
             this.addOrdo.Size = new System.Drawing.Size(197, 65);
             this.addOrdo.TabIndex = 7;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1110, 609);
             this.Controls.Add(this.addOrdo);
             this.Controls.Add(this.printLastNameUser);
             this.Controls.Add(this.buttonDeleteOrdo);

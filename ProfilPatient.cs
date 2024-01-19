@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static InventLab.AllergyDataAccess;
 using static InventLab.GestionPatient;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace InventLab
 {
@@ -19,39 +20,51 @@ namespace InventLab
         private AllergyDataAccess dataAccessAllergy = new AllergyDataAccess();
         private antecedentsDataAccess dataAccessAntecedents = new antecedentsDataAccess();
         private User currentUser;
-        public ProfilPatient(Patient patient, User user)
+        public ProfilPatient(int Id, User user)
         {
             InitializeComponent();
 
             tableAllergiesPatient.Refresh();
             tableAntecedents.Refresh();
 
-            // Print nom et prénom patient
-            NameAndLastname.Text = patient.Name + " " + patient.LastName;
-            printBirthPatient.Text = patient.Birth;
-            printSexePatient.Text = patient.Sexe;
-            id.Text= patient.Id.ToString();
+            
             ButtonEditBirth.Visible = false;
-           editBirthPatient.Visible = false;
+         
             this.id.Visible =false;
-
-            int idPatient = patient.Id;
+            List<Patient> patientData = dataAccess.getPatient(Id);
+            LoadPatientsData(patientData);
+            int idPatient = Id;
             LoadAllergies(dataAccessAllergy.GetAllergyByPatient(idPatient));
             LoadAntecedents(dataAccessAntecedents.GetAntecedentByPatient(idPatient));
 
             this.currentUser = user;
             tableAllergiesPatient.ReadOnly = true;
             tableAntecedents.ReadOnly = true;
+            BirthTimePicker.Visible = false;
+
         }
 
-    
+        private void LoadPatientsData(List<Patient> patients)
+        {
+            if (patients != null && patients.Any())
+            {
+              
+                var patient = patients.First();
+                NameAndLastname.Text = patient.Name + " " + patient.LastName;
+                printBirthPatient.Text = patient.Birth;
+                printSexePatient.Text = patient.Sexe;
+                id.Text = patient.Id.ToString();
+            }
+        }
 
+       
 
         private void LoadAllergies(List<AllergyDataAccess.Allergy> allergies)
         {
             if (allergies != null)
             {
                 tableAllergiesPatient.DataSource = allergies;
+                tableAllergiesPatient.Columns["Name"].HeaderText = "Nom de l'allergie";
             }
         }
         private void LoadAntecedents(List<antecedentsDataAccess.Antecedent> antecedents)
@@ -59,6 +72,7 @@ namespace InventLab
             if (antecedents != null)
             {
                 tableAntecedents.DataSource = antecedents;
+                tableAllergiesPatient.Columns["Name"].HeaderText = "Nom de l'antécédent";
             }
         }
 
@@ -80,7 +94,7 @@ namespace InventLab
 
         private void editBirth_Click(object sender, EventArgs e)
         {
-            editBirthPatient.Visible = true;
+            BirthTimePicker.Visible = true;
             editBirth.Visible = false;
             printBirthPatient.Visible=false;
           
@@ -90,6 +104,7 @@ namespace InventLab
 
         private void ButtonEditBirth_Click(object sender, EventArgs e)
         {
+
             string name = "null";
             string lastName = "null";
             DateTimePicker editBirthPatient = new DateTimePicker();
@@ -100,12 +115,14 @@ namespace InventLab
             int idPatient = Convert.ToInt32(id.Text);
             Patient patient = new Patient(idPatient, name, lastName, newBirth, sexe);
             dataAccess.updateBirth(patient);
+            List<Patient> patientData = dataAccess.getPatient(idPatient);
+            LoadPatientsData(patientData);
 
-           
             editBirth.Visible = true;
             printBirthPatient.Visible = true;
             ButtonEditBirth.Visible = false;
-            
+
+            BirthTimePicker.Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

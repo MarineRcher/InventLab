@@ -42,7 +42,11 @@ namespace InventLab
             if (patients != null)
             {
                 tablePatient.DataSource = patients;
-                this.tablePatient.Columns["id"].Visible = false;
+                this.tablePatient.Columns["id"].Visible = false; 
+                tablePatient.Columns["Name"].HeaderText = "Prénom";
+                tablePatient.Columns["LastName"].HeaderText = "Nom de famille";
+                tablePatient.Columns["Birth"].HeaderText = "Date de naissance";
+
             }
 
         }
@@ -54,6 +58,9 @@ namespace InventLab
             int idMed = currentUser.Id;
             this.tablePatient.DataSource = dataAccess.getPatients(idMed);
             this.tablePatient.Columns["id"].Visible = false;
+            tablePatient.Columns["Name"].HeaderText = "Prénom";
+            tablePatient.Columns["LastName"].HeaderText = "Nom de famille";
+            tablePatient.Columns["Birth"].HeaderText = "Date de naissance";
         }
         private void buttonAddPatientPage_Click(object sender, EventArgs e)
         {
@@ -88,14 +95,11 @@ namespace InventLab
             if (tablePatient.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = tablePatient.SelectedRows[0];
-                string name = selectedRow.Cells["name"].Value.ToString();
-                string lastName = selectedRow.Cells["lastName"].Value.ToString();
-                string birth = selectedRow.Cells["birth"].Value.ToString();
-                string sexe = selectedRow.Cells["sexe"].Value.ToString();
+
+
                 int id = (int)selectedRow.Cells["id"].Value;
-               
-                Patient patient = new Patient(id, name, lastName, birth, sexe);
-                ProfilPatient profilPatient = new ProfilPatient(patient, this.currentUser);
+                
+                ProfilPatient profilPatient = new ProfilPatient(id, this.currentUser);
                 profilPatient.Show();
 
             }

@@ -83,7 +83,42 @@ namespace InventLab
             } 
            
         }
-        
+        public List<Patient> getPatient(int Id)
+        {
+            this.patients = new List<Patient>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                conn.Open();
+                string query = "select id_p, prenom_p, nom_p, DATE_FORMAT(birth, '%d/%m/%Y') as birth, sexe from patient where id_p=@id";
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@id", Id);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Patient patient = new Patient();
+                            patient.Id = reader.GetInt32("id_p");
+                            patient.Name = reader.GetString("prenom_p");
+                            patient.LastName = reader.GetString("nom_p");
+                            patient.Birth = reader.GetString("birth");
+                            patient.Sexe = reader.GetString("sexe");
+
+
+                            patients.Add(patient);
+                        }
+                        return patients;
+
+                    }
+
+                }
+
+            }
+
+        }
+
         public int deletePatient(Patient patient)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))

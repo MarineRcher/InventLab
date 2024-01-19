@@ -45,7 +45,7 @@
             this.id = new System.Windows.Forms.Label();
             this.editBirth = new System.Windows.Forms.PictureBox();
             this.ButtonEditBirth = new System.Windows.Forms.Button();
-            this.editBirthPatient = new System.Windows.Forms.DateTimePicker();
+            this.BirthTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.tableAllergiesPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableAntecedents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editBirth)).BeginInit();
@@ -112,7 +112,7 @@
             // 
             this.tableAllergiesPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableAllergiesPatient.Location = new System.Drawing.Point(477, 136);
-            this.tableAllergiesPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableAllergiesPatient.Margin = new System.Windows.Forms.Padding(2);
             this.tableAllergiesPatient.Name = "tableAllergiesPatient";
             this.tableAllergiesPatient.RowHeadersWidth = 51;
             this.tableAllergiesPatient.RowTemplate.Height = 24;
@@ -124,7 +124,7 @@
             // 
             this.tableAntecedents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableAntecedents.Location = new System.Drawing.Point(477, 370);
-            this.tableAntecedents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableAntecedents.Margin = new System.Windows.Forms.Padding(2);
             this.tableAntecedents.Name = "tableAntecedents";
             this.tableAntecedents.RowHeadersWidth = 51;
             this.tableAntecedents.RowTemplate.Height = 24;
@@ -155,7 +155,7 @@
             // buttonAddAllergyPatient
             // 
             this.buttonAddAllergyPatient.Location = new System.Drawing.Point(477, 249);
-            this.buttonAddAllergyPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddAllergyPatient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddAllergyPatient.Name = "buttonAddAllergyPatient";
             this.buttonAddAllergyPatient.Size = new System.Drawing.Size(128, 39);
             this.buttonAddAllergyPatient.TabIndex = 9;
@@ -166,7 +166,7 @@
             // buttonDeleteAllergyToPatient
             // 
             this.buttonDeleteAllergyToPatient.Location = new System.Drawing.Point(628, 249);
-            this.buttonDeleteAllergyToPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeleteAllergyToPatient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteAllergyToPatient.Name = "buttonDeleteAllergyToPatient";
             this.buttonDeleteAllergyToPatient.Size = new System.Drawing.Size(130, 39);
             this.buttonDeleteAllergyToPatient.TabIndex = 10;
@@ -177,7 +177,7 @@
             // buttonAddToPatientAntecedent
             // 
             this.buttonAddToPatientAntecedent.Location = new System.Drawing.Point(477, 490);
-            this.buttonAddToPatientAntecedent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddToPatientAntecedent.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddToPatientAntecedent.Name = "buttonAddToPatientAntecedent";
             this.buttonAddToPatientAntecedent.Size = new System.Drawing.Size(128, 39);
             this.buttonAddToPatientAntecedent.TabIndex = 11;
@@ -188,7 +188,7 @@
             // buttonDeleteAntecedentPatient
             // 
             this.buttonDeleteAntecedentPatient.Location = new System.Drawing.Point(628, 490);
-            this.buttonDeleteAntecedentPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeleteAntecedentPatient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteAntecedentPatient.Name = "buttonDeleteAntecedentPatient";
             this.buttonDeleteAntecedentPatient.Size = new System.Drawing.Size(130, 39);
             this.buttonDeleteAntecedentPatient.TabIndex = 12;
@@ -209,7 +209,7 @@
             // 
             this.editBirth.Image = ((System.Drawing.Image)(resources.GetObject("editBirth.Image")));
             this.editBirth.Location = new System.Drawing.Point(191, 138);
-            this.editBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editBirth.Margin = new System.Windows.Forms.Padding(2);
             this.editBirth.Name = "editBirth";
             this.editBirth.Size = new System.Drawing.Size(17, 18);
             this.editBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -220,7 +220,7 @@
             // ButtonEditBirth
             // 
             this.ButtonEditBirth.Location = new System.Drawing.Point(263, 166);
-            this.ButtonEditBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonEditBirth.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonEditBirth.Name = "ButtonEditBirth";
             this.ButtonEditBirth.Size = new System.Drawing.Size(154, 28);
             this.ButtonEditBirth.TabIndex = 17;
@@ -228,20 +228,21 @@
             this.ButtonEditBirth.UseVisualStyleBackColor = true;
             this.ButtonEditBirth.Click += new System.EventHandler(this.ButtonEditBirth_Click);
             // 
-            // editBirthPatient
+            // BirthTimePicker
             // 
-            this.editBirthPatient.Location = new System.Drawing.Point(22, 168);
-            this.editBirthPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.editBirthPatient.Name = "editBirthPatient";
-            this.editBirthPatient.Size = new System.Drawing.Size(186, 20);
-            this.editBirthPatient.TabIndex = 18;
+            this.BirthTimePicker.Location = new System.Drawing.Point(22, 168);
+            this.BirthTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.BirthTimePicker.Name = "BirthTimePicker";
+            this.BirthTimePicker.Size = new System.Drawing.Size(186, 20);
+            this.BirthTimePicker.TabIndex = 18;
+            this.BirthTimePicker.Visible = false;
             // 
             // ProfilPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 554);
-            this.Controls.Add(this.editBirthPatient);
+            this.Controls.Add(this.BirthTimePicker);
             this.Controls.Add(this.ButtonEditBirth);
             this.Controls.Add(this.editBirth);
             this.Controls.Add(this.id);
@@ -258,7 +259,7 @@
             this.Controls.Add(this.labelSexe);
             this.Controls.Add(this.birthPatient);
             this.Controls.Add(this.NameAndLastname);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProfilPatient";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProfilPatient_Load);
@@ -288,6 +289,6 @@
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.PictureBox editBirth;
         private System.Windows.Forms.Button ButtonEditBirth;
-        private System.Windows.Forms.DateTimePicker editBirthPatient;
+        private System.Windows.Forms.DateTimePicker BirthTimePicker;
     }
 }

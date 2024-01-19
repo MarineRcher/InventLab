@@ -35,6 +35,10 @@ namespace InventLab
                 tableUsers.DataSource = users;
                 this.tableUsers.Columns["Id"].Visible = false;
                 this.tableUsers.Columns["Password"].Visible = false;
+                tableUsers.Columns["Name"].HeaderText = "Prénom";
+                tableUsers.Columns["LastName"].HeaderText = "Nom de famille";
+                tableUsers.Columns["Login"].HeaderText = "Nom d'utilisateur";
+                tableUsers.Columns["Role"].HeaderText = "Rôle";
             }
         }
 
@@ -49,6 +53,10 @@ namespace InventLab
             this.tableUsers.DataSource = dataAccess.selectUsers();
             this.tableUsers.Columns["Id"].Visible = false;
             this.tableUsers.Columns["Password"].Visible = false;
+            tableUsers.Columns["Name"].HeaderText = "Prénom";
+            tableUsers.Columns["LastName"].HeaderText = "Nom de famille";
+            tableUsers.Columns["Login"].HeaderText = "Nom d'utilisateur";
+            tableUsers.Columns["Role"].HeaderText = "Rôle";
         }
         private void buttonDeleteUser_Click(object sender, EventArgs e)
         {

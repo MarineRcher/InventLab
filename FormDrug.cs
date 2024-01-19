@@ -60,6 +60,9 @@ namespace InventLab
             {
                 tableDrug.DataSource = drugs;
                 this.tableDrug.Columns["Id"].Visible = false;
+                tableDrug.Columns["Name"].HeaderText = "Prénom";
+                tableDrug.Columns["ContreIndication"].HeaderText = "Contre-Indication";
+                tableDrug.Columns["Quantity"].HeaderText = "Quantité";
             }
         }
         public void tableDrug_CellContentClick(object sender, DataGridViewCellEventArgs e)

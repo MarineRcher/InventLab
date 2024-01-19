@@ -36,7 +36,13 @@ namespace InventLab
             {
                 tableOrdonnance.DataSource = ordonnances;
                 this.tableOrdonnance.Columns["idOrd"].Visible = false;
-            }}
+                tableOrdonnance.Columns["posologie"].HeaderText = "Posologie";
+                tableOrdonnance.Columns["Duree"].HeaderText = "Durée du traitement";
+                tableOrdonnance.Columns["NomPatient"].HeaderText = "Nom Patient";
+                tableOrdonnance.Columns["PrenomPatient"].HeaderText = "Prénom";
+                tableOrdonnance.Columns["LibelleMedicament"].HeaderText = "Nom du médicament";
+            }
+        }
 
         private void buttonDeleteOrdo_Click(object sender, EventArgs e)
         {
@@ -57,6 +63,18 @@ namespace InventLab
             this.tableOrdonnance.DataSource = null;
             this.tableOrdonnance.DataSource = dataAccess.selectOrdonnances(currentUser.Id);
             this.tableOrdonnance.Columns["idOrd"].Visible = false;
+            tableOrdonnance.Columns["posologie"].HeaderText = "Posologie";
+            if (tableOrdonnance.Columns.Contains("duree_traitement"))
+            {
+                tableOrdonnance.Columns["duree_traitement"].HeaderText = "Durée du traitement";
+            }
+
+            tableOrdonnance.Columns["instruction_specifique"].HeaderText = "Instructions";
+            tableOrdonnance.Columns["date_o"].HeaderText = "Date";
+            tableOrdonnance.Columns["Nom_Patient"].HeaderText = "Nom Patient";
+            tableOrdonnance.Columns["Prenom_Patient"].HeaderText = "Prénom";
+             tableOrdonnance.Columns["Nom_medicament"].HeaderText = "Nom du médicament";
+
         }
 
         private void printNameLastNameUser_Click(object sender, EventArgs e)
