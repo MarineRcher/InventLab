@@ -27,7 +27,7 @@ use gsb;
 
 CREATE USER 'gsb'@'localhost' IDENTIFIED BY 'gsbUser';
 GRANT ALL PRIVILEGES ON gsb.* TO 'gsb'@'localhost';
-FLUSH PRIVILEGES
+FLUSH PRIVILEGES;
 --
 -- Structure de la table `allergie`
 --
