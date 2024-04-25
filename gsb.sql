@@ -22,7 +22,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE USER 'gsb'@'localhost' IDENTIFIED BY 'gsbUser';
+GRANT ALL PRIVILEGES ON gsb.* TO 'gsb'@'localhost';
+FLUSH PRIVILEGES
 --
 -- Structure de la table `allergie`
 --
