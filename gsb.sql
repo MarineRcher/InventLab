@@ -22,12 +22,16 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+create database if not exists `gsb`;
+use gsb;
+
 CREATE USER 'gsb'@'localhost' IDENTIFIED BY 'gsbUser';
 GRANT ALL PRIVILEGES ON gsb.* TO 'gsb'@'localhost';
 FLUSH PRIVILEGES
 --
 -- Structure de la table `allergie`
 --
+  
 
 DROP TABLE IF EXISTS `allergie`;
 CREATE TABLE IF NOT EXISTS `allergie` (
