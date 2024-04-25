@@ -33,6 +33,12 @@ On y retrouve les fonctionnalitées suivantes :
 
   ![XAMPP_Consola](https://github.com/MarineRcher/InventLab/assets/106527470/ab7a5c4d-b1a2-4d36-a045-5ea6384e7820)
 
+
+
+  puis importer dans le menu en haut.
+
+  Enfin il suffit d'importer le fichier SQL qui se trouve dans le dossier du projet.
+
 Dans visual studio, demarrer avec start ou démarrer, accompagné d'un bouton play.
   
 
