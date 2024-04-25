@@ -158,7 +158,7 @@ namespace InventLab
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "delete from ordonnance where id_m=@id; delete from medecin where id_m=@id;";
+                string query = "SET FOREIGN_KEY_CHECKS=0;update patient set id_m=0 where id_m=@id; delete from ordonnance where id_m=@id; delete from medecin where id_m=@id;";
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", user.Id);

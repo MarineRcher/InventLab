@@ -22,6 +22,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+
 create database if not exists `gsb`;
 use gsb;
 

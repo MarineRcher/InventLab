@@ -126,17 +126,7 @@
             this.tableDrug.Size = new System.Drawing.Size(597, 402);
             this.tableDrug.TabIndex = 10;
             this.tableDrug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableDrug_CellContentClick);
-            // 
-            // deleteDrug
-            // 
-            this.deleteDrug.Location = new System.Drawing.Point(1032, 417);
-            this.deleteDrug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deleteDrug.Name = "deleteDrug";
-            this.deleteDrug.Size = new System.Drawing.Size(260, 81);
-            this.deleteDrug.TabIndex = 11;
-            this.deleteDrug.Text = "Supprimer le médicament";
-            this.deleteDrug.UseVisualStyleBackColor = true;
-            this.deleteDrug.Click += new System.EventHandler(this.deleteDrug_Click_1);
+          
             // 
             // searchDrug
             // 

@@ -68,9 +68,6 @@ namespace InventLab
                 sexe = "H";
             }
 
-
-
-
             string name = inputNamePatient.Text;
             string lastName = inputLastNamePatient.Text;
 

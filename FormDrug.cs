@@ -32,21 +32,7 @@ namespace InventLab
             updateData();
         }
 
-        private void deleteDrug_Click_1(object sender, EventArgs e)
-        {
-            if (tableDrug.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = tableDrug.SelectedRows[0];
-                string name = selectedRow.Cells["name"].Value.ToString();
-                string description = selectedRow.Cells["description"].Value.ToString();
-                string contreIndic = selectedRow.Cells["contreIndication"].Value.ToString();
-                int quantity = (int)selectedRow.Cells["quantity"].Value;
-                Drug drug = new Drug(name, description, contreIndic, quantity);
-                int result = dataAccess.deleteValue(drug);
-               // MessageBox.Show(result.ToString());
-                updateData();
-            }
-        }
+       
         public void updateData()
         {
             tableDrug.Refresh();

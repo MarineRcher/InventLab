@@ -41,17 +41,19 @@ namespace InventLab
                 int id = Convert.ToInt32(label5.Text);
                 string password = textBox1.Text;
                 string passwordConfirm = textBox2.Text;
-                Console.WriteLine(password);
-                Console.WriteLine(id);
+              
                 if (password.Equals(passwordConfirm))
                 {
                     dataAccess.updatePasswordUser(id, password);
-                    gestionMotDePasse.updateData(); ;
-                }
+                    gestionMotDePasse.updateData();
+                this.Close();
+            }
                 else
                 {
                         MessageBox.Show("Veuillez utiliser le meme mot de passe");
-            }
+                }
+           
+                
         }
     }
 }

@@ -68,13 +68,26 @@ namespace InventLab
             {
                 tableOrdonnance.Columns["duree_traitement"].HeaderText = "Durée du traitement";
             }
-
-            tableOrdonnance.Columns["instruction_specifique"].HeaderText = "Instructions";
-            tableOrdonnance.Columns["date_o"].HeaderText = "Date";
-            tableOrdonnance.Columns["Nom_Patient"].HeaderText = "Nom Patient";
-            tableOrdonnance.Columns["Prenom_Patient"].HeaderText = "Prénom";
-             tableOrdonnance.Columns["Nom_medicament"].HeaderText = "Nom du médicament";
-
+            if (tableOrdonnance.Columns.Contains("instruction_specifique"))
+            {
+                tableOrdonnance.Columns["instruction_specifique"].HeaderText = "Instructions";
+            }
+            if (tableOrdonnance.Columns.Contains("date_o"))
+            {
+                tableOrdonnance.Columns["date_o"].HeaderText = "Date";
+            }
+            if (tableOrdonnance.Columns.Contains("Nom_Patient"))
+            {
+                tableOrdonnance.Columns["Nom_Patient"].HeaderText = "Nom Patient";
+            }
+            if (tableOrdonnance.Columns.Contains("Prenom_Patient"))
+            {
+                tableOrdonnance.Columns["Prenom_Patient"].HeaderText = "Prénom";
+            }
+            if (tableOrdonnance.Columns.Contains("Nom_medicament"))
+            {
+                tableOrdonnance.Columns["Nom_medicament"].HeaderText = "Nom du médicament";
+            }
         }
 
         private void printNameLastNameUser_Click(object sender, EventArgs e)
@@ -88,6 +101,11 @@ namespace InventLab
         {
             addOrdonnance addOrd = new addOrdonnance(this.currentUser, this);
             addOrd.Show();
+        }
+
+        private void tableOrdonnance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
