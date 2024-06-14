@@ -174,5 +174,33 @@ namespace InventLab
                 }
             }
         }
+
+        public List<Drug> moleculeMedicament(string name)
+        {
+            this.drugs = new List<Drug>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select name_molecule from molecule join composition on composition.id_molecule = molecule.id_molecule join medicament on medicament.id_med = composition.id_med where libelle_med= @name ;";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@name", name);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            Drug drug = new Drug(); ;
+                            drug.Molecule = reader.GetString("name_molecule");
+                           
+                            drugs.Add(drug);
+
+                        }
+                        return drugs;
+                    }
+
+                }
+            }
+        }
     }
 }

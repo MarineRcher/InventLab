@@ -17,6 +17,8 @@ namespace InventLab
 
         public int Quantity { get; set; }
 
+        public string Molecule {  get; set; }
+
         public Drug()
         {
             this.Id = 0;
@@ -31,6 +33,11 @@ namespace InventLab
             this.Description = Description;
             this.ContreIndication = ContreIndication;
             this.Quantity = Quantity ?? 0;
+        }
+
+        public Drug(string molecule)
+        {
+            this.Molecule = molecule;
         }
 
     }

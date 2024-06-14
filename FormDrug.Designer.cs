@@ -41,6 +41,7 @@
             this.inputContreIndication = new System.Windows.Forms.TextBox();
             this.contreIndicationDRug = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.compo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantityAddDrug)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDrug)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,13 @@
             this.tableDrug.Size = new System.Drawing.Size(597, 402);
             this.tableDrug.TabIndex = 10;
             this.tableDrug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableDrug_CellContentClick);
-          
+            // 
+            // deleteDrug
+            // 
+            this.deleteDrug.Location = new System.Drawing.Point(0, 0);
+            this.deleteDrug.Name = "deleteDrug";
+            this.deleteDrug.Size = new System.Drawing.Size(75, 23);
+            this.deleteDrug.TabIndex = 17;
             // 
             // searchDrug
             // 
@@ -165,12 +172,23 @@
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 16;
             // 
+            // compo
+            // 
+            this.compo.Location = new System.Drawing.Point(1056, 430);
+            this.compo.Name = "compo";
+            this.compo.Size = new System.Drawing.Size(224, 67);
+            this.compo.TabIndex = 18;
+            this.compo.Text = "Voir la composition";
+            this.compo.UseVisualStyleBackColor = true;
+            this.compo.Click += new System.EventHandler(this.compo_Click);
+            // 
             // FormDrug
             // 
             this.AcceptButton = this.buttonAddDrug;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 554);
+            this.Controls.Add(this.compo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.contreIndicationDRug);
             this.Controls.Add(this.inputContreIndication);
@@ -210,5 +228,6 @@
         private System.Windows.Forms.TextBox inputContreIndication;
         private System.Windows.Forms.Label contreIndicationDRug;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button compo;
     }
 }

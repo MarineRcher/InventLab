@@ -203,6 +203,12 @@
     <Compile Include="AskChangePassword.Designer.cs">
       <DependentUpon>AskChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompositionMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompositionMedicament.Designer.cs">
+      <DependentUpon>CompositionMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drug.cs" />
     <Compile Include="DrugDataAccess.cs" />
     <Compile Include="EditDrug.cs">
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AskChangePassword.resx">
       <DependentUpon>AskChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompositionMedicament.resx">
+      <DependentUpon>CompositionMedicament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDrug.resx">
       <DependentUpon>EditDrug.cs</DependentUpon>

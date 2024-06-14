@@ -327,3 +327,4 @@ C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.GestionUsers.resou
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.HomePage.resources
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.ProfilPatient.resources
 C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.csproj.Up2Date
+C:\Users\Administrateur\Desktop\InventLab\obj\Debug\InventLab.CompositionMedicament.resources

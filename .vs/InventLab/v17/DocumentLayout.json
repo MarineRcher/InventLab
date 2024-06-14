@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\InventLab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\editpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:editpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\compositionmedicament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:compositionmedicament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\gestionmotdepasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:gestionmotdepasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\compositionmedicament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:compositionmedicament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\formdrug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:formdrug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\formdrug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:formdrug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 124,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,51 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditPassword.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
-              "RelativeDocumentMoniker": "EditPassword.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
-              "RelativeToolTip": "EditPassword.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAgwDEAAAANAAAA",
+              "DocumentIndex": 2,
+              "Title": "FormDrug.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\FormDrug.cs",
+              "RelativeDocumentMoniker": "FormDrug.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\FormDrug.cs",
+              "RelativeToolTip": "FormDrug.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAYwC8AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:19:39.368Z",
+              "WhenOpened": "2024-06-14T08:29:03.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "addOrdonnance.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\addOrdonnance.cs",
-              "RelativeDocumentMoniker": "addOrdonnance.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\addOrdonnance.cs",
-              "RelativeToolTip": "addOrdonnance.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAEwJMAAAAhAAAA",
+              "Title": "FormDrug.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\FormDrug.cs",
+              "RelativeDocumentMoniker": "FormDrug.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\FormDrug.cs [Design]",
+              "RelativeToolTip": "FormDrug.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:23:15.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "addOrdonnance.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\addOrdonnance.cs",
-              "RelativeDocumentMoniker": "addOrdonnance.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\addOrdonnance.cs [Design]",
-              "RelativeToolTip": "addOrdonnance.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:23:10.055Z"
+              "WhenOpened": "2024-06-14T08:29:02.808Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GestionMotDePasse.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\GestionMotDePasse.cs",
-              "RelativeDocumentMoniker": "GestionMotDePasse.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\GestionMotDePasse.cs",
-              "RelativeToolTip": "GestionMotDePasse.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAIAwwDkAAAAAAAAA",
+              "Title": "CompositionMedicament.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\CompositionMedicament.cs",
+              "RelativeDocumentMoniker": "CompositionMedicament.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\CompositionMedicament.cs",
+              "RelativeToolTip": "CompositionMedicament.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:22:13.289Z"
+              "WhenOpened": "2024-06-14T08:17:58.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompositionMedicament.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\CompositionMedicament.cs",
+              "RelativeDocumentMoniker": "CompositionMedicament.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\CompositionMedicament.cs [Design]",
+              "RelativeToolTip": "CompositionMedicament.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:01:11.527Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

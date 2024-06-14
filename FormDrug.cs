@@ -121,6 +121,17 @@ namespace InventLab
 
         }
 
-        
+        private void compo_Click(object sender, EventArgs e)
+        {
+            if (tableDrug.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = tableDrug.SelectedRows[0];
+
+                string name = selectedRow.Cells["name"].Value.ToString();
+
+                CompositionMedicament compositionMedicament = new CompositionMedicament(this.currentUser, name);
+                compositionMedicament.Show();
+            }
+        }
     }
 }
