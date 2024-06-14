@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:editpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\gestionmotdepasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\gestionmotdepasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:gestionmotdepasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|c:\\users\\administrateur\\desktop\\inventlab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|C:\\Users\\Administrateur\\Desktop\\InventLab\\addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{116F45FF-9076-4D0E-80B9-226D029D42FD}|InventLab.csproj|solutionrelative:addordonnance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 124,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditPassword.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
+              "RelativeDocumentMoniker": "EditPassword.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
+              "RelativeToolTip": "EditPassword.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwDEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T10:19:39.368Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -42,8 +55,7 @@
               "RelativeToolTip": "addOrdonnance.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAEwJMAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:23:15.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T10:23:15.726Z"
             },
             {
               "$type": "Document",
@@ -54,8 +66,7 @@
               "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\addOrdonnance.cs [Design]",
               "RelativeToolTip": "addOrdonnance.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:23:10.055Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-25T10:23:10.055Z"
             },
             {
               "$type": "Document",
@@ -67,21 +78,7 @@
               "RelativeToolTip": "GestionMotDePasse.cs",
               "ViewState": "AQIAACAAAAAAAAAAAIAwwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:22:13.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditPassword.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
-              "RelativeDocumentMoniker": "EditPassword.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\InventLab\\EditPassword.cs",
-              "RelativeToolTip": "EditPassword.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAgwDAAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:19:39.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T10:22:13.289Z"
             }
           ]
         }
